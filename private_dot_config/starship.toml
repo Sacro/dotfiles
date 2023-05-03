@@ -1,0 +1,6 @@
+[gcloud]
+disabled = true
+
+[hg_branch]
+disabled = false
+
