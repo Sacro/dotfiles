@@ -1,3 +1,10 @@
+[".local/share/lunarvim/lvim/"]
+  type = "archive"
+  url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -10,11 +17,4 @@
   url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
   exact = true
   stripComponents = 1
-
-[".local/share/lunarvim/lvim/"]
-  type = "archive"
-  url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "168h"
 
