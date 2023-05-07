@@ -162,8 +162,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+# BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 export TZ=Europe/London
 

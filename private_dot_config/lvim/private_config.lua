@@ -46,7 +46,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 -- -- Change theme settings
-lvim.colorscheme = "monokai-pro"
+lvim.colorscheme = "catppuccin-mocha"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -207,6 +207,10 @@ lvim.plugins = {
     "nvim-neorg/neorg",
     ft = "norg",   -- lazy-load on filetype
     config = true, -- run require("neorg").setup()
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
   },
   {
     "norcalli/nvim-colorizer.lua",
