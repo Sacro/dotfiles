@@ -1,3 +1,16 @@
+
+{{ range .catppuccinFlavours }}
+[".config/bat/themes/Catppuccin-{{ . }}.tmTheme"]
+  type = "file"
+  url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "bat-main/Catppuccin-{{ . }}.tmTheme"]
+{{ end }}
+
 [".local/share/lunarvim/lvim/"]
   type = "archive"
   url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
