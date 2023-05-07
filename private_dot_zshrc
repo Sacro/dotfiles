@@ -162,9 +162,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 export TZ=Europe/London
 
 export EDITOR=vim
@@ -230,11 +227,6 @@ fi
 # C#
 if [ -d $HOME/.dotnet/tools ] ; then
   path=("$HOME/.dotnet/tools" "$path[@]")
-fi
-
-# fzf
-if [ -d $HOME/.config/base16-fzf ]; then
-  source $HOME/.config/base16-fzf/bash/base16-monokai.config
 fi
 
 
