@@ -265,6 +265,10 @@ lvim.plugins = {
     "mrjones2014/nvim-ts-rainbow",
   },
   {
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+  },
+  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
