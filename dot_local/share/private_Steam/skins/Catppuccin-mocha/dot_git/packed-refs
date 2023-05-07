@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled sorted 
+d0a1825fea0d4dc4a04967385a30d0eedbd5c123 refs/remotes/origin/master
+f7ec369dc0ff0c67235a17230a0af230eb3fcac1 refs/remotes/origin/metro-for-steam-next
+5b827e26aa0e285bad01ae1d514dbc38396dcf6b refs/remotes/origin/steam-library-beta-support
+d51cce6d8d1113e63cfc832732261bcc831129b6 refs/tags/v4.4
