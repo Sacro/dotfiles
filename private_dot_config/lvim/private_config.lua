@@ -117,6 +117,9 @@ linters.setup {
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
   {
+    "alker0/chezmoi.vim"
+  },
+  {
     "stevearc/dressing.nvim",
     config = function()
       require("dressing").setup({
