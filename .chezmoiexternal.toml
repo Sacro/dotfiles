@@ -28,6 +28,12 @@
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
 
+[".config/nvim/"]
+  type = "archive"
+  url = "https://github.com/NvChad/NvChad/archive/main.tar.gz"
+  stripComponents = 1
+  refreshPeriod = "168h"
+
 [".local/share/lunarvim/lvim/"]
   type = "archive"
   url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
