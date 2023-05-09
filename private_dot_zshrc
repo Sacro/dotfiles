@@ -202,8 +202,8 @@ path=("${COMPOSER_HOME}/vendor/bin" "$path[@]")
 
 # Neovim
 if type nvim > /dev/null; then
-  export EDITOR=nvim
-  alias vim="nvim"
+  export EDITOR=lvim
+  alias vim="lvim"
 fi
 
 #if [ -f /usr/bin/nvim-qt ]
