@@ -215,6 +215,7 @@ lvim.plugins = {
 		name = "catppuccin",
 		config = function()
 			require("catppuccin").setup({
+				flavour = "mocha",
 				integrations = {
 					dap = {
 						enabled = true,
@@ -224,6 +225,9 @@ lvim.plugins = {
 						enabled = true,
 					},
 					native_lsp = {
+						enabled = true,
+					},
+					treesitter = {
 						enabled = true,
 					},
 				},
