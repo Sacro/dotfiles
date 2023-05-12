@@ -7,6 +7,7 @@ return {
 			integrations = {
 				aerial = true,
 				alpha = true,
+				dashboard = true,
 				gitsigns = true,
 				indent_blankline = {
 					enabled = true,
