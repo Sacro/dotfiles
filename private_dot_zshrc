@@ -186,16 +186,20 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
 fi
 
+if type fzf &> /dev/null && type bat &>/dev/null; then 
+  alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'" 
+fi
+
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # ccat
 ZSH_COLORIZE_STYLE=monokai
 
 # LS
-if type lsd &>/dev/null; ; then
+if type lsd &>/dev/null; then
   alias ls='lsd'
 fi
 
@@ -264,13 +268,13 @@ if [ -d $HOME/go/bin ] ; then
 fi
 
 if [ -d $HOME/Code/Go ] ; then
- export GOPATH=$HOME/Code/Go
- path=("$GOPATH/bin" "$path[@]")
+  export GOPATH=$HOME/Code/Go
+  path=("$GOPATH/bin" "$path[@]")
 fi
 
 # Rootless Docker
 if [ -S ${XDG_RUNTIME_DIR}/docker.sock ] ; then
- export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
+  export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
 fi
 
 if [ -d $HOME/.perl5 ]; then
@@ -286,6 +290,10 @@ fi
 if [ -S $XDG_RUNTIME_DIR/podman/podman.sock ] ; then
   DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
+
+# QT
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Rust
 if [ -d $HOME/.cargo/bin ] ; then

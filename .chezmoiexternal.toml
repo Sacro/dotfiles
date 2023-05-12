@@ -35,6 +35,30 @@
   stripComponents =1
   refreshPeriod = "168h"
 
+{{ range .catppuccinFlavoursTitleCase }}
+[".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
+  type = "file"
+  url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
+{{ end }}
+
+{{ range .catppuccinFlavoursTitleCase }}
+[".config/qt6ct/colors/Catppuccin-{{ . }}.conf"]
+  type = "file"
+  url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
+{{ end }}
+
 {{ range .catppuccinFlavours }}
 [".fleet/themes/catppuccin-{{ . }}.json"]
   type = "file"
@@ -46,6 +70,13 @@
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
 {{ end }}
+
+[".local/share/catppuccin/gtk"]
+  type = "archive"
+  url = "https://github.com/catppuccin/gtk/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
 
 [".local/share/lunarvim/lvim/"]
   type = "archive"

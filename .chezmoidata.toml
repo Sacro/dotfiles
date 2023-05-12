@@ -1,2 +1,3 @@
 catppuccinFlavours = ['frappe', 'latte', 'macchiato', 'mocha']
+catppuccinFlavoursTitleCase = ['Frappe', 'Latte', 'Macchiato', 'Mocha']
 
