@@ -116,6 +116,8 @@ if type brew &>/dev/null; then
 fi
 
 # Python
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
 if [ -d $HOME/.pyenv/bin ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   path=("$HOME/.pyenv/bin" "$path[@]")
