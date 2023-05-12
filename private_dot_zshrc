@@ -112,11 +112,12 @@ if [ -d /opt/homebrew/bin ]; then
 fi
 
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
 fi
 
 # Python
 if [ -d $HOME/.pyenv/bin ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
   path=("$HOME/.pyenv/bin" "$path[@]")
 fi
 
@@ -172,7 +173,7 @@ else
   eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
 fi
 
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}" menu select rehash true
 autoload -Uz compinit
 compinit -u
 

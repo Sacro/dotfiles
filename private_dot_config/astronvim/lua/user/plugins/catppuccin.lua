@@ -21,6 +21,7 @@ return {
 				treesitter = true,
 				which_key = true,
 			},
+			term_colors = true,
 		})
 	end,
 }
