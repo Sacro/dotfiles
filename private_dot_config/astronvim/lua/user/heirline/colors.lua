@@ -26,28 +26,29 @@
 --  crust      #11111B  Darkest bg
 
 return function(hl)
-	local mocha = require("catppuccin.palettes").get_palette("mocha")
+	local get_hlgroup = require("astronvim.utils").get_hlgroup
+	-- local mocha = require("catppuccin.palettes").get_palette("mocha")
 
 	-- use helper function to get highlight group properties
-	local normal_hg = mocha.base
+	local normal_hg = get_hlgroup("EndOfBuffer").fg
 	hl.normal_bg = normal_hg
 
-	hl.file_info_bg = mocha.surface0
+	hl.file_info_bg = get_hlgroup("ColorColumn").bg
 
-	local comment_fg = mocha.surface2
+	local comment_fg = get_hlgroup("Comment").fg
 	hl.git_branch_fg = comment_fg
 	hl.git_added = comment_fg
 	hl.git_changed = comment_fg
 	hl.git_removed = comment_fg
 
 	hl.lsp_bg = hl.file_info_bg
-	hl.lsp_icon_bg = mocha.blue
+	hl.lsp_icon_bg = get_hlgroup("DiffChanged").fg
 
-	hl.diagnostics_bg = mocha.yellow
+	hl.diagnostics_bg = get_hlgroup("WarningMsg").fg
 
-	hl.folder_icon_bg = mocha.pink
+	hl.folder_icon_bg = get_hlgroup("PreProc").fg
 
-	hl.nav_icon_bg = mocha.green
+	hl.nav_icon_bg = get_hlgroup("TabLineSel").fg
 	hl.nav_fg = hl.nav_icon_bg
 	return hl
 end

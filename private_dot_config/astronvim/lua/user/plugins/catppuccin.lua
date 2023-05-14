@@ -24,4 +24,5 @@ return {
 			term_colors = true,
 		})
 	end,
+	lazy = false,
 }
