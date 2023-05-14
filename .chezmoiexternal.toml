@@ -3,7 +3,7 @@
   url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
   include = ["*/*.yml"]
 
 {{ range .catppuccinFlavours }}
@@ -12,7 +12,7 @@
   url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "bat-main/Catppuccin-{{ . }}.tmTheme"]
@@ -23,7 +23,7 @@
   url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
   
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
@@ -33,7 +33,7 @@
   url = "https://github.com/AstroNvim/AstroNvim/archive/main.tar.gz"
   exact = true
   stripComponents =1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
@@ -41,7 +41,7 @@
   url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
@@ -53,7 +53,7 @@
   url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
@@ -65,7 +65,7 @@
   url = "https://github.com/kkrypt0nn/jetbrains-fleet/archive/main.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
@@ -76,47 +76,47 @@
   url = "https://github.com/catppuccin/gtk/archive/master.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".local/share/lunarvim/lvim/"]
   type = "archive"
   url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".oh-my-zsh/custom/themes/powerlevel10k"]
   type = "archive"
   url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".pyenv"]
   type = "archive"
   url = "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.17.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".pyenv/plugins/pyenv-virtualenv"]
   type = "archive"
   url = "https://github.com/pyenv/pyenv-virtualenv/archive/refs/tags/v1.2.1.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
 [".tmux/plugins/tpm"]
   type = "archive"
   url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
   exact = true
   stripComponents = 1
-  refreshPeriod = "168h"
+  refreshPeriod = "1h"
 
