@@ -57,9 +57,17 @@ return {
 			-- the elements after this will appear on the right of the statusline
 			status.component.fill(),
 			-- add a component for the current diagnostics if it exists and use the right separator for the section
-			status.component.diagnostics({
-				surround = { separator = "right", color = { main = "file_info_bg", left = "normal_bg" } },
-			}),
+			{
+				-- status.component.builder({
+				-- 	{ provider = "" },
+				-- 	-- define the surrounding separator and colors to be used inside of the component
+				-- 	-- and the color to the right of the separated out section
+				-- 	surround = { separator = "right", color = { main = "file_info_bg", left = "normal_bg" } },
+				-- }),
+				status.component.diagnostics({
+					surround = { separator = "none" },
+				}),
+			},
 			-- -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
 			-- status.component.lsp({
 			-- 	lsp_progress = false,
@@ -77,7 +85,7 @@ return {
 					-- set the foreground color to be used for the icon
 					hl = { fg = "bg" },
 					-- use the right separator and define the background color
-					surround = { separator = "right", color = { main = "folder_icon_bg", left = "file_info_bg" } },
+					surround = { separator = "right", color = { main = "folder_icon_bg", left = "normal_bg" } },
 				}),
 				-- add a file information component and only show the current working directory name
 				status.component.file_info({

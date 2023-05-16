@@ -30,10 +30,11 @@ return function(hl)
 	-- local mocha = require("catppuccin.palettes").get_palette("mocha")
 
 	-- use helper function to get highlight group properties
-	local normal_hg = get_hlgroup("EndOfBuffer").fg
-	hl.normal_bg = normal_hg
+	local normal_bg = get_hlgroup("EndOfBuffer").fg
+	hl.normal_bg = normal_bg
 
 	hl.file_info_bg = get_hlgroup("ColorColumn").bg
+	hl.diagnostics_bg = hl.normal_bg
 
 	local comment_fg = get_hlgroup("Comment").fg
 	hl.git_branch_fg = comment_fg
@@ -43,8 +44,6 @@ return function(hl)
 
 	hl.lsp_bg = hl.file_info_bg
 	hl.lsp_icon_bg = get_hlgroup("DiffChanged").fg
-
-	hl.diagnostics_bg = get_hlgroup("WarningMsg").fg
 
 	hl.folder_icon_bg = get_hlgroup("PreProc").fg
 
