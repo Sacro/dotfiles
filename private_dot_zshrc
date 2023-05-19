@@ -10,15 +10,15 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 if [ -x "$(command -v starship)" ] && [ -f ~/.config/starship.toml ]; then
-  eval "$(starship init zsh)"
+    eval "$(starship init zsh)"
 elif [ $TERM != "xterm" ] \
-  && [ -f $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ] \
-  && [ -f $HOME/.p10k.zsh ]
+    && [ -f "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" ] \
+    && [ -f "$HOME/.p10k.zsh" ]
 then
-  ZSH_THEME='powerlevel10k/powerlevel10k'
-  source $HOME/.p10k.zsh
+    ZSH_THEME='powerlevel10k/powerlevel10k'
+    source "$HOME/.p10k.zsh"
 else
-  ZSH_THEME="af-magic"
+    ZSH_THEME="af-magic"
 fi
 
 # Set list of themes to pick from when loading at random
@@ -82,51 +82,51 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  adb alias-finder archlinux asdf autopep8 aws
-  bgnotify branch
-  catimg colored-man-pages colorize composer copypath cp
-  deno dircycle direnv dirhistory docker docker-compose
-  emoji emotty encode64 extract
-  fabric fancy-ctrl-z frontend-search fzf
-  gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
-  helm heroku history httpie
-  iterm2
-  jira jsontools
-  kubectl
-  macos man mercurial microk8s minikube mosh
-  ng nmap node npm nvm # DO NOT ADD NPX - SECURITY ISSUES
-  pep8 per-directory-history perl perms pip profiles pyenv pylint python
-  react-native redis-cli repo ripgrep rsync ruby rust rvm
-  safe-paste salt screen sudo svn systemadmin systemd
-  taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox
-  ufw universalarchive urltools
-  vim-interaction vscode
-  wd
-  yarn
-  z
+    adb alias-finder archlinux autopep8 aws
+    bgnotify branch
+    catimg colored-man-pages colorize composer copypath cp
+    deno dircycle direnv dirhistory docker docker-compose
+    emoji emotty encode64 extract
+    fabric fancy-ctrl-z frontend-search fzf
+    gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
+    helm heroku history httpie
+    iterm2
+    jira jsontools
+    kubectl
+    macos man mercurial microk8s minikube mosh
+    ng nmap node npm nvm # DO NOT ADD NPX - SECURITY ISSUES
+    pep8 per-directory-history perl perms pip profiles pyenv pylint python
+    react-native redis-cli repo ripgrep rsync ruby rust rvm
+    safe-paste salt screen sudo svn systemadmin systemd
+    taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox
+    ufw universalarchive urltools
+    vim-interaction vscode
+    wd
+    yarn
+    z
 )
 
 # Configure brew before oh-my-zsh starts
 if [ -d /opt/homebrew/bin ]; then
-  path=("/opt/homebrew/bin" "$path[@]")
+    path=("/opt/homebrew/bin" "$path[@]")
 fi
 
 if type brew &>/dev/null; then
-  fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
+    fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
 fi
 
 # Python
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
-if [ -d $HOME/.pyenv/bin ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  path=("$HOME/.pyenv/bin" "$path[@]")
+if [ -d "$HOME/.pyenv/bin" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    path=("$HOME/.pyenv/bin" "$path[@]")
 fi
 
-if type pyenv > /dev/null; then
-  if [ -d "$(pyenv root)/shims" ]; then
-    path=("$(pyenv root)/shims" "$path[@]")
-  fi
+if type pyenv &>/dev/null; then
+    if [ -d "$(pyenv root)/shims" ]; then
+        path=("$(pyenv root)/shims" "$path[@]")
+    fi
 fi
 
 
@@ -138,7 +138,7 @@ source $ZSH/oh-my-zsh.sh
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -169,10 +169,10 @@ export TZ=Europe/London
 
 export EDITOR=vim
 
-if type gdircolors > /dev/null; then
-  eval $( gdircolors -b $HOME/.ls_colors/LS_COLORS )
+if type gdircolors &> /dev/null; then
+    eval "$( gdircolors -b $HOME/.ls_colors/LS_COLORS )"
 else
-  eval $( dircolors -b $HOME/.ls_colors/LS_COLORS )
+    eval "$( dircolors -b $HOME/.ls_colors/LS_COLORS )"
 fi
 
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}" menu select rehash true
@@ -181,13 +181,23 @@ compinit -u
 
 typeset -U PATH path
 
-# FZF
-if [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
+# Add local bin nice and early
+if [ -d "$HOME/.local/bin" ]; then
+    path=("$HOME/.local/bin" "$path[@]")
 fi
 
-if type fzf &> /dev/null && type bat &>/dev/null; then 
-  alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'" 
+if [ -d "$HOME/.local/share/zsh/site-functions/" ]; then
+    fpath=("$HOME/.local/share/zsh/site-functions" "$fpath[@]")
+fi
+
+
+# FZF
+if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+fi
+
+if type fzf &> /dev/null && type bat &>/dev/null; then
+    alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 fi
 
 export FZF_DEFAULT_OPTS=" \
@@ -200,7 +210,7 @@ ZSH_COLORIZE_STYLE=monokai
 
 # LS
 if type lsd &>/dev/null; then
-  alias ls='lsd'
+    alias ls='lsd'
 fi
 
 # PHP
@@ -208,9 +218,9 @@ export COMPOSER_HOME=$HOME/.composer
 path=("${COMPOSER_HOME}/vendor/bin" "$path[@]")
 
 # Neovim
-if type nvim > /dev/null; then
-  export EDITOR=lvim
-  alias vim="lvim"
+if type nvim &> /dev/null; then
+    export EDITOR=lvim
+    alias vim="lvim"
 fi
 
 #if [ -f /usr/bin/nvim-qt ]
@@ -218,8 +228,8 @@ fi
 #  alias gvim="nvim-qt"
 #fi
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte*.sh
+if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
+    source /etc/profile.d/vte*.sh
 fi
 
 #if [ -f /usr/bin/pygmentize ]; then
@@ -227,84 +237,86 @@ fi
 #fi
 
 # Nix
-if [ -d $HOME/.nix-profile/bin ]; then
-  path=("$HOME/.nix-profile/bin" "$path[@]")
+if [ -d "$HOME/.nix-profile/bin" ]; then
+    path=("$HOME/.nix-profile/bin" "$path[@]")
 fi
 
 # C#
-if [ -d $HOME/.dotnet/tools ] ; then
-  path=("$HOME/.dotnet/tools" "$path[@]")
+if [ -d "$HOME/.dotnet/tools" ] ; then
+    path=("$HOME/.dotnet/tools" "$path[@]")
 fi
 
 
 # Ruby
-if [ -d $HOME/.local/share/gem/ruby/3.0.0/bin ] ; then
-  path=("$HOME/.local/share/gem/ruby/3.0.0/bin" "$path[@]")
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ; then
+    path=("$HOME/.local/share/gem/ruby/3.0.0/bin" "$path[@]")
 fi
 
 # Snap
 if [ -d /snap/bin/ ] ; then
-  path=("/snap/bin" "$path[@]")
+    path=("/snap/bin" "$path[@]")
 fi
 
 # NVM
 if [ -f /usr/share/nvm/init-nvm.sh ] ; then
-  source /usr/share/nvm/init-nvm.sh
+    source /usr/share/nvm/init-nvm.sh
 fi
 
 # Yarn
-if [ -d $HOME/.yarn/bin ] ; then
-  path=("$HOME/.yarn/bin" "$path[@]")
+if [ -d "$HOME/.yarn/bin" ] ; then
+    path=("$HOME/.yarn/bin" "$path[@]")
 fi
 
 # Krew
-if [ -d $HOME/.krew ] ; then
-  path=("$HOME/.krew/bin" "$path[@]")
+if [ -d "$HOME/.krew" ] ; then
+    path=("$HOME/.krew/bin" "$path[@]")
 fi
 
 # Go
-if [ -d $HOME/go/bin ] ; then
-  path=("$HOME/go/bin" "$path[@]")
+if [ -d "$HOME/go/bin" ] ; then
+    path=("$HOME/go/bin" "$path[@]")
 fi
 
-if [ -d $HOME/Code/Go ] ; then
-  export GOPATH=$HOME/Code/Go
-  path=("$GOPATH/bin" "$path[@]")
+if [ -d "$HOME/Code/Go" ] ; then
+    export GOPATH="$HOME/Code/Go"
+    path=("$GOPATH/bin" "$path[@]")
 fi
 
 # Rootless Docker
-if [ -S ${XDG_RUNTIME_DIR}/docker.sock ] ; then
-  export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
+if [ -S "${XDG_RUNTIME_DIR}/docker.sock" ] ; then
+    export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
 fi
 
-if [ -d $HOME/.perl5 ]; then
-  PERL_MB_OPT="--install_base $HOME/.perl5"; export PERL_MB_OPT;
-  PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"; export PERL_MM_OPT;
-  PERL5LIB="$HOME/.perl5/lib/perl5"; export PERL5LIB;
-  PERL_LOCAL_LIB_ROOT="$HOME/.perl5:"; export PERL_LOCAL_LIB_ROOT;
+if [ -d "$HOME/.perl5" ]; then
+    PERL_MB_OPT="--install_base $HOME/.perl5"; export PERL_MB_OPT;
+    PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"; export PERL_MM_OPT;
+    PERL5LIB="$HOME/.perl5/lib/perl5"; export PERL5LIB;
+    PERL_LOCAL_LIB_ROOT="$HOME/.perl5:"; export PERL_LOCAL_LIB_ROOT;
 
-  path=("$HOME/.perl5" "$path[@]")
+    path=("$HOME/.perl5" "$path[@]")
 fi
 
 # PODMAN
-if [ -S $XDG_RUNTIME_DIR/podman/podman.sock ] ; then
-  DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+if [ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ] ; then
+    DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
 # QT
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt6ct
 
+# RTX
+if type rtx &>/dev/null; then
+    eval "$(rtx activate zsh)"
+    rtx completion zsh > ~/.local/share/zsh/site-functions/rtx
+fi
+
 # Rust
-if [ -d $HOME/.cargo/bin ] ; then
-  path=("$HOME/.cargo/bin" "$path[@]")
+if [ -d "$HOME/.cargo/bin" ] ; then
+    path=("$HOME/.cargo/bin" "$path[@]")
 fi
 
 # Jetbrains
-if [ -d $HOME/.local/share/JetBrains/Toolbox/scripts ] ; then
-  path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
+    path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
 fi
-
-
-path=("$HOME/.local/bin" "$path[@]")
-

@@ -36,7 +36,7 @@
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  
+
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
 
@@ -94,6 +94,16 @@
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
 {{ end }}
+
+[".local/bin/zsweep"]
+  type = "file"
+  url = "https://github.com/psprint/zsh-sweep/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "zsh-sweep-master/bin/zsweep"]
 
 [".local/share/catppuccin/gtk"]
   type = "archive"
