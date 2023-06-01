@@ -24,7 +24,7 @@ return {
 			term_colors = true,
 		},
 
-		{ import = "astrocommunity.colorscheme.monokai-pro" },
+		{ import = "astrocommunity.colorscheme.monokai-pro-nvim" },
 		{
 			"monokai-pro.nvim",
 			opts = {
