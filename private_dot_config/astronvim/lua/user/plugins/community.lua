@@ -1,8 +1,17 @@
 return {
 	"Astronvim/astrocommunity",
+	{ import = "user.plugins.community.bars-and-lines" },
+	{ import = "user.plugins.community.code-runner" },
 	{ import = "user.plugins.community.colorscheme" },
 	{ import = "user.plugins.community.debugging" },
 	{ import = "user.plugins.community.diagnostics" },
+	{ import = "user.plugins.community.editing-support" },
 	{ import = "user.plugins.community.indent" },
+	{ import = "user.plugins.community.lsp" },
+	{ import = "user.plugins.community.note-taking" },
 	{ import = "user.plugins.community.pack" },
+	{ import = "user.plugins.community.project" },
+	{ import = "user.plugins.community.terminal-integration" },
+	{ import = "user.plugins.community.test" },
+	{ import = "user.plugins.community.workflow" },
 }
