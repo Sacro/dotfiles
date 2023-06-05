@@ -1,12 +1,13 @@
 return {
-  "rcarriga/nvim-dap-ui",
-  config = function()
-    require("dap")
+	"rcarriga/nvim-dap-ui",
+	optional = true,
+	config = function()
+		require("dap")
 
-    local sign = vim.fn.sign_define
+		local sign = vim.fn.sign_define
 
-    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
-    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
-  end,
+		sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+		sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+		sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
+	end,
 }
