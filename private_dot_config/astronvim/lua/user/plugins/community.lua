@@ -2,6 +2,7 @@ return {
 	"Astronvim/astrocommunity",
 	{ import = "user.plugins.community.bars-and-lines" },
 	{ import = "user.plugins.community.code-runner" },
+	{ import = "user.plugins.community.color" },
 	{ import = "user.plugins.community.colorscheme" },
 	{ import = "user.plugins.community.debugging" },
 	{ import = "user.plugins.community.diagnostics" },

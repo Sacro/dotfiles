@@ -10,15 +10,15 @@ return {
 		end,
 	},
 
-	{ import = "astrocommunity.bars-and-lines.feline-nvim" },
-	{
-		"feline.nvim",
-		config = function()
-			require("feline").setup({
-				components = require("catppuccin.groups.integrations.feline").get(),
-			})
-		end,
-	},
+	-- { import = "astrocommunity.bars-and-lines.feline-nvim" },
+	-- {
+	-- 	"feline.nvim",
+	-- 	config = function()
+	-- 		require("feline").setup({
+	-- 			components = require("catppuccin.groups.integrations.feline").get(),
+	-- 		})
+	-- 	end,
+	-- },
 
 	-- { import = "astrocommunity.bars-and-lines.lualine-nvim" },
 	-- {
