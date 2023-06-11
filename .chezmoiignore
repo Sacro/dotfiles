@@ -2,3 +2,7 @@
 .pyenv/cache
 .pyenv/shims
 .pyenv/versions
+
+{{ if ne .chezmoi.os "windows" }}
+AppData
+{{ end }}
