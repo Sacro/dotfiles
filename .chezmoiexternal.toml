@@ -119,6 +119,16 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
+[".local/share/mc/skins/catppuccin.ini"]
+  type = "file"
+  url = "https://github.com/catppuccin/mc/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "mc-main/catppuccin.ini"]
+
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
