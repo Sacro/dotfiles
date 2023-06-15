@@ -4,6 +4,7 @@
 .pyenv/versions
 
 {{ if eq .chezmoi.osRelease.id "steamos" }}
+.local/share/Steam
 .steam
 {{ end }} 
 
