@@ -10,6 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 if [ -x "$(command -v starship)" ] && [ -f ~/.config/starship.toml ]; then
+    export SPACESHIP_EXEC_TIME_SHOW=false
     eval "$(starship init zsh)"
 elif [ $TERM != "xterm" ] \
     && [ -f "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" ] \
@@ -280,6 +281,11 @@ fi
 if [ -d "$HOME/Code/Go" ] ; then
     export GOPATH="$HOME/Code/Go"
     path=("$GOPATH/bin" "$path[@]")
+fi
+
+# Kind
+if type kind &>/dev/null && type podman &>/dev/null; then
+    alias kind="systemd-run --setenv=KIND_EXPERIMENTAL_PROVIDER=podman --scope --user kind"
 fi
 
 # Rootless Docker

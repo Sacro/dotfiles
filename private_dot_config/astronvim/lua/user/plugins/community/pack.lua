@@ -7,6 +7,7 @@ return {
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.markdown" },
 	{ import = "astrocommunity.pack.nix" },
+	{ import = "astrocommunity.pack.php" },
 	{ import = "astrocommunity.pack.prisma" },
 	{ import = "astrocommunity.pack.python" },
 	{ import = "astrocommunity.pack.rust" },
