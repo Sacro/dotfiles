@@ -3,6 +3,10 @@
 .pyenv/shims
 .pyenv/versions
 
+{{ if eq .chezmoi.osRelease.id "steamos" }}
+.steam
+{{ end }} 
+
 {{ if ne .chezmoi.os "windows" }}
 AppData
 {{ end }}
