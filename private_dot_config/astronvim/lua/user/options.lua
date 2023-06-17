@@ -4,4 +4,7 @@ return {
 		python3_host_prog = "~/.pyenv/versions/neovim/bin/python",
 		resession_enabled = true,
 	},
+	o = {
+		guifont = "JetBrainsMono Nerd Font Mono:h16",
+	},
 }
