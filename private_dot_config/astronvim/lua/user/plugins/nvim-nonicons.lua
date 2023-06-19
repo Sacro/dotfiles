@@ -3,7 +3,7 @@ local utils = require("astronvim.utils")
 return {
 	{
 		"yamatsum/nvim-nonicons",
-		requires = { "nvim-web-devicons" },
+		dependencies = { "nvim-web-devicons" },
 	},
 	{
 		"nvim-notify",
