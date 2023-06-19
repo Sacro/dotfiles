@@ -1,8 +1,7 @@
 return {
-	"rcarriga/nvim-dap-ui",
-	optional = true,
-	config = function()
-		require("dap")
+	"nvim-dap-ui",
+	config = function(plugin, opts)
+		require("plugins.configs.nvim-dap-ui")(plugin, opts)
 
 		local sign = vim.fn.sign_define
 
