@@ -15,6 +15,19 @@ disabled = true
 [hg_branch]
 disabled = false
 
+[os]
+disabled = false
+
+[os.symbols]
+Alpine = ""
+Arch = "󰣇"
+Debian = ""
+Fedora = ""
+Macos = ""
+NixOS = ""
+Ubuntu = ""
+Windows = "󰖳"
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
