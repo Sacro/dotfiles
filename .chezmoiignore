@@ -3,11 +3,11 @@
 .pyenv/shims
 .pyenv/versions
 
-{{ if eq .chezmoi.osRelease.id "steamos" }}
+{{- if (and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos")) }}
 .local/share/Steam
 .steam
-{{ end }} 
+{{ end }}
 
-{{ if ne .chezmoi.os "windows" }}
+{{- if ne .chezmoi.os "windows" }}
 AppData
 {{ end }}
