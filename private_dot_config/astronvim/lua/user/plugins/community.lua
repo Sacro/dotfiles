@@ -12,6 +12,7 @@ return {
 	{ import = "user.plugins.community.note-taking" },
 	{ import = "user.plugins.community.pack" },
 	{ import = "user.plugins.community.project" },
+	{ import = "user.plugins.community.scrolling" },
 	{ import = "user.plugins.community.terminal-integration" },
 	{ import = "user.plugins.community.test" },
 	{ import = "user.plugins.community.workflow" },
