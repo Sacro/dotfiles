@@ -22,8 +22,10 @@ return {
 				neotree = true,
 				neotest = true,
 				cmp = true, -- nvim-cmp
+				noice = true,
 				notify = true,
 				overseer = true,
+				sandwich = true,
 				telescope = true,
 				treesitter = true,
 				ts_rainbow2 = true,
