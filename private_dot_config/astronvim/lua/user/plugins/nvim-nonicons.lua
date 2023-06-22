@@ -1,32 +1,34 @@
-local utils = require("astronvim.utils")
+-- local utils = require("astronvim.utils")
 
 return {
-	{
-		"yamatsum/nvim-nonicons",
-		dependencies = { "nvim-web-devicons" },
-	},
-	{
-		"nvim-notify",
-		optional = true,
-		opts = function(_, opts)
-			local nonicons_extention = require("nvim-nonicons.extentions.nvim-notify")
-			return utils.extend_tbl(opts, {
-				icons = nonicons_extention.icons,
-			})
-		end,
-	},
-	{
-		"telescope.nvim",
-		optional = true,
-		opts = function(_, opts)
-			local icons = require("nvim-nonicons")
-			return utils.extend_tbl(opts, {
-				defaults = {
-					prompt_prefix = "  " .. icons.get("telescope") .. "  ",
-					selection_caret = " ❯ ",
-					entry_prefix = "   ",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"yamatsum/nvim-nonicons",
+	-- 	dependencies = { "nvim-web-devicons" },
+	-- },
+	-- {
+	-- 	"nvim-notify",
+	-- 	optional = true,
+	-- 	opts = function(_, opts)
+	-- 		local nonicons_extention = require("nvim-nonicons.extentions.nvim-notify")
+	-- 		return utils.extend_tbl(opts, {
+	-- 			icons = nonicons_extention.icons,
+	-- 		})
+	-- 	end,
+	-- 	dependencies = { "nvim-nonicons" },
+	-- },
+	-- {
+	-- 	"telescope.nvim",
+	-- 	optional = true,
+	-- 	opts = function(_, opts)
+	-- 		local icons = require("nvim-nonicons")
+	-- 		return utils.extend_tbl(opts, {
+	-- 			defaults = {
+	-- 				prompt_prefix = "  " .. icons.get("telescope") .. "  ",
+	-- 				selection_caret = " ❯ ",
+	-- 				entry_prefix = "   ",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	dependencies = { "nvim-nonicons" },
+	-- },
 }
