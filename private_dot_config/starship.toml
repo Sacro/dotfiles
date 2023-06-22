@@ -12,6 +12,20 @@ disabled = true
 [gcloud]
 disabled = true
 
+[git_status]
+conflicted = "󰂭"
+ahead = "󰁝"
+behind = "󰁅"
+diverged = "󰓢"
+up_to_date = "󰄬"
+untracked = "?"
+stashed = "󱊖"
+modified = "󱐌"
+staged = "󰐕"
+renamed = "󰄾"
+deleted = "󰅖"
+typechanged = ""
+
 [hg_branch]
 disabled = false
 
@@ -26,7 +40,7 @@ Fedora = "[](blue) "
 Macos = "[](white) "
 NixOS = "[](blue) "
 Ubuntu = "[](peach) "
-Windows = "[󰖳](blue) "
+Windows = "[󰖳](white) "
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
