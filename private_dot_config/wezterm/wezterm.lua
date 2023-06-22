@@ -15,7 +15,7 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 config.default_prog = { "pwsh" }
-config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
+config.font = wezterm.font("JetBrainsMonoNL NFM")
 
 -- and finally, return the configuration to wezterm
 return config
