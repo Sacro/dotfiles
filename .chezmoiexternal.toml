@@ -42,6 +42,18 @@
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "foot-main/catppuccin-{{ . }}.conf"]
 {{ end }}
 
+{{ range .catppuccinFlavours }}
+[".config/hypr/themes/catppuccin-{{ . }}.conf"]
+  type = "file"
+  url = "https://github.com/catppuccin/hyprland/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hyprland-main/themes/{{ . }}.conf"]
+{{ end }}
+
 [".config/k9s/skin.yml"]
   type = "file"
   url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
