@@ -19,6 +19,18 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
+[".config/btop/themes/catppuccin_{{ . }}.theme"]
+  type = "file"
+  url = "https://github.com/catppuccin/btop/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "btop-main/themes/catppuccin_{{ . }}.theme"]
+{{ end }}
+
+{{ range .catppuccinFlavours }}
 [".config/foot/themes/catppuccin-{{ . }}.conf"]
   type = "file"
   url = "https://github.com/catppuccin/foot/archive/main.tar.gz"
