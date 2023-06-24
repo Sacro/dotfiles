@@ -112,6 +112,18 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
+{{ range .catppuccinFlavours }}
+[".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
+  type = "file"
+  url = "https://github.com/catppuccin/gedit/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "gedit-main/themes/catppuccin-{{ . }}.xml"]
+{{ end }}
+
 [".local/share/lunarvim/lvim/"]
   type = "archive"
   url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
@@ -138,14 +150,14 @@
 
 [".oh-my-zsh/custom/themes/powerlevel10k"]
   type = "archive"
-  url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
+  url = "https://github.com/romkatv/powerlevel10k/archive/v1.19.0.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
 
 [".pyenv"]
   type = "archive"
-  url = "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.17.tar.gz"
+  url = "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.21.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"

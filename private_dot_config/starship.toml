@@ -1,10 +1,26 @@
-palette = "catppuccin_mocha"
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# palette = "catppuccin_mocha"
+add_newline = true
+
+[aws]
+symbol = "󰸏 "
+
+[azure]
+symbol = "󰠅 "
+
+[battery]
+full_symbol = "󰁹 "
+empty_symbol = "󰂎 "
+unknown_symbol = "󰁾 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
 
 [character]
 # Note the use of Catppuccin color 'maroon'
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
 
 [cmd_duration]
 disabled = true
@@ -26,8 +42,14 @@ renamed = "󰄾"
 deleted = "󰅖"
 typechanged = ""
 
+[golang]
+symbol = " "
+
 [hg_branch]
 disabled = false
+
+[nodejs]
+symbol = "󰎙 "
 
 [os]
 disabled = false

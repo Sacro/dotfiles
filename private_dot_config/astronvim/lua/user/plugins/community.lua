@@ -1,5 +1,8 @@
 return {
-	"Astronvim/astrocommunity",
+	{
+		"Astronvim/astrocommunity",
+		dev = true,
+	},
 	{ import = "user.plugins.community.bars-and-lines" },
 	{ import = "user.plugins.community.code-runner" },
 	{ import = "user.plugins.community.color" },
