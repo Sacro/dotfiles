@@ -9,6 +9,10 @@ return {
 				aerial = true,
 				alpha = true,
 				dashboard = true,
+				dap = {
+					enabled = true,
+					enable_ui = true,
+				},
 				gitsigns = true,
 				indent_blankline = {
 					enabled = true,
