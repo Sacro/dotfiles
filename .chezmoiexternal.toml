@@ -165,6 +165,16 @@
   filter.command = "tar"
   filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "mc-main/catppuccin.ini"]
 
+[".icons/{{ .catppuccinCursorTheme }}"]
+  type = "file"
+  url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "cursors-main/cursors/{{ .catppuccinCursorTheme }}.zip" ]
+
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
