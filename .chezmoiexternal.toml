@@ -200,3 +200,10 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
+{{ range .catppuccinGtkThemes }}
+[".themes/{{ . }}"]
+  type = "archive"
+  url = "https://github.com/catppuccin/gtk/releases/download/v0.6.0/{{ . }}.zip"
+  exact = true
+  refreshPeriod = "1h"
+{{ end }}
