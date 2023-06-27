@@ -200,10 +200,10 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
-{{ range .catppuccinGtkThemes }}
-[".themes/{{ . }}"]
+[".themes/{{ .catppuccinGtkTheme }}/"]
   type = "archive"
-  url = "https://github.com/catppuccin/gtk/releases/download/v0.6.0/{{ . }}.zip"
+  url = "https://github.com/catppuccin/gtk/releases/download/v0.6.0/{{ .catppuccinGtkTheme }}.zip"
   exact = true
+  stripComponents = 1
   refreshPeriod = "1h"
-{{ end }}
+  include = ["{{ .catppuccinGtkTheme }}/**"]
