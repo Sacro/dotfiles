@@ -15,7 +15,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "bat-main/Catppuccin-{{ . }}.tmTheme"]
+  filter.args = ["--extract", "--gzip", "--to-stdout", "bat-main/Catppuccin-{{ . }}.tmTheme"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
@@ -27,7 +27,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "btop-main/themes/catppuccin_{{ . }}.theme"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "btop-main/themes/catppuccin_{{ . }}.theme"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
@@ -39,7 +39,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "foot-main/catppuccin-{{ . }}.conf"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "foot-main/catppuccin-{{ . }}.conf"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
@@ -51,7 +51,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hyprland-main/themes/{{ . }}.conf"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "hyprland-main/themes/{{ . }}.conf"]
 {{ end }}
 
 [".config/k9s/skin.yml"]
@@ -62,7 +62,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
 
 {{ range .catppuccinFlavours }}
 [".config/kitty/themes/{{ . }}.conf"]
@@ -73,7 +73,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "kitty-main/themes/{{ . }}.conf"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "kitty-main/themes/{{ . }}.conf"]
 {{ end }}
 
 [".config/nvim"]
@@ -92,7 +92,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
 {{ end }}
 
 {{ range .catppuccinFlavoursTitleCase }}
@@ -104,7 +104,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
@@ -116,7 +116,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
 {{ end }}
 
 [".local/bin/zsweep"]
@@ -127,7 +127,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "zsh-sweep-master/bin/zsweep"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "zsh-sweep-master/bin/zsweep"]
 
 [".local/share/catppuccin/gtk"]
   type = "archive"
@@ -145,7 +145,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "gedit-main/themes/catppuccin-{{ . }}.xml"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "gedit-main/themes/catppuccin-{{ . }}.xml"]
 {{ end }}
 
 [".local/share/lunarvim/lvim/"]
@@ -163,7 +163,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "mc-main/catppuccin.ini"]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "mc-main/catppuccin.ini"]
 
 [".icons/{{ .catppuccinCursorTheme }}"]
   type = "file"
@@ -173,7 +173,7 @@
   refreshPeriod = "1h"
 
   filter.command = "tar"
-  filter.args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "cursors-main/cursors/{{ .catppuccinCursorTheme }}.zip" ]
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "cursors-main/cursors/{{ .catppuccinCursorTheme }}.zip" ]
 
 [".oh-my-zsh"]
   type = "archive"
