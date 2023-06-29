@@ -314,7 +314,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 # RTX
 if type rtx &>/dev/null; then
     eval "$(rtx activate zsh)"
-    rtx completion zsh > ~/.local/share/zsh/site-functions/rtx
+    # rtx completion zsh > ~/.local/share/zsh/site-functions/_rtx
 fi
 
 # Rust

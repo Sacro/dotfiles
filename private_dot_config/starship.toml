@@ -17,6 +17,15 @@ unknown_symbol = "󰁾 "
 charging_symbol = "󰂄 "
 discharging_symbol = "󰂃 "
 
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
@@ -24,8 +33,61 @@ error_symbol = "[❯](red)"
 [cmd_duration]
 disabled = true
 
+[cobol]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[container]
+symbol = "⬢"
+
+[crystal]
+symbol = "󰬯 "
+
+[daml]
+symbol = "Λ "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = "🦕 "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+symbol = " "
+format = "via [$symbol($version )(󰓾 $tfm )]($style)"
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[erlang]
+symbol = " "
+
+[fennel]
+symbol = "🧅 "
+
+[fill]
+symbol = "."
+
+[fossil_branch]
+symbol = " "
+
 [gcloud]
 disabled = true
+symbol = "󰅟  "
+
+[git_branch]
+symbol = " "
 
 [git_status]
 conflicted = "󰂭"
@@ -44,24 +106,117 @@ typechanged = ""
 [golang]
 symbol = " "
 
+[gradle]
+symbol = "🅶 "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[helm]
+symbol = "⎈ "
+
 [hg_branch]
 disabled = false
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[jobs]
+symbol_threshold = 1
+symbol = "✦"
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = "🅺 "
+
+[kubernetes]
+symbol = "󱃾 "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
 
 [nodejs]
-symbol = "󰎙 "
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[opa]
+symbol = "🪖  "
+
+[openstack]
+symbol = "󰅟  "
 
 [os]
 disabled = false
 
 [os.symbols]
-Alpine = "[](blue) "
-Arch = "[󰣇](blue) "
-Debian = "[](maroon) "
-Fedora = "[](blue) "
-Macos = "[](white) "
-NixOS = "[](blue) "
-Ubuntu = "[](peach) "
-Windows = "[󰖳](white) "
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = "[ ](blue)"
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = "[ ](blue)"
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = "[ ](peach)"
+Unknown = " "
+Windows = "[󰍲 ](white)"
+
+[package]
+symbol = "󰏗 "
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -90,3 +245,74 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[perl]
+symbol = " "
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pulumi]
+symbol = " "
+
+[purescript]
+symbol = "<=> "
+
+[python]
+symbol = " "
+
+[raku]
+symbol = " "
+
+[red]
+symbol = "[󰔶](red) "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = "󰹹  "
+
+[singularity]
+symbol = ""
+
+[solidity]
+symbol = "S "
+
+[spack]
+symbol = "🅢 "
+
+[status]
+symbol = "[󰅖](red)"
+
+[sudo]
+symbol = "󱅧 "
+
+[swift]
+symbol = " "
+
+[terraform]
+symbol = " "
+
+[vagrant]
+symbol = "⍱ "
+
+[vcsh]
+symbol = ""
+
+[vlang]
+symbol = "V "
+
+[zig]
+symbol = "↯ "
