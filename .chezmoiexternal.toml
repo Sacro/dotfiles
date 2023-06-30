@@ -148,6 +148,18 @@
   filter.args = ["--extract",  "--gzip", "--to-stdout", "gedit-main/themes/catppuccin-{{ . }}.xml"]
 {{ end }}
 
+{{ range .catppuccinFlavoursTitleCase }}
+[".local/share/konsole/Catppuccin-{{ . }}.colorscheme"]
+type = "file"
+  url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract",  "--gzip", "--to-stdout", "konsole-main/Catppuccin-{{ . }}.colorscheme"]
+{{ end }}
+
 [".local/share/lunarvim/lvim/"]
   type = "archive"
   url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
