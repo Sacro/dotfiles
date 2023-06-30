@@ -3,7 +3,7 @@ local utils = require("astronvim.utils")
 return function(opts)
 	local python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
 
-	if vim.fn.has("win32") then
+	if vim.fn.has("win32") == 1 then
 		python3_host_prog = "python.exe"
 	end
 

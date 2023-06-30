@@ -14,8 +14,19 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
-config.default_prog = { "pwsh" }
 config.font = wezterm.font("JetBrainsMonoNL NFM")
 
+local default_prog = {}
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	-- Configs for Windows only
+	-- font_dirs = {
+	--     'C:\\Users\\whoami\\.dotfiles\\.fonts'
+	-- }
+	-- default_prog = { "wsl.exe", "~", "-d", "Ubuntu-20.04" }
+	default_prog = { "pwsh.exe" }
+end
+
+config.default_prog = default_prog
 -- and finally, return the configuration to wezterm
 return config
