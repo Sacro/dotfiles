@@ -15,8 +15,9 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("JetBrainsMonoNL NFM")
+config.font_size = 16
 
-local default_prog = {}
+local default_prog = nil
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	-- Configs for Windows only
