@@ -129,6 +129,14 @@
   filter.command = "tar"
   filter.args = ["--extract", "--gzip", "--to-stdout", "zellij-main/catppuccin.yaml"]
 
+
+[".config/zellij/plugins/multitask.wasm"]
+  type = "file"
+  url = "https://github.com/imsnif/multitask/releases/latest/download/multitask.wasm"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
 {{ range .catppuccinFlavours }}
 [".fleet/themes/catppuccin-{{ . }}.json"]
   type = "file"
@@ -246,7 +254,7 @@ type = "file"
 
 [".themes/{{ .catppuccinGtkTheme }}/"]
   type = "archive"
-  url = "https://github.com/catppuccin/gtk/releases/download/v0.6.0/{{ .catppuccinGtkTheme }}.zip"
+  url = "https://github.com/catppuccin/gtk/releases/latest/download/{{ .catppuccinGtkTheme }}.zip"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
