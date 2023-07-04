@@ -43,6 +43,18 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
+[".config/helix/themes/catppuccin_{{ . }}.toml"]
+  type = "file"
+  url = "https://github.com/catppuccin/helix/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--gzip", "--to-stdout", "helix-main/themes/default/catppuccin_{{ . }}.toml"]
+{{ end }}
+
+{{ range .catppuccinFlavours }}
 [".config/hypr/themes/catppuccin-{{ . }}.conf"]
   type = "file"
   url = "https://github.com/catppuccin/hyprland/archive/main.tar.gz"
@@ -106,6 +118,16 @@
   filter.command = "tar"
   filter.args = ["--extract",  "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
 {{ end }}
+
+[".config/zellij/themes/catppuccin.yaml"]
+  type = "file"
+  url = "https://github.com/catppuccin/zellij/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+  filter.command = "tar"
+  filter.args = ["--extract", "--gzip", "--to-stdout", "zellij-main/catppuccin.yaml"]
 
 {{ range .catppuccinFlavours }}
 [".fleet/themes/catppuccin-{{ . }}.json"]
