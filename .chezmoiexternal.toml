@@ -8,84 +8,70 @@
 
 {{ range .catppuccinFlavours }}
 [".config/bat/themes/Catppuccin-{{ . }}.tmTheme"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+  path = "Catppuccin-{{ . }}.tmTheme"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract", "--gzip", "--to-stdout", "bat-main/Catppuccin-{{ . }}.tmTheme"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/btop/themes/catppuccin_{{ . }}.theme"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/btop/archive/main.tar.gz"
+  path = "themes/catppuccin_{{ . }}.theme"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "btop-main/themes/catppuccin_{{ . }}.theme"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/foot/themes/catppuccin-{{ . }}.conf"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/foot/archive/main.tar.gz"
+  path = "catppuccin-{{ . }}.conf"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "foot-main/catppuccin-{{ . }}.conf"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/helix/themes/catppuccin_{{ . }}.toml"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/helix/archive/main.tar.gz"
+  path = "themes/default/catppuccin_{{ . }}.toml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract", "--gzip", "--to-stdout", "helix-main/themes/default/catppuccin_{{ . }}.toml"]
 {{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/hypr/themes/catppuccin-{{ . }}.conf"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/hyprland/archive/main.tar.gz"
+  path = "themes/{{ . }}.conf"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "hyprland-main/themes/{{ . }}.conf"]
 {{ end }}
 
 [".config/k9s/skin.yml"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
+  path = "dist/mocha.yml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "k9s-main/dist/mocha.yml"]
 
 {{ range .catppuccinFlavours }}
 [".config/kitty/themes/{{ . }}.conf"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/kitty/archive/main.tar.gz"
+  path = "themes/{{ . }}.conf"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "kitty-main/themes/{{ . }}.conf"]
 {{ end }}
 
 [".config/nvim"]
@@ -97,38 +83,21 @@
 
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
+  path = "themes/Catppuccin-{{ . }}.conf"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
-{{ end }}
-
-{{ range .catppuccinFlavoursTitleCase }}
-[".config/qt6ct/colors/Catppuccin-{{ . }}.conf"]
-  type = "file"
-  url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "qt5ct-main/themes/Catppuccin-{{ . }}.conf"]
 {{ end }}
 
 [".config/zellij/themes/catppuccin.yaml"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/zellij/archive/main.tar.gz"
+  path = "catppuccin.yaml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract", "--gzip", "--to-stdout", "zellij-main/catppuccin.yaml"]
-
 
 [".config/zellij/plugins/multitask.wasm"]
   type = "file"
@@ -139,25 +108,21 @@
 
 {{ range .catppuccinFlavours }}
 [".fleet/themes/catppuccin-{{ . }}.json"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/kkrypt0nn/jetbrains-fleet/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.json"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "jetbrains-fleet-main/themes/catppuccin-{{ . }}.json"]
 {{ end }}
 
 [".local/bin/zsweep"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/psprint/zsh-sweep/archive/master.tar.gz"
+  path = "bin/zsweep"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "zsh-sweep-master/bin/zsweep"]
 
 [".local/share/catppuccin/gtk"]
   type = "archive"
@@ -168,26 +133,22 @@
 
 {{ range .catppuccinFlavours }}
 [".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/gedit/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.xml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "gedit-main/themes/catppuccin-{{ . }}.xml"]
 {{ end }}
 
 {{ range .catppuccinFlavoursTitleCase }}
 [".local/share/konsole/Catppuccin-{{ . }}.colorscheme"]
-type = "file"
+type = "archive-file"
   url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
+  path = "Catppuccin-{{ . }}.colorscheme"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "konsole-main/Catppuccin-{{ . }}.colorscheme"]
 {{ end }}
 
 [".local/share/lunarvim/lvim/"]
@@ -198,24 +159,20 @@ type = "file"
   refreshPeriod = "1h"
 
 [".local/share/mc/skins/catppuccin.ini"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/mc/archive/main.tar.gz"
+  path = "catppuccin.ini"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "mc-main/catppuccin.ini"]
 
 [".icons/{{ .catppuccinCursorTheme }}"]
-  type = "file"
+  type = "archive-file"
   url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
+  path = "cursors/{{ .catppuccinCursorTheme }}.zip"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-  filter.command = "tar"
-  filter.args = ["--extract",  "--gzip", "--to-stdout", "cursors-main/cursors/{{ .catppuccinCursorTheme }}.zip" ]
 
 [".oh-my-zsh"]
   type = "archive"
