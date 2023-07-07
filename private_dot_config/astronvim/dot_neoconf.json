@@ -1,0 +1,208 @@
+{
+  "payload": {
+    "allShortcutsEnabled": false,
+    "fileTree": {
+      "": {
+        "items": [
+          {
+            "name": ".github",
+            "path": ".github",
+            "contentType": "directory"
+          },
+          {
+            "name": "lua",
+            "path": "lua",
+            "contentType": "directory"
+          },
+          {
+            "name": ".gitignore",
+            "path": ".gitignore",
+            "contentType": "file"
+          },
+          {
+            "name": ".luacheckrc",
+            "path": ".luacheckrc",
+            "contentType": "file"
+          },
+          {
+            "name": ".neoconf.json",
+            "path": ".neoconf.json",
+            "contentType": "file"
+          },
+          {
+            "name": ".stylua.toml",
+            "path": ".stylua.toml",
+            "contentType": "file"
+          },
+          {
+            "name": "CHANGELOG.md",
+            "path": "CHANGELOG.md",
+            "contentType": "file"
+          },
+          {
+            "name": "CONTRIBUTING.md",
+            "path": "CONTRIBUTING.md",
+            "contentType": "file"
+          },
+          {
+            "name": "LICENSE",
+            "path": "LICENSE",
+            "contentType": "file"
+          },
+          {
+            "name": "README.md",
+            "path": "README.md",
+            "contentType": "file"
+          }
+        ],
+        "totalCount": 10
+      }
+    },
+    "fileTreeProcessingTime": 3.586149,
+    "foldersToFetch": [],
+    "reducedMotionEnabled": null,
+    "repo": {
+      "id": 604672702,
+      "defaultBranch": "main",
+      "name": "astrocommunity",
+      "ownerLogin": "AstroNvim",
+      "currentUserCanPush": false,
+      "isFork": false,
+      "isEmpty": false,
+      "createdAt": "2023-02-21T14:55:56.000Z",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/102238249?v=4",
+      "public": true,
+      "private": false,
+      "isOrgOwned": true
+    },
+    "refInfo": {
+      "name": "main",
+      "listCacheKey": "v0:1688675571.0",
+      "canEdit": false,
+      "refType": "branch",
+      "currentOid": "8f829a3ef84c84bca4e30c1da5656b139187b444"
+    },
+    "path": ".neoconf.json",
+    "currentUser": null,
+    "blob": {
+      "rawBlob": "{\n  \"neodev\": {\n    \"library\": {\n      \"enabled\": true,\n      \"plugins\": true\n    }\n  },\n  \"neoconf\": {\n    \"plugins\": {\n      \"lua_ls\": {\n        \"enabled\": true\n      }\n    }\n  },\n  \"lspconfig\": {\n    \"lua_ls\": {\n      \"Lua.format.enable\": false\n    }\n  }\n}\n",
+      "colorizedLines": [
+        "{",
+        "  <span class=\"pl-ent\">&quot;neodev&quot;</span>: {",
+        "    <span class=\"pl-ent\">&quot;library&quot;</span>: {",
+        "      <span class=\"pl-ent\">&quot;enabled&quot;</span>: <span class=\"pl-c1\">true</span>,",
+        "      <span class=\"pl-ent\">&quot;plugins&quot;</span>: <span class=\"pl-c1\">true</span>",
+        "    }",
+        "  },",
+        "  <span class=\"pl-ent\">&quot;neoconf&quot;</span>: {",
+        "    <span class=\"pl-ent\">&quot;plugins&quot;</span>: {",
+        "      <span class=\"pl-ent\">&quot;lua_ls&quot;</span>: {",
+        "        <span class=\"pl-ent\">&quot;enabled&quot;</span>: <span class=\"pl-c1\">true</span>",
+        "      }",
+        "    }",
+        "  },",
+        "  <span class=\"pl-ent\">&quot;lspconfig&quot;</span>: {",
+        "    <span class=\"pl-ent\">&quot;lua_ls&quot;</span>: {",
+        "      <span class=\"pl-ent\">&quot;Lua.format.enable&quot;</span>: <span class=\"pl-c1\">false</span>",
+        "    }",
+        "  }",
+        "}"
+      ],
+      "stylingDirectives": null,
+      "csv": null,
+      "csvError": null,
+      "dependabotInfo": {
+        "showConfigurationBanner": false,
+        "configFilePath": null,
+        "networkDependabotPath": "/AstroNvim/astrocommunity/network/updates",
+        "dismissConfigurationNoticePath": "/settings/dismiss-notice/dependabot_configuration_notice",
+        "configurationNoticeDismissed": null,
+        "repoAlertsPath": "/AstroNvim/astrocommunity/security/dependabot",
+        "repoSecurityAndAnalysisPath": "/AstroNvim/astrocommunity/settings/security_analysis",
+        "repoOwnerIsOrg": true,
+        "currentUserCanAdminRepo": false
+      },
+      "displayName": ".neoconf.json",
+      "displayUrl": "https://github.com/AstroNvim/astrocommunity/blob/main/.neoconf.json?raw=true",
+      "headerInfo": {
+        "blobSize": "260 Bytes",
+        "deleteInfo": {
+          "deletePath": null,
+          "deleteTooltip": "You must be signed in to make or propose changes"
+        },
+        "editInfo": {
+          "editTooltip": "You must be signed in to make or propose changes"
+        },
+        "ghDesktopPath": "https://desktop.github.com",
+        "gitLfsPath": null,
+        "onBranch": true,
+        "shortPath": "2d7a81f",
+        "siteNavLoginPath": "/login?return_to=https%3A%2F%2Fgithub.com%2FAstroNvim%2Fastrocommunity%2Fblob%2Fmain%2F.neoconf.json",
+        "isCSV": false,
+        "isRichtext": false,
+        "toc": null,
+        "lineInfo": {
+          "truncatedLoc": "20",
+          "truncatedSloc": "20"
+        },
+        "mode": "file"
+      },
+      "image": false,
+      "isCodeownersFile": null,
+      "isValidLegacyIssueTemplate": false,
+      "issueTemplateHelpUrl": "https://docs.github.com/articles/about-issue-and-pull-request-templates",
+      "issueTemplate": null,
+      "discussionTemplate": null,
+      "language": "JSON",
+      "large": false,
+      "loggedIn": false,
+      "newDiscussionPath": "/AstroNvim/astrocommunity/discussions/new",
+      "newIssuePath": "/AstroNvim/astrocommunity/issues/new",
+      "planSupportInfo": {
+        "repoIsFork": null,
+        "repoOwnedByCurrentUser": null,
+        "requestFullPath": "/AstroNvim/astrocommunity/blob/main/.neoconf.json",
+        "showFreeOrgGatedFeatureMessage": null,
+        "showPlanSupportBanner": null,
+        "upgradeDataAttributes": null,
+        "upgradePath": null
+      },
+      "publishBannersInfo": {
+        "dismissActionNoticePath": "/settings/dismiss-notice/publish_action_from_dockerfile",
+        "dismissStackNoticePath": "/settings/dismiss-notice/publish_stack_from_file",
+        "releasePath": "/AstroNvim/astrocommunity/releases/new?marketplace=true",
+        "showPublishActionBanner": false,
+        "showPublishStackBanner": false
+      },
+      "renderImageOrRaw": false,
+      "richText": null,
+      "renderedFileInfo": null,
+      "tabSize": 8,
+      "topBannersInfo": {
+        "overridingGlobalFundingFile": false,
+        "globalPreferredFundingPath": null,
+        "repoOwner": "AstroNvim",
+        "repoName": "astrocommunity",
+        "showInvalidCitationWarning": false,
+        "citationHelpUrl": "https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files",
+        "showDependabotConfigurationBanner": false,
+        "actionsOnboardingTip": null
+      },
+      "truncated": false,
+      "viewable": true,
+      "workflowRedirectUrl": null,
+      "symbols": {
+        "timedOut": false,
+        "notAnalyzed": true,
+        "symbols": []
+      }
+    },
+    "csrf_tokens": {
+      "/AstroNvim/astrocommunity/branches": {
+        "post": "pcrBoc9eNWxobhksfIbthwl6m20MwZL5FJ5hiGsvshmsuw1byUmBsQixPxRg8bpH0jbNmsH1761vfg9QERdCxQ"
+      }
+    }
+  },
+  "title": "astrocommunity/.neoconf.json at main · AstroNvim/astrocommunity",
+  "locale": "en"
+}
