@@ -36,4 +36,6 @@ return {
 			"rcarriga/nvim-notify",
 		},
 	},
+	{ import = "astrocommunity.utility.telescope-fzy-native-nvim" },
+	{ import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
 }
