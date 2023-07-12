@@ -91,13 +91,14 @@
   refreshPeriod = "1h"
 {{ end }}
 
-[".config/zellij/themes/catppuccin.yaml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/zellij/archive/main.tar.gz"
-  path = "catppuccin.yaml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
+# Now maintined in Zellij
+#[".config/zellij/themes/catppuccin.yaml"]
+#  type = "archive-file"
+#  url = "https://github.com/catppuccin/zellij/archive/main.tar.gz"
+#  path = "catppuccin.yaml"
+#  exact = true
+#  stripComponents = 1
+#  refreshPeriod = "1h"
 
 [".config/zellij/plugins/multitask.wasm"]
   type = "file"
