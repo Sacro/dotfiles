@@ -37,6 +37,16 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
+[".config/fsh/catppuccin-{{ . }}.ini"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/zsh-fsh/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.ini"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{end}}
+
+{{ range .catppuccinFlavours }}
 [".config/helix/themes/catppuccin_{{ . }}.toml"]
   type = "archive-file"
   url = "https://github.com/catppuccin/helix/archive/main.tar.gz"
@@ -178,6 +188,13 @@ type = "archive-file"
 [".oh-my-zsh"]
   type = "archive"
   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+[".oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
+  type = "archive"
+  url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"

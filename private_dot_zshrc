@@ -97,7 +97,7 @@ plugins=(
     jira jsontools
     kubectl
     macos man mercurial microk8s minikube mosh
-    ng nmap node npm nvm # DO NOT ADD NPX - SECURITY ISSUES
+    ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
     pep8 per-directory-history perl perms pip profiles pyenv pylint python
     react-native redis-cli repo ripgrep rsync ruby rust rvm
     safe-paste salt screen sudo svn systemadmin systemd
@@ -107,6 +107,9 @@ plugins=(
     wd
     yarn
     z
+
+    # Custom plugins
+    fast-syntax-highlighting
 )
 
 # Configure brew before oh-my-zsh starts
@@ -193,6 +196,8 @@ if [ -d "$HOME/.local/share/zsh/site-functions/" ]; then
     fpath=("$HOME/.local/share/zsh/site-functions" "$fpath[@]")
 fi
 
+# FSH
+fast-theme XDG:catppuccin-mocha &> /dev/null
 
 # FZF
 if [ -f ~/.fzf.zsh ]; then
