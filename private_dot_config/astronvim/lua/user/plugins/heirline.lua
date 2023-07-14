@@ -23,6 +23,8 @@ return {
 					end,
 				},
 
+				hl = { fg = "normal_bg" },
+
 				-- enable paste and spell mode icons
 				paste = { padding = { right = 1, left = 1 } },
 				spell = { padding = { right = 1, left = 1 } },
@@ -83,7 +85,7 @@ return {
 					-- add padding after icon
 					padding = { right = 1 },
 					-- set the foreground color to be used for the icon
-					hl = { fg = "bg" },
+					hl = { fg = "normal_bg" },
 					-- use the right separator and define the background color
 					surround = { separator = "right", color = { main = "folder_icon_bg", left = "normal_bg" } },
 				}),
@@ -114,7 +116,7 @@ return {
 					-- add padding after icon
 					padding = { right = 1 },
 					-- set the icon foreground
-					hl = { fg = "bg" },
+					hl = { fg = "normal_bg" },
 					-- use the right separator and define the background color
 					-- as well as the color to the left of the separator
 					surround = { separator = "right", color = { main = "nav_icon_bg", left = "file_info_bg" } },

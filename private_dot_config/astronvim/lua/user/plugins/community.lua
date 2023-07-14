@@ -18,6 +18,7 @@ return {
 	{ import = "user.plugins.community.pack" },
 	{ import = "user.plugins.community.project" },
 	{ import = "user.plugins.community.programming-language-support" },
+	{ import = "user.plugins.community.remote-development" },
 	{ import = "user.plugins.community.scrolling" },
 	{ import = "user.plugins.community.syntax" },
 	{ import = "user.plugins.community.terminal-integration" },

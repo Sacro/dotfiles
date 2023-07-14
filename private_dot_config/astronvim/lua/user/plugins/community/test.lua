@@ -7,7 +7,6 @@ return {
 	{
 		-- https://github.com/nvim-neotest/neotest
 		"neotest",
-		dependencies = { "overseer.nvim" },
 		ft = { "cs", "go", "javascript", "javascriptreact", "php", "python", "rust", "typescript", "typescriptreact" },
 		opts = function(_, opts)
 			return utils.extend_tbl(opts, {
@@ -26,6 +25,7 @@ return {
 				},
 			})
 		end,
+		dependencies = { "overseer.nvim" },
 	},
 	{
 		"Issafalcon/neotest-dotnet",

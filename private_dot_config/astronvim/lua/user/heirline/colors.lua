@@ -1,3 +1,5 @@
+local utils = require("astronvim.utils")
+
 --  rosewater  #F5E0DC  Winbar
 --  flamingo   #F2CDCD  Target word
 --  pink       #F5C2E7  Just pink
@@ -26,7 +28,7 @@
 --  crust      #11111B  Darkest bg
 
 return function(hl)
-	local get_hlgroup = require("astronvim.utils").get_hlgroup
+	local get_hlgroup = utils.get_hlgroup
 	-- local mocha = require("catppuccin.palettes").get_palette("mocha")
 
 	-- use helper function to get highlight group properties
