@@ -106,7 +106,7 @@ plugins=(
     vim-interaction vscode
     wd
     yarn
-    z
+    z zoxide
 
     # Custom plugins
     fast-syntax-highlighting
