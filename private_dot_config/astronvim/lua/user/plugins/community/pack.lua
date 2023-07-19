@@ -16,6 +16,7 @@ return {
 	{ import = "astrocommunity.pack.php" },
 	{ import = "astrocommunity.pack.prisma" },
 	{ import = "astrocommunity.pack.proto" },
+	{ import = "astrocommunity.pack.ps1" },
 	{ import = "astrocommunity.pack.python" },
 	{ import = "astrocommunity.pack.rust" },
 	{ import = "astrocommunity.pack.tailwindcss" },

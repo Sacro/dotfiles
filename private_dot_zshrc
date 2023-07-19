@@ -90,7 +90,7 @@ plugins=(
     catimg colored-man-pages colorize composer copypath cp
     deno dircycle direnv dirhistory docker docker-compose
     emoji emotty encode64 extract
-    fabric fancy-ctrl-z frontend-search fzf
+    fabric fancy-ctrl-z firewalld frontend-search fzf
     gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
     helm heroku history httpie
     iterm2
@@ -103,13 +103,14 @@ plugins=(
     safe-paste salt screen sudo svn systemadmin systemd
     taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox
     ufw universalarchive urltools
-    vim-interaction vscode
+    vscode
     wd
     yarn
     z zoxide
 
     # Custom plugins
-    fast-syntax-highlighting
+    fast-syntax-highlighting 
+    # zsh-vi-mode
 )
 
 # Configure brew before oh-my-zsh starts
@@ -175,11 +176,11 @@ export TZ=Europe/London
 
 export EDITOR=vim
 
-if type gdircolors &> /dev/null; then
-    eval "$( gdircolors -b $HOME/.ls_colors/LS_COLORS )"
-else
-    eval "$( dircolors -b $HOME/.ls_colors/LS_COLORS )"
-fi
+# if type gdircolors &> /dev/null; then
+#     eval "$( gdircolors -b $HOME/.ls_colors/LS_COLORS )"
+# else
+#     eval "$( dircolors -b $HOME/.ls_colors/LS_COLORS )"
+# fi
 
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}" menu select rehash true
 autoload -Uz compinit
@@ -217,6 +218,10 @@ export FZF_DEFAULT_OPTS=" \
 ZSH_COLORIZE_STYLE=monokai
 
 # LS
+# if type exa &>/dev/null; then
+#     alias ls='exa'
+# fi
+
 if type lsd &>/dev/null; then
     alias ls='lsd'
 fi

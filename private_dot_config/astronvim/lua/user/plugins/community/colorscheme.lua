@@ -4,44 +4,12 @@ return {
 		"catppuccin",
 		-- https://github.com/catppuccin/nvim
 		opts = {
-			flavour = "mocha",
-			transparent_background = true,
-			integrations = {
-				aerial = true,
-				alpha = true,
-				dashboard = true,
-				dap = {
-					enabled = true,
-					enable_ui = true,
-				},
-				gitsigns = true,
-				indent_blankline = {
-					enabled = true,
-					colored_indent_levels = true,
-				},
-				mason = true,
-				native_lsp = {
-					enabled = true,
-				},
-				neogit = true,
-				neotree = true,
-				neotest = true,
-				nvimtree = false,
-				cmp = true, -- nvim-cmp
-				noice = true,
-				notify = true,
-				overseer = true,
-				rainbow_delimiters = true,
-				sandwich = true,
-				semantic_tokens = true,
-				telescope = true,
-				treesitter = true,
-				lsp_trouble = true,
-				which_key = true,
+			-- transparent_background = true,
+			native_lsp = {
+				enabled = true,
 			},
-			term_colors = true,
 		},
-		priority = 1000,
+		term_colors = true,
 	},
 
 	{ import = "astrocommunity.colorscheme.monokai-pro-nvim" },

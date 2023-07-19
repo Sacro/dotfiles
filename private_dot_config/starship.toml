@@ -29,6 +29,7 @@ symbol = " "
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [cmd_duration]
 disabled = true
