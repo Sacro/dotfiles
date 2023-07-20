@@ -1,7 +1,7 @@
 return {
 	{
 		"Astronvim/astrocommunity",
-		-- dev = true,
+		dev = true,
 	},
 	{ import = "user.plugins.community.bars-and-lines" },
 	{ import = "user.plugins.community.code-runner" },

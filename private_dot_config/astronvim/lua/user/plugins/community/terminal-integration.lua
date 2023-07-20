@@ -1,3 +1,3 @@
 return {
-	{ import = "astrocommunity.terminal-integration.vim-tmux-yank", disabled = true },
+  { import = "astrocommunity.terminal-integration.vim-tmux-yank", disabled = true },
 }
