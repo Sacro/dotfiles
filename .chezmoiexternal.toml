@@ -220,20 +220,6 @@ type = "archive-file"
   stripComponents = 1
   refreshPeriod = "1h"
 
-[".pyenv"]
-  type = "archive"
-  url = "https://github.com/pyenv/pyenv/archive/refs/tags/v2.3.21.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".pyenv/plugins/pyenv-virtualenv"]
-  type = "archive"
-  url = "https://github.com/pyenv/pyenv-virtualenv/archive/refs/tags/v1.2.1.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
 [".tmux/plugins/tpm"]
   type = "archive"
   url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"

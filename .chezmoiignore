@@ -2,6 +2,7 @@
 .pyenv/cache
 .pyenv/shims
 .pyenv/versions
+**/.venv/**
 
 {{- if (and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos")) }}
 .local/share/Steam
