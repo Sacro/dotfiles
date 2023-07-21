@@ -86,7 +86,7 @@
 
 [".config/nvim"]
   type = "archive"
-  url = "https://github.com/AstroNvim/AstroNvim/archive/main.tar.gz"
+  url = "https://github.com/AstroNvim/AstroNvim/archive/nightly.tar.gz"
   exact = true
   stripComponents =1
   refreshPeriod = "1h"

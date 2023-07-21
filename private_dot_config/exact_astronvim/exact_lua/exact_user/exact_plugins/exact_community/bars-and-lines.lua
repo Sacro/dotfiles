@@ -1,16 +1,19 @@
-local utils = require "astronvim.utils"
-
 return {
 
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   {
     "bufferline.nvim",
-    after = "catppuccin",
     config = function()
       require("bufferline").setup {
+        -- diagnostics_indicator = function(_, _, _, context) -- (count, level, diagnostics_dict, context)
+        --   if context.buffer:current() then return "" end
+        --
+        --   return ""
+        -- end,
         highlights = require("catppuccin.groups.integrations.bufferline").get(),
       }
     end,
+    dependencies = { "catppuccin" },
   },
 
   -- {
@@ -47,7 +50,7 @@ return {
   -- 	end,
   -- },
 
-  { import = "astrocommunity.bars-and-lines.feline-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.feline-nvim" },
   -- {
   --   "feline.nvim",
   --   opts = function(_, opts)

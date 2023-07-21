@@ -5,9 +5,9 @@ return {
     -- https://github.com/catppuccin/nvim
     opts = {
       transparent_background = true,
-      native_lsp = {
-        enabled = true,
-      },
+      -- native_lsp = {
+      --   enabled = true,
+      -- },
     },
     term_colors = true,
   },
