@@ -26,6 +26,16 @@
   refreshPeriod = "1h"
 {{ end }}
 
+{{ range .catppuccinFlavoursTitleCase }}
+[".config/fish/themes/Catppuccin {{ . }}.theme"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/fish/archive/main.tar.gz"
+  path = "themes/Catppuccin {{ . }}.theme"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
+
 {{ range .catppuccinFlavours }}
 [".config/foot/themes/catppuccin-{{ . }}.conf"]
   type = "archive-file"

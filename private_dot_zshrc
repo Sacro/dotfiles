@@ -323,7 +323,7 @@ fi
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt6ct
 
-# RTX
+# # RTX
 if type rtx &>/dev/null; then
     eval "$(rtx activate zsh)"
     # rtx completion zsh > ~/.local/share/zsh/site-functions/_rtx
@@ -338,4 +338,5 @@ fi
 if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
     path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
 fi
+
 
