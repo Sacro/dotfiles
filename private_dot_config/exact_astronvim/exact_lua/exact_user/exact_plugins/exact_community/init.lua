@@ -12,6 +12,7 @@ return {
   { import = "user.plugins.community.diagnostics" },
   { import = "user.plugins.community.editing-support" },
   { import = "user.plugins.community.fuzzy-finder" },
+  { import = "user.plugins.community.git" },
   { import = "user.plugins.community.indent" },
   { import = "user.plugins.community.lsp" },
   { import = "user.plugins.community.markdown-and-latex" },

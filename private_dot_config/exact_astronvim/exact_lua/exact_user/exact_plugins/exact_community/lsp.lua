@@ -1,19 +1,21 @@
 return {
-	{ import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  { import = "astrocommunity.lsp.inc-rename-nvim" },
 
-	{
-		"lsp-inlayhints.nvim",
-		opts = {
-			gopls = {
-				hints = {
-					assignVariableTypes = true,
-					compositeLiteralFields = true,
-					constantValues = true,
-					functionTypeParameters = true,
-					parameterNames = true,
-					rangeVariableTypes = true,
-				},
-			},
-		},
-	},
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+
+  {
+    "lsp-inlayhints.nvim",
+    opts = {
+      gopls = {
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
+      },
+    },
+  },
 }
