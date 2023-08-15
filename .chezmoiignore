@@ -9,3 +9,7 @@
 {{- if ne .chezmoi.os "windows" }}
 AppData
 {{ end }}
+
+{{- if eq .chezmoi.os "windows" }}
+.oh-my.zsh
+{{ end }}
