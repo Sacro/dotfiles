@@ -172,13 +172,6 @@ type = "archive-file"
   refreshPeriod = "1h"
 {{ end }}
 
-[".local/share/lunarvim/lvim/"]
-  type = "archive"
-  url = "https://github.com/LunarVim/LunarVim/archive/release-1.3/neovim-0.9.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
 [".local/share/mc/skins/catppuccin.ini"]
   type = "archive-file"
   url = "https://github.com/catppuccin/mc/archive/main.tar.gz"
@@ -186,7 +179,7 @@ type = "archive-file"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  
+
 [".local/share/powershell/Modules/Catppuccin"]
   type = "archive"
   url = "https://github.com/catppuccin/powershell/archive/main.tar.gz"
@@ -215,17 +208,18 @@ type = "archive-file"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  
+
 [".oh-my-zsh/custom/plugins/zsh-vi-mode"]
   type = "archive"
   url = "https://github.com/jeffreytse/zsh-vi-mode/archive/master.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  
+
+{{ $powerlevel10kVersion := (gitHubLatestRelease "romkatv/powerlevel10k").TagName }}
 [".oh-my-zsh/custom/themes/powerlevel10k"]
   type = "archive"
-  url = "https://github.com/romkatv/powerlevel10k/archive/v1.19.0.tar.gz"
+  url = "https://github.com/romkatv/powerlevel10k/archive/{{ $powerlevel10kVersion }}.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
