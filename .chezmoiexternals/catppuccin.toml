@@ -124,6 +124,15 @@
   refreshPeriod = "1h"
 {{ end }}
 
+# TODO: see if chezmoi can add archive-archive or something
+# [".icons/{{ .catppuccinCursorTheme }}"]
+#   type = "archive-file"
+#   url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
+#   path = "cursors/{{- .catppuccinCursorTheme -}}.zip"
+#   exact = true
+#   stripComponents = 1
+#   refreshPeriod = "1h"
+#   include = ["cursors-main/src/{{ .catppuccinCursorTheme }}"]
 
 {{ range .catppuccinFlavours }}
 [".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
@@ -168,14 +177,6 @@ type = "archive-file"
   stripComponents = 1
   refreshPeriod = "1h"
 
-[".icons/{{ .catppuccinCursorTheme }}"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
-  path = "cursors/{{ .catppuccinCursorTheme }}.zip"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
 [".themes/{{ .catppuccinGtkTheme }}/"]
   type = "archive"
   url = "https://github.com/catppuccin/gtk/releases/latest/download/{{ .catppuccinGtkTheme }}.zip"
@@ -184,12 +185,16 @@ type = "archive-file"
   refreshPeriod = "1h"
   include = ["{{ .catppuccinGtkTheme }}/**"]
 
-{{ range .catppuccinFlavoursTitleCase }}
-["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/flow-launcher/archive/main.tar.gz"
-  path = "themes/Catppuccin {{ . }}.xaml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
+{{ if eq .chezmoi.os "windows" }}
+
+  {{ range .catppuccinFlavoursTitleCase }}
+  ["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
+    type = "archive-file"
+    url = "https://github.com/catppuccin/flow-launcher/archive/main.tar.gz"
+    path = "themes/Catppuccin {{ . }}.xaml"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "1h"
+  {{ end }}
+
 {{ end }}
