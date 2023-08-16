@@ -1,3 +1,6 @@
+# Use this for global ignores, and for things in the root directory
+# Otherwise, put a .chezmoiignore lower down.
+
 .oh-my-zsh/cache/*
 **/.venv/**
 

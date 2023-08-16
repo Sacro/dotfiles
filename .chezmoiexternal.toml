@@ -1,124 +1,9 @@
-[".config/alacritty/catppuccin"]
-  type = "archive"
-  url = "https://github.com/catppuccin/alacritty/archive/main.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-  include = ["*/*.yml"]
-
-{{ range .catppuccinFlavours }}
-[".config/bat/themes/Catppuccin-{{ . }}.tmTheme"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
-  path = "Catppuccin-{{ . }}.tmTheme"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavours }}
-[".config/btop/themes/catppuccin_{{ . }}.theme"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/btop/archive/main.tar.gz"
-  path = "themes/catppuccin_{{ . }}.theme"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavoursTitleCase }}
-[".config/fish/themes/Catppuccin {{ . }}.theme"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/fish/archive/main.tar.gz"
-  path = "themes/Catppuccin {{ . }}.theme"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavours }}
-[".config/foot/themes/catppuccin-{{ . }}.conf"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/foot/archive/main.tar.gz"
-  path = "catppuccin-{{ . }}.conf"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavours }}
-[".config/fsh/catppuccin-{{ . }}.ini"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/zsh-fsh/archive/main.tar.gz"
-  path = "themes/catppuccin-{{ . }}.ini"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{end}}
-
-{{ range .catppuccinFlavours }}
-[".config/helix/themes/catppuccin_{{ . }}.toml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/helix/archive/main.tar.gz"
-  path = "themes/default/catppuccin_{{ . }}.toml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavours }}
-[".config/hypr/themes/catppuccin-{{ . }}.conf"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/hyprland/archive/main.tar.gz"
-  path = "themes/{{ . }}.conf"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-[".config/k9s/skin.yml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
-  path = "dist/mocha.yml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-{{ range .catppuccinFlavours }}
-[".config/kitty/themes/{{ . }}.conf"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/kitty/archive/main.tar.gz"
-  path = "themes/{{ . }}.conf"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
 [".config/nvim"]
   type = "archive"
   url = "https://github.com/AstroNvim/AstroNvim/archive/nightly.tar.gz"
   exact = true
   stripComponents =1
   refreshPeriod = "1h"
-
-{{ range .catppuccinFlavoursTitleCase }}
-[".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
-  path = "themes/Catppuccin-{{ . }}.conf"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-# Now maintined in Zellij
-#[".config/zellij/themes/catppuccin.yaml"]
-#  type = "archive-file"
-#  url = "https://github.com/catppuccin/zellij/archive/main.tar.gz"
-#  path = "catppuccin.yaml"
-#  exact = true
-#  stripComponents = 1
-#  refreshPeriod = "1h"
 
 [".config/zellij/plugins/multitask.wasm"]
   type = "file"
@@ -127,99 +12,10 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
-{{ range .catppuccinFlavours }}
-[".fleet/themes/catppuccin-{{ . }}.json"]
-  type = "archive-file"
-  url = "https://github.com/kkrypt0nn/jetbrains-fleet/archive/main.tar.gz"
-  path = "themes/catppuccin-{{ . }}.json"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
 [".local/bin/zsweep"]
   type = "archive-file"
   url = "https://github.com/psprint/zsh-sweep/archive/master.tar.gz"
   path = "bin/zsweep"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".local/share/catppuccin/gtk"]
-  type = "archive"
-  url = "https://github.com/catppuccin/gtk/archive/master.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-{{ range .catppuccinFlavours }}
-[".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/gedit/archive/main.tar.gz"
-  path = "themes/catppuccin-{{ . }}.xml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-{{ range .catppuccinFlavoursTitleCase }}
-[".local/share/konsole/Catppuccin-{{ . }}.colorscheme"]
-type = "archive-file"
-  url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
-  path = "Catppuccin-{{ . }}.colorscheme"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
-
-[".local/share/mc/skins/catppuccin.ini"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/mc/archive/main.tar.gz"
-  path = "catppuccin.ini"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".local/share/powershell/Modules/Catppuccin"]
-  type = "archive"
-  url = "https://github.com/catppuccin/powershell/archive/main.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".icons/{{ .catppuccinCursorTheme }}"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
-  path = "cursors/{{ .catppuccinCursorTheme }}.zip"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".oh-my-zsh"]
-  type = "archive"
-  url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
-  type = "archive"
-  url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-[".oh-my-zsh/custom/plugins/zsh-vi-mode"]
-  type = "archive"
-  url = "https://github.com/jeffreytse/zsh-vi-mode/archive/master.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-
-{{ $powerlevel10kVersion := (gitHubLatestRelease "romkatv/powerlevel10k").TagName }}
-[".oh-my-zsh/custom/themes/powerlevel10k"]
-  type = "archive"
-  url = "https://github.com/romkatv/powerlevel10k/archive/{{ $powerlevel10kVersion }}.tar.gz"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
@@ -230,21 +26,3 @@ type = "archive-file"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-
-[".themes/{{ .catppuccinGtkTheme }}/"]
-  type = "archive"
-  url = "https://github.com/catppuccin/gtk/releases/latest/download/{{ .catppuccinGtkTheme }}.zip"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-  include = ["{{ .catppuccinGtkTheme }}/**"]
-
-{{ range .catppuccinFlavoursTitleCase }}
-["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
-  type = "archive-file"
-  url = "https://github.com/catppuccin/flow-launcher/archive/main.tar.gz"
-  path = "themes/Catppuccin {{ . }}.xaml"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "1h"
-{{ end }}
