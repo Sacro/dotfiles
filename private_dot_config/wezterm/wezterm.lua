@@ -29,7 +29,7 @@ config.font_size = 14
 -- config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
 -- config.font_size = 15
 
-config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and "pwsh.exe" or nil)
+config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 
 -- Here comes the Neovim configuration
 --
