@@ -218,13 +218,13 @@ export FZF_DEFAULT_OPTS=" \
 ZSH_COLORIZE_STYLE=monokai
 
 # LS
-# if type exa &>/dev/null; then
-#     alias ls='exa'
-# fi
-
-if type lsd &>/dev/null; then
-    alias ls='lsd'
+if type exa &>/dev/null; then
+    alias ls='exa'
 fi
+
+# if type lsd &>/dev/null; then
+#     alias ls='lsd'
+# fi
 
 # PHP
 export COMPOSER_HOME=$HOME/.composer
@@ -312,6 +312,11 @@ if [ -d "$HOME/.perl5" ]; then
     PERL_LOCAL_LIB_ROOT="$HOME/.perl5:"; export PERL_LOCAL_LIB_ROOT;
 
     path=("$HOME/.perl5" "$path[@]")
+fi
+
+# Mozilla
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
 fi
 
 # PODMAN
