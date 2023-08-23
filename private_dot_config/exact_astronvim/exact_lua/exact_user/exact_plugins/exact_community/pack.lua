@@ -3,6 +3,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.cs" },
+  { import = "astrocommunity.pack.cue" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.go" },

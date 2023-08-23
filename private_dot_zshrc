@@ -197,6 +197,11 @@ if [ -d "$HOME/.local/share/zsh/site-functions/" ]; then
     fpath=("$HOME/.local/share/zsh/site-functions" "$fpath[@]")
 fi
 
+# 1password
+if [ -f ~/.config/op/plugins.sh ]; then
+    source ~/.config/op/plugins.sh
+fi
+
 # FSH
 fast-theme XDG:catppuccin-mocha &> /dev/null
 
