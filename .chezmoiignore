@@ -2,6 +2,7 @@
 # Otherwise, put a .chezmoiignore lower down.
 
 .oh-my-zsh/cache/*
+**/.pspminfo
 **/.venv/**
 
 {{- if (and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos")) }}
