@@ -124,16 +124,6 @@
   refreshPeriod = "1h"
 {{ end }}
 
-# TODO: see if chezmoi can add archive-archive or something
-# [".icons/{{ .catppuccinCursorTheme }}"]
-#   type = "archive-file"
-#   url = "https://github.com/catppuccin/cursors/archive/main.tar.gz"
-#   path = "cursors/{{- .catppuccinCursorTheme -}}.zip"
-#   exact = true
-#   stripComponents = 1
-#   refreshPeriod = "1h"
-#   include = ["cursors-main/src/{{ .catppuccinCursorTheme }}"]
-
 {{ range .catppuccinFlavours }}
 [".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
   type = "archive-file"
@@ -144,6 +134,12 @@
   refreshPeriod = "1h"
 {{ end }}
 
+[".local/share/icons/{{ .catppuccinCursorTheme }}"]
+  type = "archive"
+  url = "https://github.com/catppuccin/cursors/releases/latest/download/{{ .catppuccinCursorTheme }}.zip"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
 
 {{ range .catppuccinFlavoursTitleCase }}
 [".local/share/konsole/Catppuccin-{{ . }}.colorscheme"]
