@@ -1,1 +1,2 @@
-[formatting]
+
+include = [".taplo.toml"]
