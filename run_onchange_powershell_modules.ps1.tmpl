@@ -1,0 +1,31 @@
+{{ if eq .chezmoi.os "windows" }}
+
+  {{ if not (lookPath "scoop") }}
+    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+  {{ end }}
+
+  $buckets  = @(
+    'main',
+    'extras',
+    'nerd-fonts'
+    'versions'
+  )
+  $buckets |% { scoop bucket add $_ 6> $null }
+
+  $packages  = @(
+    'bat', 'bottom',
+    'chezmoi',
+    'fd', 'fzf',
+    'gsudo',
+    'lsd',
+    'neovim', 'nu',
+    'pwsh'
+    'ripgrep'
+    'scoop-completion', 'sd', 'starship', 'sudo', 'sysinternals'
+    'wezterm', 'win32yank',
+    'zoxide'
+  )
+  $packages |% { scoop install $_ 6> $null }
+
+
+{{ end }}

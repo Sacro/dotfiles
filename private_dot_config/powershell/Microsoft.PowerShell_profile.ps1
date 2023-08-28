@@ -1,4 +1,4 @@
-
+## Catppuccin ##
 # Import the module
 Import-Module Catppuccin
 
@@ -14,15 +14,15 @@ $Flavor = $Catppuccin['Mocha']
 # Write-Host $Flavor.Blocks()
 
 # Modified from the built-in prompt function at: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts
-function prompt
-{
-  $(if (Test-Path variable:/PSDebugContext)
-    { "$($Flavor.Red.Foreground())[DBG]: " 
-    } else
-    { '' 
+function prompt {
+  $(if (Test-Path variable:/PSDebugContext) {
+      "$($Flavor.Red.Foreground())[DBG]: "
+    }
+    else {
+      ''
     }) + "$($Flavor.Teal.Foreground())PS $($Flavor.Yellow.Foreground())" + $(Get-Location) +
-  "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1)
-    { '>>' 
+  "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1) {
+      '>>'
     }) + '> ' + $($PSStyle.Reset)
 }
 # The above example requires the automatic variable $PSStyle to be available, so can be only used in PS 7.2+
@@ -40,12 +40,12 @@ $ENV:FZF_DEFAULT_OPTS = @"
 $Colors = @{
   # Largely based on the Code Editor style guide
   # Emphasis, ListPrediction and ListPredictionSelected are inspired by the Catppuccin fzf theme
-	
+
   # Powershell colours
   ContinuationPrompt     = $Flavor.Teal.Foreground()
   Emphasis               = $Flavor.Red.Foreground()
   Selection              = $Flavor.Surface0.Background()
-	
+
   # PSReadLine prediction colours
   InlinePrediction       = $Flavor.Overlay0.Foreground()
   ListPrediction         = $Flavor.Mauve.Foreground()
@@ -78,6 +78,26 @@ $PSStyle.Formatting.FormatAccent = $Flavor.Teal.Foreground()
 $PSStyle.Formatting.TableHeader = $Flavor.Rosewater.Foreground()
 $PSStyle.Formatting.Verbose = $Flavor.Yellow.Foreground()
 $PSStyle.Formatting.Warning = $Flavor.Peach.Foreground()
+## End Catppuccin ##
 
-# Invoke-Expression (&starship init powershell)
+Import-Module gsudoModule
 
+kubectl completion powershell | Out-String | Invoke-Expression
+
+Set-Alias ls 'lsd'
+function l {lsd -l}
+function la {lsd -a}
+function lla {lsd -la}
+function lt {lsd --tree}
+
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+
+Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+      (zoxide init --hook $hook powershell | Out-String)
+  })
+
+# Add this line (with your login user!) to the bottom of your PowerShell profile configuration
+$Env:KOMOREBI_CONFIG_HOME = 'C:\Users\ben\.config\komorebi'
+
+Invoke-Expression (&starship init powershell)

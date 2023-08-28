@@ -1,0 +1,5 @@
+{{ if or (lookPath "pwsh.exe") (lookPath "pwsh")  -}}
+[interpreters.ps1]
+    command = "pwsh"
+    args = ["-NoLogo"]
+{{ end }}
