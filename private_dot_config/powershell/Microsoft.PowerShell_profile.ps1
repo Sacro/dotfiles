@@ -82,7 +82,11 @@ $PSStyle.Formatting.Warning = $Flavor.Peach.Foreground()
 
 Import-Module gsudoModule
 
-kubectl completion powershell | Out-String | Invoke-Expression
+Import-Module PSReadLine
+Set-PSReadLineOption -EditMode Emacs
+
+
+# kubectl completion powershell | Out-String | Invoke-Expression
 
 Set-Alias ls 'lsd'
 function l {lsd -l}
@@ -98,6 +102,6 @@ Invoke-Expression (& {
   })
 
 # Add this line (with your login user!) to the bottom of your PowerShell profile configuration
-$Env:KOMOREBI_CONFIG_HOME = 'C:\Users\ben\.config\komorebi'
+$Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 
 Invoke-Expression (&starship init powershell)

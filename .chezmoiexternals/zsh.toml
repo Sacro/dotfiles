@@ -1,0 +1,9 @@
+{{- if ne .chezmoi.os "windows" }}
+[".local/bin/zsweep"]
+  type = "archive-file"
+  url = "https://github.com/psprint/zsh-sweep/archive/master.tar.gz"
+  path = "bin/zsweep"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}

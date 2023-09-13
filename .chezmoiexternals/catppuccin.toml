@@ -27,6 +27,21 @@
   refreshPeriod = "1h"
 {{ end }}
 
+
+{{ range .catppuccinFlavours }}
+{{ if ne $.chezmoi.os "windows" }}
+[".config/discord/themes/catppuccin/{{ . }}.theme.css"]
+{{ else }}
+["AppData/Roaming/discord/themes/catppuccin/{{ . }}.theme.css"]
+{{ end }}
+  type = "archive-file"
+  url = "https://github.com/catppuccin/discord/archive/main.tar.gz"
+  path = "themes/mocha.theme.css"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
+
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/fish/themes/Catppuccin {{ . }}.theme"]
   type = "archive-file"
@@ -105,6 +120,18 @@
   refreshPeriod = "1h"
 {{ end }}
 
+{{- if ne $.chezmoi.os "windows" }}
+[".config/spicetify/Themes/catppuccin"]
+{{ else }}
+["AppData/Roaming/spicetify/Themes/catppuccin"]
+{{ end }}
+  type = "archive"
+  url = "https://github.com/catppuccin/spicetify/archive/main.tar.gz"
+  exact = true
+  stripComponents = 2
+  refreshPeriod = "1h"
+  include = ["*/catppuccin/**"]
+
 # Now maintined in Zellij
 #[".config/zellij/themes/catppuccin.yaml"]
 #  type = "archive-file"
@@ -173,6 +200,7 @@ type = "archive-file"
   stripComponents = 1
   refreshPeriod = "1h"
 
+{{- if ne $.chezmoi.os "windows" }}
 [".themes/{{ .catppuccinGtkTheme }}/"]
   type = "archive"
   url = "https://github.com/catppuccin/gtk/releases/latest/download/{{ .catppuccinGtkTheme }}.zip"
@@ -180,8 +208,9 @@ type = "archive-file"
   stripComponents = 1
   refreshPeriod = "1h"
   include = ["{{ .catppuccinGtkTheme }}/**"]
+{{ end }}
 
-{{ if eq .chezmoi.os "windows" }}
+{{ if eq $.chezmoi.os "windows" }}
 
   {{ range .catppuccinFlavoursTitleCase }}
   ["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]

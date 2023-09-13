@@ -1,0 +1,4 @@
+[".config/zellij/plugins/multitask.wasm"]
+  type = "file"
+  url = "https://github.com/imsnif/multitask/releases/latest/download/multitask.wasm"
+  refreshPeriod = "1h"
