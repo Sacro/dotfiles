@@ -12,7 +12,8 @@ return function(opts)
       resession_enabled = true,
     },
     o = {
-      guifont = "JetBrainsMono Nerd Font Mono:h16",
+      -- guifont = "JetBrainsMono Nerd Font Mono:h16",
+      guifont = "MonoLisaVariableScript Nerd Font:h18",
     },
   })
 end

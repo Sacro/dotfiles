@@ -23,11 +23,15 @@ config.hide_tab_bar_if_only_one_tab = true
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
-config.font_size = 14
+-- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
+-- config.font_size = 14
 
 -- config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
--- config.font_size = 15
+-- config.font_size = 18
+
+config.font = wezterm.font("MonoLisaVariableScript Nerd Font")
+config.font_size = 14
+config.freetype_load_flags = "NO_HINTING"
 
 config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 

@@ -31,9 +31,6 @@ return {
         lsp_doc_border = true,
       },
     },
-    dependencies = {
-      "catppuccin",
-    },
   },
 
   { import = "astrocommunity.utility.nvim-toggler" },
@@ -41,6 +38,4 @@ return {
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
 
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
-
-  { import = "astrocommunity.utility.transparent-nvim" },
 }

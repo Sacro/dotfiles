@@ -5,7 +5,7 @@ return {
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.cue" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.full-dadbod" },
+  -- { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.html-css" },
@@ -27,4 +27,5 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.zig" },
 }

@@ -85,28 +85,30 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    adb alias-finder archlinux autopep8 aws
-    bgnotify branch
+    1password
+    adb alias-finder aliases archlinux autopep8 aws
+    bgnotify branch bun
     catimg colored-man-pages colorize composer copypath cp
     deno dircycle direnv dirhistory docker docker-compose
     emoji emotty encode64 extract
-    fabric fancy-ctrl-z firewalld frontend-search fzf
+    fabric fancy-ctrl-z fd firewalld fluxcd frontend-search fzf
     gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
     helm heroku history httpie
     iterm2
     jira jsontools
-    kubectl
+    kubectl kubectx
     macos man mercurial microk8s minikube mosh
-    ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
-    pep8 per-directory-history perl perms pip profiles pyenv pylint python
-    react-native redis-cli repo ripgrep rsync ruby rust rvm
-    safe-paste salt screen sudo svn systemadmin systemd
-    taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox
+    nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
+    pep8 per-directory-history perl perms pip podman postgres pre-commit profiles pyenv pylint python
+    qodana qrcode
+    react-native redis-cli repo ripgrep rsync ruby rust
+    safe-paste salt screen skaffold starship sudo svn systemadmin systemd
+    taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox transfer
     ufw universalarchive urltools
     vscode
-    wd
+    wd web-search
     yarn
-    z zoxide
+    z zoxide # zsh-interactive-cd zsh-navigation-tools
 
     # Custom plugins
     fast-syntax-highlighting 
@@ -223,8 +225,8 @@ export FZF_DEFAULT_OPTS=" \
 ZSH_COLORIZE_STYLE=monokai
 
 # LS
-if type exa &>/dev/null; then
-    alias ls='exa'
+if type eza &>/dev/null; then
+    alias ls='eza'
 fi
 
 # if type lsd &>/dev/null; then
