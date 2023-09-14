@@ -12,6 +12,8 @@ end
 
 -- This is where you actually apply your config choices
 
+config.audible_bell = "Disabled"
+
 config.window_frame = {
 	active_titlebar_bg = "#14141F",
 	inactive_titlebar_bg = "#232335",
@@ -23,15 +25,24 @@ config.hide_tab_bar_if_only_one_tab = true
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 
+-- config.font = wezterm.font_with_fallback{ "Berkeley Mono" , "Symbols Nerd Font Mono" }
+-- config.font_size = 16
+
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font_size = 14
 
--- config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
--- config.font_size = 18
-
-config.font = wezterm.font("MonoLisaVariableScript Nerd Font")
+config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
 config.font_size = 14
-config.freetype_load_flags = "NO_HINTING"
+config.line_height = 1.2
+
+-- config.font = wezterm.font("MonoLisa Trial")
+-- config.font_size = 15
+
+-- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font Mono"})
+-- config.font_size = 14
+-- config.line_height = 1.2
+
+-- config.use_cap_height_to_scale_fallback_fonts = true
 
 config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 
