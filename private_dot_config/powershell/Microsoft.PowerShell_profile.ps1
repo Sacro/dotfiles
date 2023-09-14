@@ -80,28 +80,50 @@ $PSStyle.Formatting.Verbose = $Flavor.Yellow.Foreground()
 $PSStyle.Formatting.Warning = $Flavor.Peach.Foreground()
 ## End Catppuccin ##
 
+## Direnv ##
+
+$Env:DIRENV_CONFIG = "$Env:UserProfile\.config\direnv\"
+$Env:XDG_CACHE_HOME = "$Env:UserProfile\.cache"
+$Env:XDG_DATA_HOME = "$Env:UserProfile\.local\share"
+
+## End Direnv ##
+
+# GSudo
 Import-Module gsudoModule
 
+# PSReadLine
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 
+# Golangci-lint 
+golangci-lint.exe completion powershell | Out-String | Invoke-Expression
+
+# GoReleaser
+$(goreleaser completion powershell | Out-String | Invoke-Expression) 2> $null 
+
+# Jira
+jira completion powershell | Out-String | Invoke-Expression
+
+# Komorebi
+$Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 
 # kubectl completion powershell | Out-String | Invoke-Expression
 
+# LSD
 Set-Alias ls 'lsd'
 function l {lsd -l}
 function la {lsd -a}
 function lla {lsd -la}
 function lt {lsd --tree}
 
+# Scoop Completion
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
-Invoke-Expression (& {
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-      (zoxide init --hook $hook powershell | Out-String)
-  })
+# Scoop Search
+Invoke-Expression (&scoop-search --hook)
 
-# Add this line (with your login user!) to the bottom of your PowerShell profile configuration
-$Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
-
+# Starship
 Invoke-Expression (&starship init powershell)
+
+# Zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
