@@ -1,3 +1,7 @@
 [tools]
+perl = { version = 'latest' }
+
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
-python = { version = 'latest' }
+python = { version = 'latest', virtualenv = ".venv" }
+
+ruby = { version = 'latest' }
