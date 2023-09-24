@@ -99,7 +99,7 @@ plugins=(
     kubectl kubectx
     macos man mercurial microk8s minikube mosh
     nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
-    pep8 per-directory-history perl perms pip podman postgres pre-commit profiles pyenv pylint python
+    pep8 perl perms pip podman postgres pre-commit profiles pyenv pylint python
     qodana qrcode
     react-native redis-cli repo ripgrep rsync ruby rust
     safe-paste salt screen skaffold starship sudo svn systemadmin systemd
@@ -202,6 +202,11 @@ fi
 # 1password
 if [ -f ~/.config/op/plugins.sh ]; then
     source ~/.config/op/plugins.sh
+fi
+
+# Atuin
+if type atuin &> /dev/null; then
+    eval "$(atuin init zsh)"
 fi
 
 # FSH

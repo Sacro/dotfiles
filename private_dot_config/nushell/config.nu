@@ -769,14 +769,8 @@ $env.config = {
     ]
 }
 
-$env.config = {
-  hooks: {
-    pre_prompt: [{ ||
-      let direnv = (direnv export json | from json)
-      let direnv = if ($direnv | length) == 1 { $direnv } else { {} }
-      $direnv | load-env
-    }]
-  }
-}
+# Atuin
+source ~/.local/share/atuin/init.nu
 
-source ~/.zoxide.nu
+# Zoxide
+source ~/.local/share/zoxide/zoxide.nu
