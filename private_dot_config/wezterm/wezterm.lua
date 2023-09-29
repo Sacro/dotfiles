@@ -1,7 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This table will hold the configuration
 local config = {}
 
 -- In newer versions of wezterm, use the config_builder which will
@@ -11,8 +10,6 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-
-config.audible_bell = "Disabled"
 
 config.window_frame = {
 	active_titlebar_bg = "#14141F",
@@ -25,24 +22,36 @@ config.hide_tab_bar_if_only_one_tab = true
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 
--- config.font = wezterm.font_with_fallback{ "Berkeley Mono" , "Symbols Nerd Font Mono" }
+-- config.font = wezterm.font_with_fallback({ "Berkeley Mono Variable", "Symbols Nerd Font" })
+-- config.font_size = 16
+
+-- config.font = wezterm.font_with_fallback({ "Dank Mono", "Symbols Nerd Font" })
+-- config.font_size = 16
+
+-- config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
+-- config.font_size = 18
+
+-- config.font = wezterm.font("FiraCode Nerd Font")
+-- config.font_size = 16
+
+-- config.font = wezterm.font_with_fallback({ "Gintronic Medium", "Symbols Nerd Font" })
 -- config.font_size = 16
 
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font_size = 14
 
-config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
-config.font_size = 14
-config.line_height = 1.2
+config.font = wezterm.font_with_fallback({
+	"MonoLisa Variable",
+	"Symbols Nerd Font Mono",
+})
+config.font_size = 15
+config.freetype_load_flags = "NO_HINTING"
+config.harfbuzz_features = { "calt=1", "liga=1", "ss02=1", "ss11=1", "zero=1" }
 
--- config.font = wezterm.font("MonoLisa Trial")
--- config.font_size = 15
+-- config.font = wezterm.font_with_fallback({ "Rec Mono Duotone", { family = "Symbols Nerd Font", scale = 0.8 } })
+-- config.font_size = 16
 
--- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font Mono"})
--- config.font_size = 14
--- config.line_height = 1.2
-
--- config.use_cap_height_to_scale_fallback_fonts = true
+config.use_cap_height_to_scale_fallback_fonts = true
 
 config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 
