@@ -44,7 +44,7 @@ config.font = wezterm.font_with_fallback({
 	"MonoLisa Variable",
 	"Symbols Nerd Font Mono",
 })
-config.font_size = 15
+config.font_size = 14
 config.freetype_load_flags = "NO_HINTING"
 config.harfbuzz_features = { "calt=1", "liga=1", "ss02=1", "ss11=1", "zero=1" }
 
