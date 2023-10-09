@@ -15,7 +15,14 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 Install-Module -Name pspm -Force 6> $null
 Install-Module PowerShellGet -Force -AllowClobber 6> $null
 
-pspm install catppuccin/powershell -Scope CurrentUser -NoImport 6> $null
+@(
+  'catppuccin/powershell',
+  'pcgeek86/PSGitHub',
+  'JiraPS',
+  'Posh-Git'
+) |% { 
+  pspm install $_ -Scope CurrentUser -NoImport 6> $null
+}
 
 return
 {{ end }}
