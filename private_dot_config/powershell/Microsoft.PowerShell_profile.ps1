@@ -88,6 +88,9 @@ $Env:XDG_DATA_HOME = "$Env:UserProfile\.local\share"
 
 ## End Direnv ##
 
+# Git
+Import-Module posh-git
+
 # GSudo
 Import-Module gsudoModule
 
@@ -96,13 +99,27 @@ Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 
 # Golangci-lint 
-golangci-lint.exe completion powershell | Out-String | Invoke-Expression
+if (Get-Command "gh" -ErrorAction SilentlyContinue) 
+{ 
+    gh completion -s powershell | Out-String | Invoke-Expression
+}
 
-# GoReleaser
-$(goreleaser completion powershell | Out-String | Invoke-Expression) 2> $null 
+# Golangci-lint 
+if (Get-Command "golangci-lint" -ErrorAction SilentlyContinue) 
+{ 
+    golangci-lint completion powershell | Out-String | Invoke-Expression
+}
+
+
+# GoRelease
+if (Get-Command "goreleaser" -ErrorAction SilentlyContinue) {
+  $(goreleaser completion powershell | Out-String | Invoke-Expression) 2> $null 
+}
 
 # Jira
-jira completion powershell | Out-String | Invoke-Expression
+if (Get-Command "jira" -ErrorAction SilentlyContinue) {
+  jira completion powershell | Out-String | Invoke-Expression
+}
 
 # Komorebi
 $Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
@@ -110,20 +127,32 @@ $Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 # kubectl completion powershell | Out-String | Invoke-Expression
 
 # LSD
-Set-Alias ls 'lsd'
-function l {lsd -l}
-function la {lsd -a}
-function lla {lsd -la}
-function lt {lsd --tree}
+if (Get-Command "lsd" -ErrorAction SilentlyContinue) 
+{
+  Set-Alias ls 'lsd'
+  function l {lsd -l}
+  function la {lsd -a}
+  function lla {lsd -la}
+  function lt {lsd --tree}
+}
 
 # Scoop Completion
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
 # Scoop Search
-Invoke-Expression (&scoop-search --hook)
+if (Get-Command "scoop-search" -ErrorAction SilentlyContinue) {
+  Invoke-Expression (&scoop-search --hook)
+}
 
 # Starship
-Invoke-Expression (&starship init powershell)
+if (Get-Command "starship" -ErrorAction SilentlyContinue) 
+{
+  Invoke-Expression (&starship init powershell)
+}
 
 # Zoxide
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
+# LSD
+if (Get-Command "zoxide" -ErrorAction SilentlyContinue) 
+{
+  Invoke-Expression (& { (zoxide init powershell | Out-String) })
+}
