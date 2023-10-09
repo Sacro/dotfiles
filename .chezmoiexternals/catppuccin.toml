@@ -219,8 +219,19 @@ type = "archive-file"
   include = ["{{ .catppuccinGtkTheme }}/**"]
 {{ end }}
 
-{{ if eq $.chezmoi.os "windows" }}
+# {{ if eq $.chezmoi.os "windows" }}
+  {{ range .catppuccinFlavours }}
+  ["Appdata/Roaming/Notepad++/themes/catppuccin-{{ . }}.xml"]
+    type = "archive-file"
+    url = "https://github.com/catppuccin/notepad-plus-plus/archive/main.tar.gz"
+    path = "catppuccin-{{ . }}.xml"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "1h"
+  {{ end }}
+# {{ end }}
 
+{{ if eq $.chezmoi.os "windows" }}
   {{ range .catppuccinFlavoursTitleCase }}
   ["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
     type = "archive-file"
@@ -230,5 +241,4 @@ type = "archive-file"
     stripComponents = 1
     refreshPeriod = "1h"
   {{ end }}
-
 {{ end }}
