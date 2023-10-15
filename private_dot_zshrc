@@ -232,11 +232,9 @@ ZSH_COLORIZE_STYLE=monokai
 # LS
 if type eza &>/dev/null; then
     alias ls='eza'
+elif type lsd &>/dev/null; then
+    alias ls='lsd'
 fi
-
-# if type lsd &>/dev/null; then
-#     alias ls='lsd'
-# fi
 
 # PHP
 export COMPOSER_HOME=$HOME/.composer
@@ -331,6 +329,18 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi
 
+# pnpm
+if [ -d "$HOME/.local/share/pnpm" ]; then
+    path=("$HOME/.local/share/pnpm" "$path[@]")
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
+
+# export PNPM_HOME="/home/ben/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+
 # PODMAN
 if [ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ] ; then
     DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
@@ -356,4 +366,7 @@ if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
     path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
 fi
 
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
