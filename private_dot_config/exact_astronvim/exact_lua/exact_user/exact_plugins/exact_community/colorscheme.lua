@@ -11,7 +11,7 @@ return {
       if vim.g.neovide then transparent_background = false end
 
       return utils.extend_tbl(opts, {
-        transparent_background = transparent_background,
+        -- transparent_background = transparent_background,
         -- native_lsp = {
         --   enabled = true,
         -- },
