@@ -41,7 +41,7 @@ config.font = wezterm.font_with_fallback({
 		harfbuzz_features = {
 			"calt",
 			"liga",
-			-- "zero",
+			"zero",
 			"ss02",
 			"ss03",
 			"ss07",
