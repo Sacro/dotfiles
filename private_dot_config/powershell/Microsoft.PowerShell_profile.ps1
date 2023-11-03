@@ -98,22 +98,22 @@ Import-Module gsudoModule
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 
-# Golangci-lint 
-if (Get-Command "gh" -ErrorAction SilentlyContinue) 
-{ 
+# Golangci-lint
+if (Get-Command "gh" -ErrorAction SilentlyContinue)
+{
     gh completion -s powershell | Out-String | Invoke-Expression
 }
 
-# Golangci-lint 
-if (Get-Command "golangci-lint" -ErrorAction SilentlyContinue) 
-{ 
+# Golangci-lint
+if (Get-Command "golangci-lint" -ErrorAction SilentlyContinue)
+{
     golangci-lint completion powershell | Out-String | Invoke-Expression
 }
 
 
 # GoRelease
 if (Get-Command "goreleaser" -ErrorAction SilentlyContinue) {
-  $(goreleaser completion powershell | Out-String | Invoke-Expression) 2> $null 
+  $(goreleaser completion powershell | Out-String | Invoke-Expression) 2> $null
 }
 
 # Jira
@@ -127,7 +127,7 @@ $Env:KOMOREBI_CONFIG_HOME = "$Env:USERPROFILE\.config\komorebi"
 # kubectl completion powershell | Out-String | Invoke-Expression
 
 # LSD
-if (Get-Command "lsd" -ErrorAction SilentlyContinue) 
+if (Get-Command "lsd" -ErrorAction SilentlyContinue)
 {
   Set-Alias ls 'lsd'
   function l {lsd -l}
@@ -145,19 +145,19 @@ if (Get-Command "scoop-search" -ErrorAction SilentlyContinue) {
 }
 
 # Starship
-if (Get-Command "starship" -ErrorAction SilentlyContinue) 
+if (Get-Command "starship" -ErrorAction SilentlyContinue)
 {
   Invoke-Expression (&starship init powershell)
 }
 
 if (Get-Command "talhelper" -ErrorAction SilentlyContinue)
 {
-  Invoke-Expession (& { (talhelper completion powershell | Out-String) })
+  Invoke-Expression (& { (talhelper completion powershell | Out-String) })
 }
 
 # Zoxide
 # LSD
-if (Get-Command "zoxide" -ErrorAction SilentlyContinue) 
+if (Get-Command "zoxide" -ErrorAction SilentlyContinue)
 {
   Invoke-Expression (& { (zoxide init powershell | Out-String) })
 }
