@@ -150,6 +150,11 @@ if (Get-Command "starship" -ErrorAction SilentlyContinue)
   Invoke-Expression (&starship init powershell)
 }
 
+if (Get-Command "talhelper" -ErrorAction SilentlyContinue)
+{
+  Invoke-Expession (& { (talhelper completion powershell | Out-String) })
+}
+
 # Zoxide
 # LSD
 if (Get-Command "zoxide" -ErrorAction SilentlyContinue) 
