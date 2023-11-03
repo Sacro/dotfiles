@@ -31,20 +31,39 @@ config.color_scheme = "Catppuccin Mocha"
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font Mono")
 -- config.font_size = 14
 
-config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
-config.font_size = 16
-config.line_height = 1.2
+-- config.font = wezterm.font("FantasqueSansM Nerd Font Mono")
+-- config.font_size = 16
+-- config.line_height = 1.2
 
--- config.font = wezterm.font_with_fallback({"MonoLisa Variable", "Symbols Nerd Font"})
--- config.font_size = 14
--- config.freetype_load_flags = 'NO_HINTING'
--- config.line_height = 1.25
+config.font = wezterm.font_with_fallback({
+	{
+		family = "MonoLisa Variable",
+		harfbuzz_features = {
+			"calt",
+			"liga",
+			-- "zero",
+			"ss02",
+			"ss03",
+			"ss07",
+			"ss08",
+			"ss11",
+			"ss13",
+			"ss14",
+			"ss15",
+			"ss16",
+		},
+	},
+	"Symbols Nerd Font",
+})
+config.font_size = 14
+-- config.freetype_load_flags = "NO_HINTING"
+config.line_height = 1.1
 
 -- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font"})
 -- config.font_size = 14
 -- config.line_height = 1.2
 
--- config.use_cap_height_to_scale_fallback_fonts = true
+config.use_cap_height_to_scale_fallback_fonts = true
 
 config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 
