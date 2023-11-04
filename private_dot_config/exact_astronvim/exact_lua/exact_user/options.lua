@@ -13,7 +13,7 @@ return function(opts)
     },
     o = {
       -- guifont = "JetBrainsMono Nerd Font Mono:h16",
-      guifont = "MonoLisaVariableScript Nerd Font:h18",
+      guifont = "MonoLisa:h20",
     },
   })
 end

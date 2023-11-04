@@ -1,8 +1,6 @@
 local utils = require "astronvim.utils"
 
-local install = {
-  "pkgbuild_language_server",
-}
+local install = {}
 
 return {
   {
