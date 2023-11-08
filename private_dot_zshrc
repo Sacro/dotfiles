@@ -202,6 +202,28 @@ fi
 # 1password
 if [ -f ~/.config/op/plugins.sh ]; then
     source ~/.config/op/plugins.sh
+
+    function __my_op_plugin_run() {
+        _op_plugin_run
+
+        for ((i = 2; i < CURRENT; i++)); do
+            if [[ ${words[i]} == -- ]]; then
+                shift $i words
+                ((CURRENT -= i))
+                _normal
+                return
+            fi
+        done
+
+    }
+
+    function __load_op_completion() {
+        completion_function="$(op completion zsh)"
+        sed -E 's/^( +)_op_plugin_run/\1__my_op_plugin_run/' <<<"${completion_function}"
+    }
+
+    eval "$(__load_op_completion)"
+    compdef _op op
 fi
 
 # Atuin
@@ -222,9 +244,9 @@ if type fzf &> /dev/null && type bat &>/dev/null; then
 fi
 
 export FZF_DEFAULT_OPTS=" \
-  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # ccat
 ZSH_COLORIZE_STYLE=monokai
@@ -369,4 +391,3 @@ fi
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
