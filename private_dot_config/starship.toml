@@ -159,6 +159,8 @@ symbol = " "
 symbol = " "
 
 [kubernetes]
+disabled = false
+detect_folders = ["clusters"]
 symbol = "󱃾 "
 
 [lua]

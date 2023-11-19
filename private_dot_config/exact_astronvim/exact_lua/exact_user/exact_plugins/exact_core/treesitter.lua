@@ -10,9 +10,5 @@ return {
         opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, languages)
       end
     end,
-    dependencies = {
-      "vrischmann/tree-sitter-templ",
-    },
   },
-  "vrischmann/tree-sitter-templ",
 }
