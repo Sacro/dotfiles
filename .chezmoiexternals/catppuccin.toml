@@ -53,10 +53,10 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
-[".config/foot/themes/catppuccin-{{ . }}.conf"]
+[".config/gitui/{{ . }}.ron"]
   type = "archive-file"
-  url = "https://github.com/catppuccin/foot/archive/main.tar.gz"
-  path = "catppuccin-{{ . }}.conf"
+  url = "https://github.com/catppuccin/gitui/archive/main.tar.gz"
+  path = "theme/{{ . }}.ron"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
@@ -64,6 +64,16 @@
 
 {{ range .catppuccinFlavours }}
 [".config/fsh/catppuccin-{{ . }}.ini"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/zsh-fsh/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.ini"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{end}}
+
+{{ range .catppuccinFlavours }}
+[".config/gitui/catppuccin-{{ . }}.ini"]
   type = "archive-file"
   url = "https://github.com/catppuccin/zsh-fsh/archive/main.tar.gz"
   path = "themes/catppuccin-{{ . }}.ini"
