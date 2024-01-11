@@ -102,13 +102,23 @@
   refreshPeriod = "1h"
 {{ end }}
 
-[".config/k9s/skin.yml"]
+{{ range .catppuccinFlavours }}
+[".config/k9s/skins/catppuccin-{{ . }}.yaml"]
   type = "archive-file"
   url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
-  path = "dist/mocha.yml"
+  path = "dist/catppuccin-{{ . }}.yaml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
+
+[".config/k9s/skins/catppuccin-{{ . }}-transparent.yaml"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
+  path = "dist/catppuccin-{{ . }}-transparent.yaml"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/kitty/themes/{{ . }}.conf"]
