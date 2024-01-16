@@ -11,13 +11,23 @@ return {
       if vim.g.neovide then transparent_background = false end
 
       return utils.extend_tbl(opts, {
-        -- transparent_background = transparent_background,
-        -- native_lsp = {
-        --   enabled = true,
-        -- },
+        alpha = true,
+        dropbar = {
+          enabled = true,
+          color_mode = false,
+        },
+        neotest = true,
+        neotree = true,
+        lsp_trouble = true,
+        noice = true,
+        notify = true,
+        overseer = true,
+        term_colors = true,
+        transparent_background = transparent_background,
+        ts_rainbow2 = true,
+        which_key = true,
       })
     end,
-    term_colors = true,
   },
 
   { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
