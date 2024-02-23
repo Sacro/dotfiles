@@ -6,7 +6,7 @@
   "alpha-nvim": { "branch": "main", "commit": "1356b9ef31b985d541d94314f2cf73c61124bf1d" },
   "astrocommunity": { "branch": "v4", "commit": "fbbe615d949983515551ac738799f288f668ae53" },
   "astrocore": { "branch": "main", "commit": "d8581526b156a5b6ed6fea57badf589cd649bb52" },
-  "astrolsp": { "branch": "main", "commit": "2c010a92114098d4e02f2a369c1f951c0c6d6191" },
+  "astrolsp": { "branch": "main", "commit": "f075bf624863659878ee57a0b9dec57b0e60af8f" },
   "astrotheme": { "branch": "main", "commit": "d96b532d2f629e0d9b55368a38debc776c3a9d32" },
   "astroui": { "branch": "main", "commit": "3a70f3067ca089afe67c567c82b9b9ae70e85d09" },
   "better-escape.nvim": { "branch": "master", "commit": "7e86edafb8c7e73699e0320f225464a298b96d12" },
