@@ -5,7 +5,11 @@
 ---@type LazySpec
 return {
   -- TODO: Remove branch v4 on release
-  { "AstroNvim/astrocommunity", branch = "v4" },
+  {
+    "AstroNvim/astrocommunity",
+    branch = "v4",
+    -- dev = true,
+  },
 
   -- bars-and-lines
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
