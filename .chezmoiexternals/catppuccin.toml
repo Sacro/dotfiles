@@ -6,11 +6,11 @@
   refreshPeriod = "1h"
   include = ["*/*.yml"]
 
-{{ range .catppuccinFlavours }}
-[".config/bat/themes/Catppuccin-{{ . }}.tmTheme"]
+{{ range .catppuccinFlavoursTitleCase }}
+[".config/bat/themes/Catppuccin {{ . }}.tmTheme"]
   type = "archive-file"
   url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
-  path = "Catppuccin-{{ . }}.tmTheme"
+  path = "themes/Catppuccin {{ . }}.tmTheme"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
