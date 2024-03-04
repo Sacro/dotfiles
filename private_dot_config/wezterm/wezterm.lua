@@ -51,6 +51,7 @@ config.font = wezterm.font_with_fallback({
 			"ss14",
 			"ss15",
 			"ss16",
+			"ss17",
 		},
 	},
 	"Symbols Nerd Font",

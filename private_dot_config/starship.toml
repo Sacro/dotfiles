@@ -68,6 +68,10 @@ home_symbol = "~"
 read_only = " 󰌾"
 truncation_symbol = ""
 
+[direnv]
+symbol = "direnv "
+
+
 [docker_context]
 symbol = " "
 

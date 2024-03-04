@@ -90,14 +90,14 @@ plugins=(
     bgnotify branch bun
     catimg colored-man-pages colorize composer copypath cp
     deno dircycle direnv dirhistory docker docker-compose
-    emoji emotty encode64 extract
+    emoji emotty encode64 extract eza
     fabric fancy-ctrl-z fd firewalld fluxcd frontend-search fzf
     gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
     helm heroku history httpie
     iterm2
     jira jsontools
     kubectl kubectx
-    macos man mercurial microk8s minikube mosh
+    macos man mercurial microk8s minikube mise mosh
     nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
     pep8 perl perms pip podman postgres pre-commit profiles pyenv pylint python
     qodana qrcode
@@ -137,7 +137,6 @@ if type pyenv &>/dev/null; then
         path=("$(pyenv root)/shims" "$path[@]")
     fi
 fi
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -251,13 +250,6 @@ export FZF_DEFAULT_OPTS=" \
 # ccat
 ZSH_COLORIZE_STYLE=monokai
 
-# LS
-if type eza &>/dev/null; then
-    alias ls='eza'
-elif type lsd &>/dev/null; then
-    alias ls='lsd'
-fi
-
 # PHP
 export COMPOSER_HOME=$HOME/.composer
 path=("${COMPOSER_HOME}/vendor/bin" "$path[@]")
@@ -291,10 +283,9 @@ if [ -d "$HOME/.dotnet/tools" ] ; then
     path=("$HOME/.dotnet/tools" "$path[@]")
 fi
 
-
 # Ruby
-if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ; then
-    path=("$HOME/.local/share/gem/ruby/3.0.0/bin" "$path[@]")
+if [ -d "$HOME/.local/share/gem/ruby/3.3.0/bin" ] ; then
+    path=("$HOME/.local/share/gem/ruby/3.3.0/bin" "$path[@]")
 fi
 
 # Snap
@@ -371,12 +362,6 @@ fi
 # QT
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt6ct
-
-# # RTX
-if type rtx &>/dev/null; then
-    eval "$(rtx activate zsh)"
-    # rtx completion zsh > ~/.local/share/zsh/site-functions/_rtx
-fi
 
 # Rust
 if [ -d "$HOME/.cargo/bin" ] ; then
