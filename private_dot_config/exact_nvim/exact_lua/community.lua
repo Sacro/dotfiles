@@ -78,6 +78,7 @@ return {
   { import = "astrocommunity.pack.just" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.ps1" },
@@ -101,6 +102,10 @@ return {
 
   -- project
   { import = "astrocommunity.project.projectmgr-nvim" },
+
+  -- recipies
+  { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.recipes.vscode" },
 
   -- scrolling
   -- { import = "astrocommunity.scrolling.mini-animate" },

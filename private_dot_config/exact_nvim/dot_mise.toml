@@ -1,0 +1,9 @@
+[env]
+'_'.python.venv = { path = ".venv", create = true }
+
+[tools]
+lua = "latest"
+perl = "latest"
+poetry = { version = 'latest', pyproject = 'pyproject.toml' }
+python = "latest"
+ruby = "latest"
