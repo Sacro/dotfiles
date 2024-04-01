@@ -21,8 +21,6 @@ return {
     },
     -- Icons can be configured throughout the interface
     icons = {
-      -- Heirline icons
-      --
       -- configure the loading of the lsp in the status line
       LSPLoading1 = "⠋",
       LSPLoading2 = "⠙",
