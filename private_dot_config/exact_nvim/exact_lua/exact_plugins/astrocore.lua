@@ -1,33 +1,17 @@
-if true then
-  -- local node_host_prog = "~/.local/share/mise/shims/neovim-node-host"
-  local node_host_prog = "~/.local/share/mise/installs/node/lts/bin/neovim-node-host"
-
-  local python3_host_prog = "~/.config/nvim/.venv/bin/python"
-  if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
-
-  -- local ruby_host_prog = "~/.local/share/mise/shims/neovim-ruby-host"
-  -- local ruby_host_prog = "~/.local/share/mise/installs/ruby/latest/bin/neovim-ruby-host"
-  -- local ruby_host_prog = "/home/ben/.local/share/mise/installs/ruby/3.3.0/bin/neovim-ruby-host"
-
-  return {
-    "AstroNvim/astrocore",
-    ---@type AstroCoreOpts
-    opts = {
-      options = {
-        g = {
-          node_host_prog = node_host_prog,
-          python3_host_prog = python3_host_prog,
-          -- ruby_host_prog = ruby_host_prog,
-        },
-      },
-    },
-  }
-end
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
+
+-- local node_host_prog = "~/.local/share/mise/shims/neovim-node-host"
+local node_host_prog = "~/.local/share/mise/installs/node/lts/bin/neovim-node-host"
+
+local python3_host_prog = "~/.config/nvim/.venv/bin/python"
+if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
+
+-- local ruby_host_prog = "~/.local/share/mise/shims/neovim-ruby-host"
+-- local ruby_host_prog = "~/.local/share/mise/installs/ruby/latest/bin/neovim-ruby-host"
+-- local ruby_host_prog = "/home/ben/.local/share/mise/installs/ruby/3.3.0/bin/neovim-ruby-host"
 
 ---@type LazySpec
 return {
@@ -61,6 +45,9 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        node_host_prog = node_host_prog,
+        python3_host_prog = python3_host_prog,
+        -- ruby_host_prog = ruby_host_prog,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -71,14 +58,8 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
+        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {

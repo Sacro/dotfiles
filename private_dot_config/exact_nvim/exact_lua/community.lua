@@ -11,7 +11,7 @@ return {
 
   -- bars-and-lines
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 
   -- code-runner
   { import = "astrocommunity.code-runner.overseer-nvim" },
@@ -115,7 +115,7 @@ return {
 
   -- utility
   -- { import = "astrocommunity.utility.mason-tool-installer-nvim" },
-  { import = "astrocommunity.utility.neodim" },
+  -- { import = "astrocommunity.utility.neodim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.nvim-toggler" },
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
