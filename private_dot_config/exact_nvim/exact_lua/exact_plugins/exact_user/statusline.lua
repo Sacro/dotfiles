@@ -103,7 +103,10 @@ return {
         },
 
         -- add a component for the current git branch if it exists and use no separator for the sections
-        status.component.git_branch { padding = { left = 1 }, surround = { separator = "none" } },
+        {
+          status.component.builder { padding = { left = 1 } },
+          status.component.git_branch {},
+        },
 
         -- add a component for the current git diff if it exists and use no separator for the sections
         status.component.git_diff { padding = { left = 1 }, surround = { separator = "none" } },

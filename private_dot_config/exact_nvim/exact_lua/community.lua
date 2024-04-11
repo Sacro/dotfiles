@@ -26,9 +26,11 @@ return {
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
   -- diagnostics
+  -- { import = "astrocommunity.diagnostics.error-lens-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   -- editing-support
+  { import = "astrocommunity.editing-support.nvim-context-vt" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.suda-vim" },
@@ -50,6 +52,7 @@ return {
   { import = "astrocommunity.indent.mini-indentscope" },
 
   -- lsp
+  { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.lsp.nvim-lint" },
 
