@@ -57,8 +57,8 @@ config.font = wezterm.font_with_fallback({
 	"Symbols Nerd Font",
 })
 config.font_size = 12
--- config.freetype_load_flags = "NO_HINTING"
-config.line_height = 1.1
+config.freetype_load_flags = "NO_HINTING"
+config.line_height = 1.25
 
 -- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font"})
 -- config.font_size = 14
