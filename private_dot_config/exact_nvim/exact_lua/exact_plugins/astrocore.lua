@@ -4,7 +4,8 @@
 --       as this provides autocomplete and documentation while editing
 
 -- local node_host_prog = "~/.local/share/mise/shims/neovim-node-host"
-local node_host_prog = "~/.local/share/mise/installs/node/lts/bin/neovim-node-host"
+-- local node_host_prog = "~/.local/share/mise/installs/node/lts/bin/neovim-node-host"
+local node_host_prog = "~/.config/nvim/node_modules/neovim/bin/cli.js"
 
 local python3_host_prog = "~/.config/nvim/.venv/bin/python"
 if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
