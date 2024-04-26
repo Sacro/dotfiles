@@ -1,4 +1,6 @@
 lazy-lock.json
 node_modules
+.pnpm.cjs
+pnpm-lock.yaml
 .venv
 
