@@ -1,6 +1,6 @@
 catppuccinCursorTheme = 'Catppuccin-Mocha-Blue-Cursors'
 catppuccinFlavours = ['frappe', 'latte', 'macchiato', 'mocha']
 catppuccinFlavoursTitleCase = ['Frappe', 'Latte', 'Macchiato', 'Mocha']
-catppuccinGtkTheme = 'Catppuccin-Mocha-Standard-Blue-Dark'
+catppuccinGtkTheme = 'catppuccin-mocha-blue-standard+default'
 
 onepasswordAccount = 'ben@benwoodward.me.uk'

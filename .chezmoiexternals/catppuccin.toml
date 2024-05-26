@@ -53,10 +53,10 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
-[".config/gitui/{{ . }}.ron"]
+[".config/gitui/catppuccin-{{ . }}.ron"]
   type = "archive-file"
   url = "https://github.com/catppuccin/gitui/archive/main.tar.gz"
-  path = "theme/{{ . }}.ron"
+  path = "themes/catppuccin-{{ . }}.ron"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
