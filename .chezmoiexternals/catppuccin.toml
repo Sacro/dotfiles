@@ -236,7 +236,7 @@ type = "archive-file"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  include = ["{{ .catppuccinGtkTheme }}/**"]
+  include = ["{{ .catppuccinGtkTheme }}-dark/**"]
 {{ end }}
 
 # {{ if eq $.chezmoi.os "windows" }}
