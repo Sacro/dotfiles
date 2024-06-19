@@ -130,6 +130,16 @@
   refreshPeriod = "1h"
 {{ end }}
 
+{{ range .catppuccinFlavours }}
+[".config/micro/colorschemes/catppuccin-{{ . }}.micro"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/micro/archive/main.tar.gz"
+  path = "src/catppuccin-{{ . }}.micro"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
+
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
   type = "archive-file"
@@ -151,6 +161,22 @@
   stripComponents = 2
   refreshPeriod = "1h"
   include = ["*/catppuccin/**"]
+
+[".config/yazi/Catppuccin Mocha.tmTheme"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
+  path = "themes/Catppuccin Mocha.tmTheme"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+[".config/yazi/theme.toml"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/yazi/archive/main.tar.gz"
+  path = "themes/mocha.toml"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
 
 # Now maintined in Zellij
 #[".config/zellij/themes/catppuccin.yaml"]
