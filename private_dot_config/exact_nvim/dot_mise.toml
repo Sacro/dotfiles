@@ -9,4 +9,4 @@ perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
 python = "latest"
-ruby = "latest"
+ruby = "system"

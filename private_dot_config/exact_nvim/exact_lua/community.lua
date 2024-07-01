@@ -11,10 +11,13 @@ return {
 
   -- bars-and-lines
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  -- { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+  { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
 
   -- code-runner
   { import = "astrocommunity.code-runner.overseer-nvim" },
+
+  -- completion
+  { import = "astrocommunity.completion.cmp-emoji" },
 
   -- colorscheme
   { import = "astrocommunity.colorscheme.catppuccin" },
@@ -79,7 +82,7 @@ return {
   { import = "astrocommunity.pack.just" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.nix" },
+  -- { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.proto" },
@@ -93,7 +96,7 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.vue" },
+  -- { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.zig" },
 
@@ -118,10 +121,11 @@ return {
   { import = "astrocommunity.test.nvim-coverage" },
 
   -- utility
-  -- { import = "astrocommunity.utility.mason-tool-installer-nvim" },
-  -- { import = "astrocommunity.utility.neodim" },
+  { import = "astrocommunity.utility.mason-tool-installer-nvim" },
+  { import = "astrocommunity.utility.neodim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.nvim-toggler" },
+  { import = "astrocommunity.utility.telescope-lazy-nvim" },
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
 
