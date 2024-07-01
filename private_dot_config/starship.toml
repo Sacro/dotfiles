@@ -127,6 +127,9 @@ renamed = "󰄾"
 deleted = "󰅖"
 typechanged = ""
 
+[gleam]
+symbol = " "
+
 [golang]
 symbol = " "
 
@@ -167,7 +170,7 @@ symbol = " "
 symbol = " "
 
 [kubernetes]
-disabled = false
+disabled = true
 detect_folders = ["clusters"]
 symbol = "󱃾 "
 
@@ -188,6 +191,9 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 truncation_symbol = "…"
 
+[nats]
+symbol = " "
+
 [nim]
 symbol = "󰆥 "
 
@@ -200,8 +206,11 @@ symbol = " "
 [ocaml]
 symbol = " "
 
+[odin]
+symbol = "Ø "
+
 [opa]
-symbol = "🪖  "
+symbol = "󱢙  "
 
 [openstack]
 symbol = "󰅟  "
