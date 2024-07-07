@@ -10,6 +10,7 @@ local node_host_prog = "~/.config/nvim/node_modules/neovim/bin/cli.js"
 local python3_host_prog = "~/.config/nvim/.venv/bin/python"
 if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
 
+local ruby_host_prog = "~/.local/share/mise/installs/ruby/3.3/bin/neovim-ruby-host"
 -- local ruby_host_prog = "~/.local/share/mise/shims/neovim-ruby-host"
 -- local ruby_host_prog = "~/.local/share/mise/installs/ruby/latest/bin/neovim-ruby-host"
 -- local ruby_host_prog = "/home/ben/.local/share/mise/installs/ruby/3.3.0/bin/neovim-ruby-host"
@@ -48,7 +49,7 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
         node_host_prog = node_host_prog,
         python3_host_prog = python3_host_prog,
-        -- ruby_host_prog = ruby_host_prog,
+        ruby_host_prog = ruby_host_prog,
       },
     },
     -- Mappings can be configured through AstroCore as well.

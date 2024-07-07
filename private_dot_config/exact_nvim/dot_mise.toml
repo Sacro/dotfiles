@@ -2,11 +2,11 @@
 '_'.python.venv = { path = ".venv", create = true }
 
 [tools]
-lua = "latest"
+lua = "5.1.5"
 node = "lts"
 "npm:neovim" = "latest"
 perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
 python = "latest"
-ruby = "system"
+ruby = "3.3"

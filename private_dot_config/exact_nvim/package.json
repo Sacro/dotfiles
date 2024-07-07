@@ -1,6 +1,6 @@
 {
   "name": "nvim",
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.4.0",
   "dependencies": {
     "neovim": "^5.1.0"
   }
