@@ -197,6 +197,14 @@
   refreshPeriod = "1h"
 {{ end }}
 
+[".local/share/delta/themes/catppuccin.gitconfig"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/delta/archive/main.tar.gz"
+  path = "catppuccin.gitconfig"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
 {{ range .catppuccinFlavours }}
 [".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
   type = "archive-file"
