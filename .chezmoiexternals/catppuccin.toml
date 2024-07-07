@@ -223,11 +223,11 @@
   include = ["*/src/**"]
 
 
-{{ range .catppuccinFlavoursTitleCase }}
-[".local/share/konsole/Catppuccin-{{ . }}.colorscheme"]
+{{ range .catppuccinFlavours }}
+[".local/share/konsole/catppuccin-{{ . }}.colorscheme"]
 type = "archive-file"
   url = "https://github.com/catppuccin/konsole/archive/main.tar.gz"
-  path = "Catppuccin-{{ . }}.colorscheme"
+  path = "themes/catppuccin-{{ . }}.colorscheme"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
