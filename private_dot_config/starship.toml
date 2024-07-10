@@ -6,7 +6,7 @@ add_newline = true
 command_timeout = 2000
 
 [aws]
-symbol = "󰸏 "
+symbol = "  "
 expiration_symbol = "󰯆"
 
 [azure]
@@ -52,7 +52,7 @@ symbol = " "
 symbol = "󱣘"
 
 [crystal]
-symbol = "󰬯 "
+symbol = " "
 
 [daml]
 symbol = "Λ "
@@ -71,7 +71,6 @@ truncation_symbol = ""
 [direnv]
 symbol = "direnv "
 
-
 [docker_context]
 symbol = " "
 
@@ -80,7 +79,7 @@ symbol = " "
 format = "via [$symbol($version )(󰓾 $tfm )]($style)"
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
@@ -221,6 +220,7 @@ disabled = false
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
+AlmaLinux = " "
 Amazon = " "
 Android = " "
 Arch = "[ ](blue)"
@@ -229,13 +229,13 @@ CentOS = " "
 Debian = " "
 DragonFly = " "
 Emscripten = " "
-EndeavourOS = " "
+EndeavourOS = " "
 Fedora = " "
 FreeBSD = " "
-Garuda = " "
+Garuda = "󰛓 "
 Gentoo = " "
 HardenedBSD = "󰞌 "
-Illumos = " "
+Illumos = "󰈸 "
 Kali = " "
 Linux = " "
 Mabox = " "
@@ -243,10 +243,10 @@ Macos = " "
 Manjaro = " "
 Mariner = " "
 MidnightBSD = " "
-Mint = "󰣭 "
+Mint = " "
 NetBSD = " "
 NixOS = "[ ](blue)"
-OpenBSD = " "
+OpenBSD = "󰈺 "
 OpenCloudOS = " "
 openEuler = " "
 openSUSE = " "
@@ -255,9 +255,9 @@ Pop = " "
 Raspbian = " "
 Redhat = " "
 RedHatEnterprise = " "
-Redox = "󰀘 "
 RockyLinux = " "
-Solus = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
 SUSE = " "
 Ubuntu = "[ ](peach)"
 Ultramarine = "  "
@@ -322,7 +322,7 @@ symbol = "⨁ "
 symbol = " "
 
 [red]
-symbol = "[󰔶](red) "
+symbol = "[󰔶 ](red)"
 
 [rlang]
 symbol = "󰟔 "
