@@ -51,18 +51,23 @@ config.font = wezterm.font_with_fallback({
 			"ss16",
 			"ss17",
 		},
+		-- scale = 1.0,
 	},
-	"Symbols Nerd Font",
+	{
+		family = "Symbols Nerd Font Mono",
+	},
 })
-config.font_size = 12
-config.freetype_load_flags = "NO_HINTING"
-config.line_height = 1.25
+
+config.font_size = 11
+-- config.freetype_load_flags = "NO_AUTOHINT"
+-- config.freetype_load_flags = "NO_HINTING"
+config.freetype_load_flags = "NO_AUTOHINT|NO_HINTING"
+config.line_height = 1.2
 
 -- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font"})
 -- config.font_size = 14
--- config.line_height = 1.2
-
-config.use_cap_height_to_scale_fallback_fonts = true
+-- config.line_height = 1.1
+-- config.use_cap_height_to_scale_fallback_fonts = true
 
 config.default_prog = (wezterm.target_triple == "x86_64-pc-windows-msvc" and { "pwsh.exe" } or nil)
 
