@@ -14,17 +14,17 @@ $Flavor = $Catppuccin['Mocha']
 # Write-Host $Flavor.Blocks()
 
 # Modified from the built-in prompt function at: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts
-function prompt {
-  $(if (Test-Path variable:/PSDebugContext) {
-      "$($Flavor.Red.Foreground())[DBG]: "
-    }
-    else {
-      ''
-    }) + "$($Flavor.Teal.Foreground())PS $($Flavor.Yellow.Foreground())" + $(Get-Location) +
-  "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1) {
-      '>>'
-    }) + '> ' + $($PSStyle.Reset)
-}
+# function prompt {
+#   $(if (Test-Path variable:/PSDebugContext) {
+#       "$($Flavor.Red.Foreground())[DBG]: "
+#     }
+#     else {
+#       ''
+#     }) + "$($Flavor.Teal.Foreground())PS $($Flavor.Yellow.Foreground())" + $(Get-Location) +
+#   "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1) {
+#       '>>'
+#     }) + '> ' + $($PSStyle.Reset)
+# }
 # The above example requires the automatic variable $PSStyle to be available, so can be only used in PS 7.2+
 # Replace $PSStyle.Reset with "`e[0m" for PS 6.0 through PS 7.1 or "$([char]27)[0m" for PS 5.1
 
@@ -98,16 +98,21 @@ Import-Module gsudoModule
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs
 
-# Golangci-lint
+# GitHub CLI
 if (Get-Command "gh" -ErrorAction SilentlyContinue)
 {
-    gh completion -s powershell | Out-String | Invoke-Expression
+    $(gh completion -s powershell | Out-String | Invoke-Expression) 2> $null
+}
+
+# GitLab CLI
+if (Get-Command "glab" -ErrorAction SilentlyContinue) {
+  $(glab completion -s powershell | Out-String | Invoke-Expression) 2> $null
 }
 
 # Golangci-lint
 if (Get-Command "golangci-lint" -ErrorAction SilentlyContinue)
 {
-    golangci-lint completion powershell | Out-String | Invoke-Expression
+    $(golangci-lint completion powershell | Out-String | Invoke-Expression) 2> $null
 }
 
 
@@ -118,7 +123,7 @@ if (Get-Command "goreleaser" -ErrorAction SilentlyContinue) {
 
 # Jira
 if (Get-Command "jira" -ErrorAction SilentlyContinue) {
-  jira completion powershell | Out-String | Invoke-Expression
+  $(jira completion powershell | Out-String | Invoke-Expression) 2> $null
 }
 
 # Komorebi
@@ -141,23 +146,46 @@ Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.Full
 
 # Scoop Search
 if (Get-Command "scoop-search" -ErrorAction SilentlyContinue) {
-  Invoke-Expression (&scoop-search --hook)
+  $(Invoke-Expression (&scoop-search --hook)) 2> $null
 }
+
+# # Oh My Posh
+# if(Get-Command "oh-my-posh" -ErrorAction SilentlyContinue) {
+#   oh-my-posh init pwsh --config ~/scoop/apps/oh-my-posh/current/themes/catppuccin_mocha.omp.json | Invoke-Expression
+# }
 
 # Starship
 if (Get-Command "starship" -ErrorAction SilentlyContinue)
 {
+  function Invoke-Starship-TransientFunction {
+    &starship module character
+  }
+
   Invoke-Expression (&starship init powershell)
+
+  # Enable-TransientPrompt
 }
 
+# Talhelper
 if (Get-Command "talhelper" -ErrorAction SilentlyContinue)
 {
-  Invoke-Expression (& { (talhelper completion powershell | Out-String) })
+  $(talhelper completion powershell | Out-String | Invoke-Expression) 2> $null
+}
+
+# Tpi
+if (Get-Command "tpi" -ErrorAction SilentlyContinue)
+{
+  $(tpi -g powershell | Out-String | Invoke-Expression) 2> $null
+}
+
+# Vfox
+if (Get-Command "vfox" -ErrorAction SilentlyContinue)
+{
+  $("$(vfox activate pwsh)" | Invoke-Expression) 2> $null
 }
 
 # Zoxide
-# LSD
 if (Get-Command "zoxide" -ErrorAction SilentlyContinue)
 {
-  Invoke-Expression (& { (zoxide init powershell | Out-String) })
+  $(zoxide init powershell | Out-String | Invoke-Expression) 2> $null
 }
