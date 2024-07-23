@@ -86,12 +86,12 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     1password
-    adb alias-finder aliases archlinux autopep8 aws
+    alias-finder aliases archlinux autopep8 aws
     bgnotify branch bun
     catimg colored-man-pages colorize composer copypath cp
     deno dircycle direnv dirhistory docker docker-compose
     emoji emotty encode64 extract eza
-    fabric fancy-ctrl-z fd firewalld fluxcd frontend-search fzf
+    fabric fancy-ctrl-z firewalld fluxcd frontend-search fzf
     gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
     helm heroku history httpie
     iterm2
@@ -101,7 +101,7 @@ plugins=(
     nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
     pep8 perl perms pip podman postgres pre-commit profiles pyenv pylint python
     qodana qrcode
-    react-native redis-cli repo ripgrep rsync ruby rust
+    react-native redis-cli repo rsync ruby rust
     safe-paste salt screen skaffold starship sudo svn systemadmin systemd
     taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox transfer
     ufw universalarchive urltools
