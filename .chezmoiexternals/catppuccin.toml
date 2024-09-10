@@ -140,6 +140,14 @@
   refreshPeriod = "1h"
 {{ end }}
 
+[".config/process-compose/theme.yaml"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/process-compose/archive/main.tar.gz"
+  path = "themes/catppuccin-mocha.yaml"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
   type = "archive-file"
@@ -187,11 +195,21 @@
 #  stripComponents = 1
 #  refreshPeriod = "1h"
 
+# {{ range .catppuccinFlavours }}
+# [".fleet/themes/catppuccin-{{ . }}.json"]
+#   type = "archive-file"
+#   url = "https://github.com/kkrypt0nn/jetbrains-fleet/archive/main.tar.gz"
+#   path = "themes/catppuccin-{{ . }}.json"
+#   exact = true
+#   stripComponents = 1
+#   refreshPeriod = "1h"
+# {{ end }}
+
 {{ range .catppuccinFlavours }}
-[".fleet/themes/catppuccin-{{ . }}.json"]
+[".local/share/gitkraken/themes/{{ . }}.jsonc"]
   type = "archive-file"
-  url = "https://github.com/kkrypt0nn/jetbrains-fleet/archive/main.tar.gz"
-  path = "themes/catppuccin-{{ . }}.json"
+  url = "https://github.com/catppuccin/gitkraken/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.jsonc"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
