@@ -181,7 +181,7 @@
 [".config/yazi/theme.toml"]
   type = "archive-file"
   url = "https://github.com/catppuccin/yazi/archive/main.tar.gz"
-  path = "themes/mocha.toml"
+  path = "themes/mocha/{{ .catppuccinYaziTheme }}.toml"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
