@@ -6,11 +6,11 @@ add_newline = true
 command_timeout = 2000
 
 [aws]
-symbol = "  "
+symbol = "  "
 expiration_symbol = "󰯆"
 
 [azure]
-symbol = "󰠅 "
+symbol = " "
 
 [battery]
 full_symbol = "󰁹 "
@@ -23,10 +23,10 @@ discharging_symbol = "󰂃 "
 symbol = " "
 
 [bun]
-symbol = " "
+symbol = " "
 
 [c]
-symbol = " "
+symbol = " "
 
 [character]
 success_symbol = "[❯](green)"
@@ -40,7 +40,7 @@ vimcmd_visual_symbol = "[❮](bold yellow)"
 disabled = true
 
 [cmake]
-symbol = "△ "
+symbol = " "
 
 [cobol]
 symbol = " "
@@ -49,10 +49,10 @@ symbol = " "
 symbol = " "
 
 [container]
-symbol = "󱣘"
+symbol = ""
 
 [crystal]
-symbol = " "
+symbol = " "
 
 [daml]
 symbol = "Λ "
@@ -61,7 +61,7 @@ symbol = "Λ "
 symbol = " "
 
 [deno]
-symbol = "🦕 "
+symbol = " "
 
 [directory]
 home_symbol = "~"
@@ -72,17 +72,17 @@ truncation_symbol = ""
 symbol = "direnv "
 
 [docker_context]
-symbol = " "
+symbol = " "
 
 [dotnet]
 symbol = " "
 format = "via [$symbol($version )(󰓾 $tfm )]($style)"
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
-symbol = " "
+symbol = " "
 
 [erlang]
 symbol = " "
@@ -99,7 +99,7 @@ truncation_symbol = "…"
 
 [gcloud]
 disabled = true
-symbol = "󰅟  "
+symbol = "  "
 
 [git_branch]
 symbol = " "
@@ -130,10 +130,10 @@ typechanged = ""
 symbol = " "
 
 [golang]
-symbol = " "
+symbol = " "
 
 [gradle]
-symbol = " "
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -142,10 +142,10 @@ symbol = " "
 symbol = " "
 
 [haxe]
-symbol = " "
+symbol = " "
 
 [helm]
-symbol = "⎈ "
+symbol = " "
 
 [hg_branch]
 disabled = false
@@ -156,22 +156,22 @@ truncation_symbol = "…"
 ssh_symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [jobs]
 symbol_threshold = 1
 symbol = "✦"
 
 [julia]
-symbol = " "
+symbol = " "
 
 [kotlin]
-symbol = " "
+symbol = " "
 
 [kubernetes]
 disabled = true
 detect_folders = ["clusters"]
-symbol = "󱃾 "
+symbol = " "
 
 [line_break]
 disabled = false
@@ -181,7 +181,7 @@ disabled = false
 ssh_only = true
 
 [lua]
-symbol = " "
+symbol = " "
 
 [memory_usage]
 symbol = "󰍛 "
@@ -194,16 +194,16 @@ truncation_symbol = "…"
 symbol = " "
 
 [nim]
-symbol = "󰆥 "
+symbol = " "
 
 [nix_shell]
-symbol = " "
+symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [ocaml]
-symbol = " "
+symbol = " "
 
 [odin]
 symbol = "Ø "
@@ -212,7 +212,7 @@ symbol = "Ø "
 symbol = "󱢙  "
 
 [openstack]
-symbol = "󰅟  "
+symbol = "  "
 
 [os]
 disabled = false
@@ -297,23 +297,23 @@ mantle = "#181825"
 crust = "#11111b"
 
 [perl]
-symbol = " "
+symbol = " "
 
 [php]
-symbol = " "
+symbol = " "
 
 [pijul_channel]
 symbol = " "
 truncation_symbol = "…"
 
 [pulumi]
-symbol = " "
+symbol = " "
 
 [purescript]
-symbol = " "
+symbol = " "
 
 [python]
-symbol = " "
+symbol = " "
 
 [quarto]
 symbol = "⨁ "
@@ -325,10 +325,10 @@ symbol = " "
 symbol = "[󰔶 ](red)"
 
 [rlang]
-symbol = "󰟔 "
+symbol = " "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = " "
@@ -357,10 +357,10 @@ symbol = "󰹹  "
 symbol = ""
 
 [solidity]
-symbol = "S "
+symbol = " "
 
 [spack]
-symbol = "🅢 "
+symbol = " "
 
 [status]
 map_symbol = false
@@ -378,7 +378,7 @@ symbol = "󱅧 "
 symbol = " "
 
 [terraform]
-symbol = " "
+symbol = " "
 
 [time]
 disabled = true
@@ -389,7 +389,7 @@ symbol = "󰰤 "
 [username]
 
 [vagrant]
-symbol = "⍱ "
+symbol = " "
 
 [vcsh]
 symbol = ""
@@ -398,4 +398,4 @@ symbol = ""
 symbol = " "
 
 [zig]
-symbol = " "
+symbol = " "
