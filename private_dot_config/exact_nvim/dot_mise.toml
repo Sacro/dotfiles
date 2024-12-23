@@ -3,10 +3,10 @@
 
 [tools]
 lua = "5.1.5"
-node = "lts"
+node = "22"
 "npm:neovim" = "latest"
 perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
-python = "latest"
+python = "3.12"
 ruby = "3.3"
