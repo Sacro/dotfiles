@@ -96,14 +96,14 @@ plugins=(
     helm heroku history httpie
     iterm2
     jira jsontools
-    kubectl kubectx
+    k9s kubectl kubectx
     macos man mercurial microk8s minikube mise mosh
     nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
     pep8 perl perms pip podman postgres pre-commit profiles pyenv pylint python
     qodana qrcode
     react-native redis-cli repo rsync ruby rust
     safe-paste salt screen skaffold starship sudo svn systemadmin systemd
-    taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox transfer
+    tailscale taskwarrior terraform term_tab tig tmux tmux-cssh tmuxinator toolbox transfer
     ufw universalarchive urltools
     vscode
     wd web-search
