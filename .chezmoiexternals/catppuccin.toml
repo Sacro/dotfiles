@@ -148,11 +148,11 @@
   stripComponents = 1
   refreshPeriod = "1h"
 
-{{ range .catppuccinFlavoursTitleCase }}
-[".config/qt5ct/colors/Catppuccin-{{ . }}.conf"]
+{{ range .catppuccinFlavours }}
+[".config/qt5ct/colors/catppuccin-{{ . }}-blue.conf"]
   type = "archive-file"
   url = "https://github.com/catppuccin/qt5ct/archive/main.tar.gz"
-  path = "themes/Catppuccin-{{ . }}.conf"
+  path = "themes/catppuccin-{{ . }}-blue.conf"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
