@@ -89,7 +89,7 @@ plugins=(
     alias-finder aliases archlinux autopep8 aws
     bgnotify branch bun
     catimg colored-man-pages colorize composer copypath cp
-    deno dircycle direnv dirhistory docker docker-compose
+    deno dircycle dirhistory docker docker-compose
     emoji emotty encode64 extract eza
     fabric fancy-ctrl-z firewalld fluxcd frontend-search fzf
     gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
@@ -122,6 +122,10 @@ fi
 
 if type brew &>/dev/null; then
     fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
+fi
+
+if type mise &>/dev/null; then
+    export MISE_NODE_COREPACK=false
 fi
 
 # Python
@@ -376,3 +380,4 @@ fi
 if type vivid &>/dev/null; then
     export LS_COLORS="$(vivid generate catppuccin-mocha)"
 fi
+
