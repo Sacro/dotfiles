@@ -170,6 +170,14 @@
   refreshPeriod = "1h"
   include = ["*/catppuccin/**"]
 
+[".config/television/themes/"]
+  type = "archive"
+  url = "https://github.com/catppuccin/television/archive/main.tar.gz"
+  exact = true
+  stripComponents = 2
+  refreshPeriod = "1h"
+  include = ["*/themes/**"]
+
 [".config/yazi/Catppuccin Mocha.tmTheme"]
   type = "archive-file"
   url = "https://github.com/catppuccin/bat/archive/main.tar.gz"
