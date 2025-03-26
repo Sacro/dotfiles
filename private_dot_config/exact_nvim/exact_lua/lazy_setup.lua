@@ -1,7 +1,7 @@
 require("lazy").setup({
   {
     "AstroNvim/AstroNvim",
-    version = "^4",
+    version = "^5", -- Remove version tracking to elect for nightly AstroNvim
     import = "astronvim.plugins",
     opts = { -- AstroNvim options must be set here with the `import` key
       mapleader = " ", -- This ensures the leader key must be configured before Lazy is set up
@@ -15,14 +15,8 @@ require("lazy").setup({
   { import = "plugins" },
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
-  dev = {
-    ---@type string | fun(plugin: LazyPlugin): string directory where you store your local plugin projects
-    path = "~/Code/nvim",
-    ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-    patterns = {}, -- For example {"folke"}
-    fallback = false, -- Fallback to git when local plugin doesn't exist
-  },
-  install = { colorscheme = { "astrodark", "habamax" } },
+  install = { colorscheme = { "astrotheme", "habamax" } },
+  ui = { backdrop = 100 },
   performance = {
     rtp = {
       -- disable some rtp plugins, add more to your liking

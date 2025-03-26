@@ -1,12 +1,14 @@
-[env]
-'_'.python.venv = { path = ".venv", create = true }
+[settings]
+python.uv_venv_create_args = ['--seed']
+python.uv_venv_auto = true
 
 [tools]
+"gem:neovim" = "latest"
 lua = "5.1.5"
 node = "22"
-"npm:neovim" = "latest"
 perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
 python = "3.12"
-ruby = "3.3"
+ruby = "latest"
+uv = "latest"
