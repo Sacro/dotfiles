@@ -38,7 +38,6 @@ return {
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
-  { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
   -- diagnostics
   -- { import = "astrocommunity.diagnostics.error-lens-nvim" },
@@ -50,7 +49,6 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.suda-vim" },
-  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
   { import = "astrocommunity.editing-support.vim-doge" },
@@ -59,7 +57,6 @@ return {
 
   -- fuzzy-finder
   { import = "astrocommunity.fuzzy-finder.fzf-lua" },
-  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
 
   -- git
   { import = "astrocommunity.git.diffview-nvim" },
@@ -72,7 +69,7 @@ return {
   { import = "astrocommunity.icon.mini-icons" },
 
   -- indent
-  { import = "astrocommunity.indent.indent-blankline-nvim" },
+  -- { import = "astrocommunity.indent.indent-blankline-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
 
   -- keybinding
@@ -109,6 +106,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.go" },
+  -- { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.pack.harper" },
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.html-css" },
@@ -147,7 +145,6 @@ return {
 
   -- recipes
   { import = "astrocommunity.recipes.neovide" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.vscode-icons" },
 
@@ -176,11 +173,8 @@ return {
   { import = "astrocommunity.utility.live-server-nvim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.utility.neodim" },
-  { import = "astrocommunity.utility.noice-nvim" },
+  -- { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.nvim-toggler" },
-  { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
-  { import = "astrocommunity.utility.telescope-lazy-nvim" },
-  { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
 
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
