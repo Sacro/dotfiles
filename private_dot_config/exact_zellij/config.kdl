@@ -268,10 +268,10 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
     // "file:~/.local/share/zellij/plugins/zjframes.wasm" {
-    //     hide_frame_for_single_pane false
-    //     hide_frame_except_for_search false
-    //     hide_frame_except_for_scroll false
-    //     hide_frame_except_for_fullscreen false
+    //     hide_frame_for_single_pane true
+    //     hide_frame_except_for_search true
+    //     hide_frame_except_for_scroll  true
+    //     hide_frame_except_for_fullscreen true
     // }
 }
  
