@@ -12,3 +12,7 @@ poetry = { version = 'latest', pyproject = 'pyproject.toml' }
 python = "3.12"
 ruby = "latest"
 uv = "latest"
+
+[tasks.installPerlModule]
+description = "Install Perl Module"
+run = "cpanm -n Neovim::Ext"

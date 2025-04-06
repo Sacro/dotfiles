@@ -106,7 +106,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.go" },
-  -- { import = "astrocommunity.pack.godot" },
+  { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.pack.harper" },
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.html-css" },
@@ -156,7 +156,7 @@ return {
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
 
   -- split and window
-  { import = "astrocommunity.split-and-window.edgy-nvim" },
+  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
 
   -- syntax
   { import = "astrocommunity.syntax.vim-sandwich" },
