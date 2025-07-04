@@ -1,21 +1,30 @@
 # Use this for global ignores, and for things in the root directory
 # Otherwise, put a .chezmoiignore lower down.
 
+# General things to ignore
 .oh-my-zsh/cache/*
 **/.pspminfo
 **/.venv/**
 renovate.json
 
+# Ignore MacOS specific things
+{{- if ne .chezmoi.os "darwin" }}
+Library
+{{ end  }}
+
+# Leave steam things alone on SteamOS
 {{- if (and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos")) }}
 .local/share/Steam
 .steam
 {{ end }}
 
+# Ignore Windows specific things
 {{- if ne .chezmoi.os "windows" }}
 AppData
 Documents
 {{ end }}
 
+# Ignore *nix specific things
 {{- if eq .chezmoi.os "windows" }}
 .*/
 !.config
