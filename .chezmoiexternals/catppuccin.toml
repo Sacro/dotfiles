@@ -16,7 +16,6 @@
   refreshPeriod = "1h"
 {{ end }}
 
-
 {{ range .catppuccinFlavours }}
 [".config/btop/themes/catppuccin_{{ . }}.theme"]
   type = "archive-file"
@@ -26,7 +25,6 @@
   stripComponents = 1
   refreshPeriod = "1h"
 {{ end }}
-
 
 {{ range .catppuccinFlavours }}
 {{ if ne $.chezmoi.os "windows" }}
@@ -285,6 +283,14 @@ type = "archive-file"
 [".local/share/powershell/Modules/Catppuccin"]
   type = "archive"
   url = "https://github.com/catppuccin/powershell/archive/main.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
+[".oh-my-zsh/custom/plugins/catppuccin-fzf/catppuccin-fzf.plugin.zsh"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/fzf/archive/main.tar.gz"
+  path = "themes/catppuccin-fzf-{{ .catppuccinTheme }}.sh"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
