@@ -51,6 +51,7 @@ config.font = wezterm.font_with_fallback({
 			"ss16",
 			"ss17",
 		},
+		-- weight = "Regular",
 		-- scale = 1.0,
 	},
 	{
@@ -58,11 +59,17 @@ config.font = wezterm.font_with_fallback({
 	},
 })
 
+config.front_end = "OpenGL"
+config.freetype_load_target = "Light"
+config.freetype_render_target = "HorizontalLcd"
+-- config.cell_width = 1.0
+
 config.font_size = 11
 -- config.freetype_load_flags = "NO_AUTOHINT"
 -- config.freetype_load_flags = "NO_HINTING"
 config.freetype_load_flags = "NO_AUTOHINT|NO_HINTING"
 config.line_height = 1.2
+config.use_cap_height_to_scale_fallback_fonts = true
 
 -- config.font = wezterm.font_with_fallback({"Rec Mono Duotone", "Symbols Nerd Font"})
 -- config.font_size = 14
