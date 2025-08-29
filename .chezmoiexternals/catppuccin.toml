@@ -132,7 +132,7 @@
 [".config/micro/colorschemes/catppuccin-{{ . }}.micro"]
   type = "archive-file"
   url = "https://github.com/catppuccin/micro/archive/main.tar.gz"
-  path = "src/catppuccin-{{ . }}.micro"
+  path = "themes/catppuccin-{{ . }}.micro"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
