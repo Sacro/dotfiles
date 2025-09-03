@@ -356,15 +356,18 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # pnpm
-if [ -d "$HOME/.local/share/pnpm" ]; then
+if [ -d "/Users/ben/Library/pnpm" ]; then 
+    path=("$HOME/Library/pnpm" "$path[@]")
+    export PNPM_HOME="$HOME/Library/pnpm"
+elif [ -d "$HOME/.local/share/pnpm" ]; then
     path=("$HOME/.local/share/pnpm" "$path[@]")
     export PNPM_HOME="$HOME/.local/share/pnpm"
 fi
 
 # export PNPM_HOME="/home/ben/.local/share/pnpm"
 # case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
+#   *":$PNPM_HOME:"* ;;
+#   * export PATH="$PNPM_HOME:$PATH" ;;
 # esac
 
 # PODMAN
@@ -395,3 +398,4 @@ fi
 [ -s "/home/ben/.bun/_bun" ] && source "/home/ben/.bun/_bun"
 
 # zprof
+
