@@ -141,6 +141,11 @@ if (Get-Command "lsd" -ErrorAction SilentlyContinue)
   function lt {lsd --tree}
 }
 
+# GoRelease
+if (Get-Command "pack" -ErrorAction SilentlyContinue) {
+  $(pack completion --shell powershell | Out-String | Invoke-Expression) 2> $null
+}
+
 # Scoop Completion
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
@@ -165,6 +170,13 @@ if (Get-Command "starship" -ErrorAction SilentlyContinue)
 
   # Enable-TransientPrompt
 }
+
+# Talhelper
+if (Get-Command "tailscale" -ErrorAction SilentlyContinue)
+{
+  $(tailscale completion powershell | Out-String | Invoke-Expression) 2> $null
+}
+
 
 # Talhelper
 if (Get-Command "talhelper" -ErrorAction SilentlyContinue)
