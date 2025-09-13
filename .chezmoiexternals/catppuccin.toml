@@ -310,7 +310,7 @@ type = "archive-file"
   ["Appdata/Roaming/Notepad++/themes/catppuccin-{{ . }}.xml"]
     type = "archive-file"
     url = "https://github.com/catppuccin/notepad-plus-plus/archive/main.tar.gz"
-    path = "catppuccin-{{ . }}.xml"
+    path = "themes/catppuccin-{{ . }}.xml"
     exact = true
     stripComponents = 1
     refreshPeriod = "1h"
