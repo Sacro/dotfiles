@@ -234,13 +234,13 @@ if [ -f ~/.config/op/plugins.sh ]; then
 
     }
 
-    function __load_op_completion() {
-        completion_function="$(op completion zsh)"
-        sed -E 's/^( +)_op_plugin_run/\1__my_op_plugin_run/' <<<"${completion_function}"
-    }
+function __load_op_completion() {
+    completion_function="$(op completion zsh)"
+    sed -E 's/^( +)_op_plugin_run/\1__my_op_plugin_run/' <<<"${completion_function}"
+}
 
-    eval "$(__load_op_completion)"
-    compdef _op op
+eval "$(__load_op_completion)"
+compdef _op op
 fi
 
 # Atuin
@@ -256,8 +256,10 @@ if [ -f ~/.fzf.zsh ]; then
     source ~/.fzf.zsh
 fi
 
-if type fzf &> /dev/null && type bat &>/dev/null; then
+if type bat &>/dev/null; then
     alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+elif [ -e ~/.local/share/fzf/themes/catppuccin-fzf-mocha.sh ]; then
+    source ~/.local/share/fzf/themes/catppuccin-fzf-mocha.sh
 fi
 
 # ccat

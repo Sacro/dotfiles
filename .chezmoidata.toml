@@ -3,6 +3,7 @@ catppuccinColors = ['blue', 'flamingo', 'green', 'lavender', 'maroon', 'mauve', 
 catppuccinFlavours = ['frappe', 'latte', 'macchiato', 'mocha']
 catppuccinFlavoursTitleCase = ['Frappe', 'Latte', 'Macchiato', 'Mocha']
 catppuccinTheme = 'mocha'
+catppuccinAtuinTheme = 'catppuccin-mocha-blue'
 catppuccinBatTheme = 'Catppuccin Mocha'
 catppuccinGtkTheme = 'catppuccin-mocha-blue-standard+default'
 catppuccinQtTheme = 'catppuccin-mocha-blue'

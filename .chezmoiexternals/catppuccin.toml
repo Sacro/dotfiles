@@ -4,7 +4,17 @@
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
-  include = ["*/*.yml"]
+  include = ["*/*.toml"]
+
+{{ range $flavour := .catppuccinFlavours }}
+  [".config/atuin/themes/catppuccin-{{ $flavour }}-blue.toml"]
+    type = "archive-file"
+    url = "https://github.com/catppuccin/atuin/archive/main.tar.gz"
+    path = "themes/{{ $flavour }}/catppuccin-{{ $flavour }}-blue.toml"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "1h"
+{{ end }}
 
 {{ range .catppuccinFlavoursTitleCase }}
 [".config/bat/themes/Catppuccin {{ . }}.tmTheme"]
@@ -79,6 +89,16 @@
   stripComponents = 1
   refreshPeriod = "1h"
 {{end}}
+
+{{ range .catppuccinFlavours }}
+[".config/ghostty/themes/catppuccin-{{ . }}.conf"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/ghostty/archive/main.tar.gz"
+  path = "themes/catppuccin-{{ . }}.conf"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
 
 {{ range .catppuccinFlavours }}
 [".config/helix/themes/catppuccin_{{ . }}.toml"]
@@ -228,6 +248,18 @@
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
+
+{{ range $flavour := .catppuccinFlavours }}
+{{ range $shell := list "fish" "nu" "ps1" "sh" }}
+[".local/share/fzf/themes/catppuccin-fzf-{{ $flavour }}.{{ $shell }}"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/fzf/archive/main.tar.gz"
+  path = "themes/catppuccin-fzf-{{ $flavour }}.{{ $shell }}"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
+{{ end }}
 
 {{ range .catppuccinFlavours }}
 [".local/share/gedit/styles/catppuccin-{{ . }}.xml"]
