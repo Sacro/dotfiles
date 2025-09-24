@@ -17,7 +17,7 @@
     {{- if (and (eq .chezmoi.arch "arm64") (eq .chezmoi.os "darwin") ) }}
       system = "aarch64-darwin";
     {{- else  }}
-      system = "x86_64-linux"
+      system = "x86_64-linux";
     {{- end }}
       pkgs = nixpkgs.legacyPackages.${system};
     in
