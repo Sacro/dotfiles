@@ -6,6 +6,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Nix early - available for zshrc
+if [ -d "$HOME/.nix-profile/bin" ]; then
+    path=("$HOME/.nix-profile/bin" "$path[@]")
+fi
+
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -287,11 +293,6 @@ fi
 #if [ -f /usr/bin/pygmentize ]; then
 #  alias cat='pygmentize -O style=monokai -f console256 -g'
 #fi
-
-# Nix
-if [ -d "$HOME/.nix-profile/bin" ]; then
-    path=("$HOME/.nix-profile/bin" "$path[@]")
-fi
 
 # C#
 if [ -d "$HOME/.dotnet/tools" ] ; then
