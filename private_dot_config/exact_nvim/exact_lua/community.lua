@@ -59,21 +59,21 @@ return {
   { import = "astrocommunity.fuzzy-finder.fzf-lua" },
 
   -- git
-  { import = "astrocommunity.git.diffview-nvim" },
+  -- { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.openingh-nvim" },
 
   -- icon
-  { import = "astrocommunity.icon.mini-icons" },
+  -- { import = "astrocommunity.icon.mini-icons" },
 
   -- indent
   -- { import = "astrocommunity.indent.indent-blankline-nvim" },
-  { import = "astrocommunity.indent.mini-indentscope" },
+  -- { import = "astrocommunity.indent.mini-indentscope" },
 
   -- keybinding
-  { import = "astrocommunity.keybinding.mini-clue" },
+  -- { import = "astrocommunity.keybinding.mini-clue" },
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
   -- lsp
@@ -106,12 +106,13 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.godot" },
+  -- { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.pack.harper" },
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.just" },
+  { import = "astrocommunity.pack.laravel" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.moonbit" },
