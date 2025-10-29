@@ -74,7 +74,7 @@ return {
 
   -- keybinding
   -- { import = "astrocommunity.keybinding.mini-clue" },
-  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+  -- { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
   -- lsp
   { import = "astrocommunity.lsp.actions-preview-nvim" },
