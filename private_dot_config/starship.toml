@@ -51,6 +51,9 @@ symbol = " "
 [container]
 symbol = ""
 
+[cpp]
+symbol = " "
+
 [crystal]
 symbol = " "
 
@@ -190,8 +193,17 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 truncation_symbol = "…"
 
+[mise]
+symbol = "mise "
+
+[mojo]
+symbol = "󰈸 "
+
 [nats]
 symbol = " "
+
+[netns]
+symbol = ""
 
 [nim]
 symbol = " "
@@ -305,6 +317,9 @@ symbol = " "
 [pijul_channel]
 symbol = " "
 truncation_symbol = "…"
+
+[pixi]
+symbol = " "
 
 [pulumi]
 symbol = " "
