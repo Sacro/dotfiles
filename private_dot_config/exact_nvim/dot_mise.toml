@@ -5,11 +5,11 @@ python.uv_venv_auto = true
 [tools]
 "gem:neovim" = "latest"
 lua = "5.1.5"
-node = "22"
+node = "24"
 perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }
-python = "3.12"
+python = "3.14"
 ruby = "latest"
 uv = "latest"
 
