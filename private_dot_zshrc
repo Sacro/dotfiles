@@ -133,10 +133,6 @@ if type brew &>/dev/null; then
     fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
 fi
 
-if type mise &>/dev/null; then
-    export MISE_NODE_COREPACK=false
-fi
-
 # Python
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
@@ -359,6 +355,9 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # pnpm
+if type pnpm &> /dev/null; then 
+    eval "$(pnpm completion zsh)"
+fi
 if [ -d "/Users/ben/Library/pnpm" ]; then 
     path=("$HOME/Library/pnpm" "$path[@]")
     export PNPM_HOME="$HOME/Library/pnpm"
