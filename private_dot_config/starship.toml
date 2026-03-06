@@ -133,7 +133,7 @@ typechanged = ""
 symbol = " "
 
 [golang]
-symbol = " "
+symbol = " "
 
 [gradle]
 symbol = " "
@@ -390,7 +390,7 @@ signal_symbol = "󱐋"
 symbol = "󱅧 "
 
 [swift]
-symbol = " "
+symbol = " "
 
 [terraform]
 symbol = " "
@@ -399,7 +399,7 @@ symbol = " "
 disabled = true
 
 [typst]
-symbol = "󰰤 "
+symbol = " "
 
 [username]
 
