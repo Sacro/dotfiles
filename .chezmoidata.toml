@@ -1,8 +1,8 @@
 catppuccinCursorTheme = 'Catppuccin-Mocha-Blue-Cursors'
 catppuccinColors = ['blue', 'flamingo', 'green', 'lavender', 'maroon', 'mauve', 'peach', 'pink', 'red', 'rosewater', 'sapphire', 'sky', 'teal', 'yellow']
 catppuccinFlavours = ['frappe', 'latte', 'macchiato', 'mocha']
+catppuccinFlavoursLowerCaseWithoutLatte = ['frappe', 'macchiato', 'mocha']
 catppuccinFlavoursTitleCase = ['Frappe', 'Latte', 'Macchiato', 'Mocha']
-catppuccinFlavoursTitleCaseWithoutLatte = ['Frappe', 'Macchiato', 'Mocha']
 catppuccinTheme = 'mocha'
 catppuccinAtuinTheme = 'catppuccin-mocha-blue'
 catppuccinBatTheme = 'Catppuccin Mocha'
