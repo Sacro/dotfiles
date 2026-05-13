@@ -32,7 +32,7 @@ MISE_NODE_COREPACK = { required = true }
 
 [tools]
 bun = "latest"
-coder = "2.24.2"
+coder = "2.33.3"
 deno = "latest"
 k9s = "latest"
 node = "lts"
