@@ -6,6 +6,7 @@
 return {
   {
     "AstroNvim/astrocommunity",
+    -- branch = "v6",
     -- dev = true,
   },
 
@@ -85,7 +86,7 @@ return {
   { import = "astrocommunity.lsp.ts-error-translator-nvim" },
 
   -- markdown-and-latex
-  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markview-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
 
   -- motion
@@ -112,12 +113,12 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.just" },
-  { import = "astrocommunity.pack.laravel" },
+  --  { import = "astrocommunity.pack.laravel" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.moonbit" },
   { import = "astrocommunity.pack.nix" },
-  { import = "astrocommunity.pack.php" },
+  --  { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.ps1" },
@@ -126,14 +127,14 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.svelte" },
-  -- { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.xml" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.zig" },
+--  { import = "astrocommunity.pack.zig" },
 
   -- programming-language-support
   { import = "astrocommunity.programming-language-support.csv-vim" },
@@ -163,6 +164,7 @@ return {
   { import = "astrocommunity.syntax.vim-sandwich" },
 
   -- terminal integration
+  -- { import = "astrocommunity.terminal-integration.floaterm" },
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
 
   -- test

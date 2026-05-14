@@ -1,0 +1,20 @@
+[settings]
+python.uv_venv_auto = "create|source"
+
+[tasks.installPerlModule]
+description = "Install Perl module"
+run = "cpanm -n Neovim::Ext"
+
+[tools]
+bottom = "latest"
+"gem:neovim" = "latest"
+gdu = "latest"
+lazygit = "latest"
+node = 'lts'
+"npm:neovim" = "latest"
+perl = 'latest'
+pnpm = 'latest'
+python = "latest"
+rg = "latest"
+ruby = 'latest'
+uv = 'latest'

@@ -5,7 +5,7 @@
 
 local node_host_prog = "~/.config/nvim/node_modules/neovim/bin/cli.js"
 
-local perl_host_prog = "~/.local/share/mise/installs/perl/current/perl-linux-amd64/bin/perl"
+local perl_host_prog = "~/.local/share/mise/installs/perl/latest/perl-linux-amd64/bin/perl"
 
 local python3_host_prog = "~/.config/nvim/.venv/bin/python"
 if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
@@ -46,6 +46,7 @@ return {
         -- This can be found in the `lua/lazy_setup.lua` file
 
         node_host_prog = node_host_prog,
+        perl_host_prog = perl_host_prog,
         python3_host_prog = python3_host_prog,
         ruby_host_prog = ruby_host_prog,
       },
