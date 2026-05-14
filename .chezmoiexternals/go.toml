@@ -1,4 +1,4 @@
 [".golangci.yml"]
   type = "file"
-  url = "https://gist.githubusercontent.com/maratori/47a4d00457a92aa426dbd48a18776322/raw/"
+  url = "https://raw.githubusercontent.com/maratori/golangci-lint-config/refs/heads/main/.golangci.yml"
   refreshPeriod = "1h"
