@@ -50,6 +50,14 @@
   refreshPeriod = "1h"
 {{ end }}
 
+[".config/eza/theme.yaml"]
+  type="archive-file"
+  url = "https://github.com/catppuccin/eza/archive/main.tar.gz"
+  path = "themes/mocha/catppuccin-mocha-blue.yml"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+
 {{ range .catppuccinFlavoursLowerCaseWithoutLatte }}
 [".config/fish/themes/catppuccin-{{ . }}.theme"]
   type = "archive-file"
