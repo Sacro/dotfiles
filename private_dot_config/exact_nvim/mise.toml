@@ -1,20 +1,22 @@
-[settings]
-python.uv_venv_auto = "create|source"
-
-[tasks.installPerlModule]
-description = "Install Perl module"
-run = "cpanm -n Neovim::Ext"
+[settings.python]
+uv_venv_auto = "create|source"
 
 [tools]
 bottom = "latest"
-"gem:neovim" = "latest"
 gdu = "latest"
+"gem:neovim" = "latest"
 lazygit = "latest"
-node = 'lts'
+lua = "5.1"
+node = "lts"
 "npm:neovim" = "latest"
-perl = 'latest'
-pnpm = 'latest'
-python = "latest"
+perl = "latest"
+pnpm = "latest"
+poetry = { version = 'latest', pyproject = 'pyproject.toml' }
+python = "3.14"
 rg = "latest"
-ruby = 'latest'
-uv = 'latest'
+ruby = "latest"
+uv = "latest"
+
+[tasks.installPerlModule]
+description = "Install Perl Module"
+run = "cpanm -n Neovim::Ext"
