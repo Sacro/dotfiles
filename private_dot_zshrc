@@ -1,16 +1,27 @@
 # vi: ft=zsh
 
+function addToPathIfDirectoryExists() {
+    if [ -d "$1" ]; then path=("$1" "${path[@]}"); fi
+}
+
 # Uncomment this, and `zprof` at the bottom to enable profiling
 # zmodload zsh/zprof
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Nix early - available for zshrc
-if [ -d "$HOME/.nix-profile/bin" ]; then
-    path=("$HOME/.nix-profile/bin" "$path[@]")
-fi
+# Add local binaries early
+addToPathIfDirectoryExists "$HOME/.local/bin"
 
+# Nix early - available for zshrc
+#if [ -d "$HOME/.nix-profile/bin" ]; then
+#    path=("$HOME/.nix-profile/bin" "$path[@]")
+#fi
+
+# Mise early
+# if [ -d "$HOME/.local/share/mise/shims" ]; then
+# path=("$HOME/.local/share/mise/shims" "${path[@]}")
+# fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -22,10 +33,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 if [ -x "$(command -v starship)" ] && [ -f ~/.config/starship.toml ]; then
     eval "$(starship init zsh)"
-elif [ $TERM != "xterm" ] \
-    && [ -f "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" ] \
-    && [ -f "$HOME/.p10k.zsh" ]
-then
+elif [ $TERM != "xterm" ] &&
+    [ -f "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" ] &&
+    [ -f "$HOME/.p10k.zsh" ]; then
     ZSH_THEME='powerlevel10k/powerlevel10k'
     source "$HOME/.p10k.zsh"
 else
@@ -46,7 +56,7 @@ CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -133,6 +143,10 @@ if type brew &>/dev/null; then
     fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
 fi
 
+if type mise &>/dev/null; then
+    export MISE_NODE_COREPACK=false
+fi
+
 # Python
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
@@ -209,11 +223,6 @@ fi
 
 typeset -U PATH path
 
-# Add local bin nice and early
-if [ -d "$HOME/.local/bin" ]; then
-    path=("$HOME/.local/bin" "$path[@]")
-fi
-
 if [ -d "$HOME/.local/share/zsh/site-functions/" ]; then
     fpath=("$HOME/.local/share/zsh/site-functions" "$fpath[@]")
 fi
@@ -236,22 +245,22 @@ if [ -f ~/.config/op/plugins.sh ]; then
 
     }
 
-function __load_op_completion() {
-    completion_function="$(op completion zsh)"
-    sed -E 's/^( +)_op_plugin_run/\1__my_op_plugin_run/' <<<"${completion_function}"
-}
+    function __load_op_completion() {
+        completion_function="$(op completion zsh)"
+        sed -E 's/^( +)_op_plugin_run/\1__my_op_plugin_run/' <<<"${completion_function}"
+    }
 
-eval "$(__load_op_completion)"
-compdef _op op
+    eval "$(__load_op_completion)"
+    compdef _op op
 fi
 
 # Atuin
-if type atuin &> /dev/null; then
+if type atuin &>/dev/null; then
     eval "$(atuin init zsh)"
 fi
 
 # FSH
-fast-theme XDG:catppuccin-mocha &> /dev/null
+fast-theme XDG:catppuccin-mocha &>/dev/null
 
 # FZF
 if [ -f ~/.fzf.zsh ]; then
@@ -260,7 +269,9 @@ fi
 
 if type bat &>/dev/null; then
     alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-elif [ -e ~/.local/share/fzf/themes/catppuccin-fzf-mocha.sh ]; then
+fi
+
+if [ -e ~/.local/share/fzf/themes/catppuccin-fzf-mocha.sh ]; then
     source ~/.local/share/fzf/themes/catppuccin-fzf-mocha.sh
 fi
 
@@ -272,7 +283,7 @@ export COMPOSER_HOME=$HOME/.composer
 path=("${COMPOSER_HOME}/vendor/bin" "$path[@]")
 
 # Neovim
-if type nvim &> /dev/null; then
+if type nvim &>/dev/null; then
     export EDITOR=nvim
     alias vim="nvim"
 fi
@@ -291,41 +302,41 @@ fi
 #fi
 
 # C#
-if [ -d "$HOME/.dotnet/tools" ] ; then
+if [ -d "$HOME/.dotnet/tools" ]; then
     path=("$HOME/.dotnet/tools" "$path[@]")
 fi
 
 # Ruby
-if [ -d "$HOME/.local/share/gem/ruby/3.3.0/bin" ] ; then
+if [ -d "$HOME/.local/share/gem/ruby/3.3.0/bin" ]; then
     path=("$HOME/.local/share/gem/ruby/3.3.0/bin" "$path[@]")
 fi
 
 # Snap
-if [ -d /snap/bin/ ] ; then
+if [ -d /snap/bin/ ]; then
     path=("/snap/bin" "$path[@]")
 fi
 
 # NVM
-if [ -f /usr/share/nvm/init-nvm.sh ] ; then
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
 # Yarn
-if [ -d "$HOME/.yarn/bin" ] ; then
+if [ -d "$HOME/.yarn/bin" ]; then
     path=("$HOME/.yarn/bin" "$path[@]")
 fi
 
 # Krew
-if [ -d "$HOME/.krew" ] ; then
+if [ -d "$HOME/.krew" ]; then
     path=("$HOME/.krew/bin" "$path[@]")
 fi
 
 # Go
-if [ -d "$HOME/go/bin" ] ; then
+if [ -d "$HOME/go/bin" ]; then
     path=("$HOME/go/bin" "$path[@]")
 fi
 
-if [ -d "$HOME/Code/Go" ] ; then
+if [ -d "$HOME/Code/Go" ]; then
     export GOPATH="$HOME/Code/Go"
     path=("$GOPATH/bin" "$path[@]")
 fi
@@ -336,7 +347,7 @@ if type kind &>/dev/null && type podman &>/dev/null; then
 fi
 
 # Rootless Docker
-if [ -S "${XDG_RUNTIME_DIR}/docker.sock" ] ; then
+if [ -S "${XDG_RUNTIME_DIR}/docker.sock" ]; then
     export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
 fi
 
@@ -355,10 +366,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # pnpm
-if type pnpm &> /dev/null; then 
-    eval "$(pnpm completion zsh)"
-fi
-if [ -d "/Users/ben/Library/pnpm" ]; then 
+if [ -d "/Users/ben/Library/pnpm" ]; then
     path=("$HOME/Library/pnpm" "$path[@]")
     export PNPM_HOME="$HOME/Library/pnpm"
 elif [ -d "$HOME/.local/share/pnpm" ]; then
@@ -373,7 +381,7 @@ fi
 # esac
 
 # PODMAN
-if [ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ] ; then
+if [ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ]; then
     DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
@@ -382,12 +390,12 @@ export QT_QPA_PLATFORM="wayland;xkb"
 export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Rust
-if [ -d "$HOME/.cargo/bin" ] ; then
+if [ -d "$HOME/.cargo/bin" ]; then
     path=("$HOME/.cargo/bin" "$path[@]")
 fi
 
 # Jetbrains
-if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ] ; then
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]; then
     path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
 fi
 
@@ -395,9 +403,4 @@ if type vivid &>/dev/null; then
     export LS_COLORS="$(vivid generate catppuccin-mocha)"
 fi
 
-
-# bun completions
-[ -s "/home/ben/.bun/_bun" ] && source "/home/ben/.bun/_bun"
-
 # zprof
-
