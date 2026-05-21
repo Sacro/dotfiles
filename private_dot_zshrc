@@ -1,7 +1,15 @@
 # vi: ft=zsh
 
-function addToPathIfDirectoryExists() {
-    if [ -d "$1" ]; then path=("$1" "${path[@]}"); fi
+function appendToPath() {
+    path=("$1" "${path[@]}")
+}
+
+function prependToPath() {
+    path=("${path[@]}" "$1")
+}
+
+function appendToPathIfDirectoryExists() {
+    if [ -d "$1" ]; then appendToPath "$1"; fi
 }
 
 # Uncomment this, and `zprof` at the bottom to enable profiling
@@ -11,7 +19,7 @@ function addToPathIfDirectoryExists() {
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Add local binaries early
-addToPathIfDirectoryExists "$HOME/.local/bin"
+appendToPathIfDirectoryExists "$HOME/.local/bin"
 
 # Nix early - available for zshrc
 #if [ -d "$HOME/.nix-profile/bin" ]; then
@@ -135,12 +143,10 @@ plugins=(
 )
 
 # Configure brew before oh-my-zsh starts
-if [ -d /opt/homebrew/bin ]; then
-    path=("/opt/homebrew/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "/opt/homebrew/bin"
 
 if type brew &>/dev/null; then
-    fpath=("$(brew --prefix)/share/zsh/site-functions" "$fpath[@]")
+    fpath=("$(brew --prefix)/share/zsh/site-functions" "${fpath[@]}")
 fi
 
 if type mise &>/dev/null; then
@@ -152,19 +158,17 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 if [ -d "$HOME/.pyenv/bin" ]; then
     export PYENV_ROOT="$HOME/.pyenv"
-    path=("$HOME/.pyenv/bin" "$path[@]")
+    appendToPath "$HOME/.pyenv/bin"
 fi
 
 if type pyenv &>/dev/null; then
-    if [ -d "$(pyenv root)/shims" ]; then
-        path=("$(pyenv root)/shims" "$path[@]")
-    fi
+    appendToPathIfDirectoryExists "$(pyenv root)/shims"
 fi
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -223,13 +227,11 @@ fi
 
 typeset -U PATH path
 
-if [ -d "$HOME/.local/share/zsh/site-functions/" ]; then
-    fpath=("$HOME/.local/share/zsh/site-functions" "$fpath[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.local/share/zsh/site-functions/"
 
 # 1password
-if [ -f ~/.config/op/plugins.sh ]; then
-    source ~/.config/op/plugins.sh
+if [ -f "$HOME/.config/op/plugins.sh" ]; then
+    source "$HOME/.config/op/plugins.sh"
 
     function __my_op_plugin_run() {
         _op_plugin_run
@@ -263,8 +265,8 @@ fi
 fast-theme XDG:catppuccin-mocha &>/dev/null
 
 # FZF
-if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
+if [ -f "$HOME/.fzf.zsh" ]; then
+    source "$HOME/fzf.zsh"
 fi
 
 if type bat &>/dev/null; then
@@ -280,7 +282,8 @@ ZSH_COLORIZE_STYLE=monokai
 
 # PHP
 export COMPOSER_HOME=$HOME/.composer
-path=("${COMPOSER_HOME}/vendor/bin" "$path[@]")
+
+appendToPathIfDirectoryExists "${COMPOSER_HOME}/vendor/bin"
 
 # Neovim
 if type nvim &>/dev/null; then
@@ -302,19 +305,13 @@ fi
 #fi
 
 # C#
-if [ -d "$HOME/.dotnet/tools" ]; then
-    path=("$HOME/.dotnet/tools" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.dotnet/tools"
 
 # Ruby
-if [ -d "$HOME/.local/share/gem/ruby/3.3.0/bin" ]; then
-    path=("$HOME/.local/share/gem/ruby/3.3.0/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.local/share/gem/ruby/3.3.0/bin"
 
 # Snap
-if [ -d /snap/bin/ ]; then
-    path=("/snap/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "/snap/bin"
 
 # NVM
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
@@ -322,23 +319,17 @@ if [ -f /usr/share/nvm/init-nvm.sh ]; then
 fi
 
 # Yarn
-if [ -d "$HOME/.yarn/bin" ]; then
-    path=("$HOME/.yarn/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.yarn/bin"
 
 # Krew
-if [ -d "$HOME/.krew" ]; then
-    path=("$HOME/.krew/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.krew"
 
 # Go
-if [ -d "$HOME/go/bin" ]; then
-    path=("$HOME/go/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/go/bin"
 
 if [ -d "$HOME/Code/Go" ]; then
+    appendToPath "$HOME/Code/Go"
     export GOPATH="$HOME/Code/Go"
-    path=("$GOPATH/bin" "$path[@]")
 fi
 
 # Kind
@@ -366,11 +357,11 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 # pnpm
-if [ -d "/Users/ben/Library/pnpm" ]; then
-    path=("$HOME/Library/pnpm" "$path[@]")
+if [ -d "$HOME/Library/pnpm" ]; then # macOS
+    appendToPath "$HOME/library/pnpm"
     export PNPM_HOME="$HOME/Library/pnpm"
-elif [ -d "$HOME/.local/share/pnpm" ]; then
-    path=("$HOME/.local/share/pnpm" "$path[@]")
+elif [ -d "$HOME/.local/share/pnpm" ]; then # Linux
+    appendToPath "$HOME/.local/share/pnpm"
     export PNPM_HOME="$HOME/.local/share/pnpm"
 fi
 
@@ -390,14 +381,10 @@ export QT_QPA_PLATFORM="wayland;xkb"
 export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Rust
-if [ -d "$HOME/.cargo/bin" ]; then
-    path=("$HOME/.cargo/bin" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.cargo/bin"
 
 # Jetbrains
-if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]; then
-    path=("$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]")
-fi
+appendToPathIfDirectoryExists "$HOME/.local/share/JetBrains/Toolbox/scripts"
 
 if type vivid &>/dev/null; then
     export LS_COLORS="$(vivid generate catppuccin-mocha)"
