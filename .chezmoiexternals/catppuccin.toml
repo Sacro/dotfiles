@@ -119,10 +119,10 @@
 {{ end }}
 
 {{ range .catppuccinFlavours }}
-[".config/hypr/themes/catppuccin-{{ . }}.conf"]
+[".config/hypr/themes/catppuccin-{{ . }}.lua"]
   type = "archive-file"
   url = "https://github.com/catppuccin/hyprland/archive/main.tar.gz"
-  path = "themes/{{ . }}.conf"
+  path = "themes/catppuccin-{{ . }}.lua"
   exact = true
   stripComponents = 1
   refreshPeriod = "1h"
