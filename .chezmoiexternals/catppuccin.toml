@@ -89,6 +89,16 @@
 {{end}}
 
 {{ range .catppuccinFlavours }}
+[".config/geany/colorschemes/catppuccin-{{ . }}.conf"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/geany/archive/main.tar.gz"
+  path = "src/catppuccin-{{ . }}.conf"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "1h"
+{{ end }}
+
+{{ range .catppuccinFlavours }}
 [".config/gitui/catppuccin-{{ . }}.ini"]
   type = "archive-file"
   url = "https://github.com/catppuccin/zsh-fsh/archive/main.tar.gz"
