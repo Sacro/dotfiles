@@ -1,14 +1,13 @@
-[settings.python]
-uv_venv_auto = "create|source"
+[settings]
+python.uv_venv_create_args = ['--seed']
+python.uv_venv_auto = true
 
 [tools]
 bottom = "latest"
 gdu = "latest"
-"gem:neovim" = "latest"
 lazygit = "latest"
 lua = "5.1"
 node = "lts"
-"npm:neovim" = "latest"
 perl = "latest"
 pnpm = "latest"
 poetry = { version = 'latest', pyproject = 'pyproject.toml' }

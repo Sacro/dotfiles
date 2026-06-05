@@ -1,7 +1,8 @@
+.pnpm.cjs
+.venv
+Gemfile.lock
 lazy-lock.json
 node_modules
-.pnpm.cjs
 pnpm-lock.yaml
 uv.lock
-.venv
 
