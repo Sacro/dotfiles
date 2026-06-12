@@ -1,0 +1,5 @@
+.luacheckrc
+.mise.toml
+.pnp.cjs
+.python-default-packages
+.yarn*
