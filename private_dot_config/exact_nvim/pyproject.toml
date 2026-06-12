@@ -1,7 +1,9 @@
 [project]
 name = "astronvim"
 version = "0.1.0"
-description = "astronvim configuration"
+description = "AstroNvim configuration"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = ["neovim>=0.3.1"]
+dependencies = [
+    "neovim>=0.3.1",
+]

@@ -1,6 +1,9 @@
+[env]
+UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
+
 [settings]
 python.uv_venv_create_args = ['--seed']
-python.uv_venv_auto = true
+python.uv_venv_auto = "create|source"
 
 [tools]
 bottom = "latest"
