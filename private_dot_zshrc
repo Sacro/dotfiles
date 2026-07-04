@@ -1,11 +1,11 @@
 # vi: ft=zsh
 
 function appendToPath() {
-    path=("$1" "${path[@]}")
+    path=("${path[@]}" "$1")
 }
 
 function prependToPath() {
-    path=("${path[@]}" "$1")
+    path=("$1" "${path[@]}")
 }
 
 function appendToPathIfDirectoryExists() {
