@@ -4,6 +4,7 @@
 palette = "catppuccin_mocha"
 add_newline = true
 command_timeout = 2000
+scan_timeout = 500
 
 [aws]
 symbol = "  "
@@ -20,7 +21,7 @@ charging_symbol = "󰂄 "
 discharging_symbol = "󰂃 "
 
 [buf]
-symbol = " "
+symbol = " " # TODO
 
 [bun]
 symbol = " "
@@ -43,10 +44,10 @@ disabled = true
 symbol = " "
 
 [cobol]
-symbol = " "
+symbol = " "
 
 [conda]
-symbol = " "
+symbol = " " # TODO
 
 [container]
 symbol = ""
@@ -58,7 +59,7 @@ symbol = " "
 symbol = " "
 
 [daml]
-symbol = "Λ "
+symbol = "Λ " # TODO
 
 [dart]
 symbol = " "
@@ -68,8 +69,8 @@ symbol = " "
 
 [directory]
 home_symbol = "~"
-read_only = " 󰌾"
-truncation_symbol = ""
+read_only = " "
+truncation_symbol = "…"
 
 [direnv]
 symbol = "direnv "
@@ -100,40 +101,43 @@ symbol = "."
 symbol = " "
 truncation_symbol = "…"
 
+[fortran]
+symbol = "  "
+
 [gcloud]
 disabled = true
 symbol = "  "
 
 [git_branch]
-symbol = " "
+symbol = " "
 truncation_symbol = "…"
 
 [git_commit]
-tag_symbol = " 󰌖  "
+tag_symbol = "   "
 
 [git_metrics]
 
 [git_state]
 
 [git_status]
-conflicted = "󰂭"
-ahead = "󰁝${count}"
-behind = "󰁅${count}"
-diverged = "󰁝${ahead_count}󰁅${behind_count}"
+conflicted = ""
+ahead = "${count}"
+behind = "${count}"
+diverged = "${ahead_count}${behind_count}"
 up_to_date = ""
-untracked = "?"
-stashed = "󱊖"
-modified = "󰇂"
-staged = "󰐕"
-renamed = "󰄾"
-deleted = "󰅖"
+untracked = ""
+stashed = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
 typechanged = ""
 
 [gleam]
-symbol = " "
+symbol = " "
 
 [golang]
-symbol = " "
+symbol = " " # seti because devicons isn't solid
 
 [gradle]
 symbol = " "
@@ -156,7 +160,7 @@ symbol = " "
 truncation_symbol = "…"
 
 [hostname]
-ssh_symbol = " "
+ssh_symbol = "󰣀 "
 
 [java]
 symbol = " "
@@ -186,21 +190,24 @@ ssh_only = true
 [lua]
 symbol = " "
 
+[maven]
+symbol = " "
+
 [memory_usage]
 symbol = "󰍛 "
 
 [meson]
-symbol = "󰔷 "
+symbol = "󰔷 " # TODO
 truncation_symbol = "…"
 
 [mise]
-symbol = "mise "
+symbol = "mise " # TODO
 
 [mojo]
-symbol = "󰈸 "
+symbol = "󰈸 " # TODO
 
 [nats]
-symbol = " "
+symbol = " "
 
 [netns]
 symbol = ""
@@ -218,10 +225,10 @@ symbol = " "
 symbol = " "
 
 [odin]
-symbol = "Ø "
+symbol = "Ø " # TODO
 
 [opa]
-symbol = "󱢙  "
+symbol = "󱢙  " # TODO
 
 [openstack]
 symbol = "  "
@@ -314,12 +321,12 @@ symbol = " "
 [php]
 symbol = " "
 
-[pijul_channel]
+[pijul_channel] # TODO
 symbol = " "
 truncation_symbol = "…"
 
 [pixi]
-symbol = " "
+symbol = " "
 
 [pulumi]
 symbol = " "
@@ -331,10 +338,10 @@ symbol = " "
 symbol = " "
 
 [quarto]
-symbol = "⨁ "
+symbol = "⨁ " # TODO
 
 [raku]
-symbol = " "
+symbol = " " # TODO
 
 [red]
 symbol = "[󰔶 ](red)"
@@ -411,6 +418,9 @@ symbol = ""
 
 [vlang]
 symbol = " "
+
+[xmake]
+symbol = "△ " # TODO
 
 [zig]
 symbol = " "

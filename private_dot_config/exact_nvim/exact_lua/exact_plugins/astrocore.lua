@@ -3,14 +3,16 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local node_host_prog = "~/.config/nvim/node_modules/neovim/bin/cli.js"
+local node_host_prog = "~/.local/share/mise/installs/npm-neovim/latest/node_modules/neovim/bin/cli.js"
 
 local perl_host_prog = "~/.local/share/mise/shims/perl"
 
-local python3_host_prog = "~/.config/nvim/.venv/bin/python"
+local python3_host_prog = "~/.local/share/mise/installs/pipx-pynvim/latest/bin/pynvim-python"
+-- local python3_host_prog = "~/.config/nvim/.venv/bin/python"
 if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
 
-local ruby_host_prog = "~/.local/share/mise/shims/neovim-ruby-host"
+-- local ruby_host_prog = "~/.local/share/mise/shims/neovim-ruby-host"
+local ruby_host_prog = "~/.local/share/mise/installs/gem-neovim/latest/bin/neovim-ruby-host"
 
 ---@type LazySpec
 return {

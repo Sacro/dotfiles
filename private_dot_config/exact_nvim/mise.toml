@@ -1,22 +1,15 @@
-[env]
-UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
-
-[settings]
-python.uv_venv_create_args = ['--seed']
-python.uv_venv_auto = "create|source"
-
 [tools]
 bottom = "latest"
 gdu = "latest"
+"gem:neovim" = "latest"
 lazygit = "latest"
 lua = "5.1"
 node = "lts"
+"npm:neovim" = "latest"
 perl = "latest"
-pnpm = "latest"
-python = "3.14"
+"pipx:pynvim" = "latest"
+python = "latest"
 rg = "latest"
-ruby = "latest"
-uv = "latest"
 
 [tasks.installPerlModule]
 description = "Install Perl Module"
