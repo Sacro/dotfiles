@@ -5,6 +5,7 @@
 .oh-my-zsh/cache/*
 **/.pspminfo
 **/.venv/**
+mise.lock
 renovate.json
 
 # Ignore MacOS specific things

@@ -1,8 +1,5 @@
 [settings]
-# Tools can read the versions files used by other version managers
-# for example, `.nvmrc` in the case of node's `nvm`
-# https://mise.jdx.dev/configuration.html#idiomatic-version-files
-idiomatic_version_file_enable_tools = []
+idiomatic_version_file_enable_tools = ["node", "ruby"]
 
 # Keep downloaded archive/source files for debugging
 always_keep_download = false        # Deleted after install; not a cache
@@ -31,7 +28,6 @@ task.output = "prefix" # See Tasks Runner for more information
 paranoid = false       # See `MISE_PARANOID`
 
 
-shorthands_file = '~/.config/mise/shorthands.toml' # path to the shorthands file, see `MISE_SHORTHANDS_FILE`
 disable_default_registry = false   # Disable the default registry, see `MISE_DISABLE_DEFAULT_REGISTRY`
 disable_tools = []                 # Disable specific tools, generally used to turn off core tools
 
@@ -45,19 +41,30 @@ status = {
   show_env = false,
   show_tools = false,
 }
+
 lockfile = true
+
+[settings.github]
+use_git_credentials = true
+
+[settings.node]
+corepack = false
 
 [settings.ruby]
 compile = false
 
 [tools]
-aube = "latest"
+"aqua:jdx/aube" = "latest"
 bun = "latest"
 coder = "2.24.2"
 deno = "latest"
+fnox = "latest"
 "gem:bundler" = "latest"
 "gem:rails" = "latest"
+golangci-lint = "latest"
+gup = "latest"
 k9s = "latest"
 node = "lts"
 pnpm = "latest"
 ruby = "latest"
+usage = "latest"
