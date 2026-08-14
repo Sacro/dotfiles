@@ -377,8 +377,8 @@ if [ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ]; then
 fi
 
 # QT
-export QT_QPA_PLATFORM="wayland;xkb"
-export QT_QPA_PLATFORMTHEME=qt6ct
+# export QT_QPA_PLATFORM="wayland;xkb"
+# export QT_QPA_PLATFORMTHEME=qt6ct
 
 # Rust
 appendToPathIfDirectoryExists "$HOME/.cargo/bin"
