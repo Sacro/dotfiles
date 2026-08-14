@@ -3,10 +3,16 @@
 
 # General things to ignore
 .oh-my-zsh/cache/*
+renovate.json
+
+**/.pnpm.cjs
 **/.pspminfo
 **/.venv/**
-mise.lock
-renovate.json
+**/Gemfile.lock
+**/node_modules/**
+**/pnpm-lock.yaml
+**/mise.lock
+**/uv.lock
 
 # Ignore MacOS specific things
 {{- if ne .chezmoi.os "darwin" }}
