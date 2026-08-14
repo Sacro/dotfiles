@@ -74,10 +74,7 @@ font-feature = 'ss12'
 font-feature = 'ss13'
 font-feature = 'zero'
 
-font-size = 11
-
 adjust-cell-height = 10%
 freetype-load-flags = false
-
 
 theme = noctalia
