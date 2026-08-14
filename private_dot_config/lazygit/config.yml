@@ -27,3 +27,6 @@ theme:
 
 authorColors:
   "*": "#b4befe"
+
+git:
+  overrideGpg: true
