@@ -365,6 +365,7 @@ type = "archive-file"
   include = ["{{ .catppuccinGtkTheme }}-dark/**"]
 {{ end }}
 
+#
 # {{ if eq $.chezmoi.os "windows" }}
   {{ range .catppuccinFlavours }}
   ["Appdata/Roaming/Notepad++/themes/catppuccin-{{ . }}.xml"]
@@ -377,6 +378,7 @@ type = "archive-file"
   {{ end }}
 # {{ end }}
 
+# Flow Launcher
 {{ if eq $.chezmoi.os "windows" }}
   {{ range .catppuccinFlavoursTitleCase }}
   ["AppData/Roaming/FlowLauncher/Themes/Catppuccin {{ . }}.xaml"]
@@ -387,4 +389,14 @@ type = "archive-file"
     stripComponents = 1
     refreshPeriod = "1h"
   {{ end }}
+{{ end }}
+
+# Powershell
+{{ if eq $.chezmoi.os "windows" }}
+    ["Documents/PowerShell/Modules/Catppuccin"]
+        type = "archive"
+        url = "https://github.com/catppuccin/powershell/archive/main.tar.gz"
+        exact = true
+        stripComponents = 1
+        refreshPeriod = "1h"
 {{ end }}
