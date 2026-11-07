@@ -1,5 +1,3 @@
-// zellij setup --dump-swap-layout=compact
-
 tab_template name="ui" {
    children
    pane size=1 borderless=true {
@@ -50,6 +48,12 @@ swap_tiled_layout name="horizontal" {
 }
 
 swap_tiled_layout name="stacked" {
+    ui min_panes=3 {
+        pane stacked=true { children; }
+    }
+}
+
+swap_tiled_layout name="half-stacked" {
     ui min_panes=4 {
         pane split_direction="vertical" {
             pane
