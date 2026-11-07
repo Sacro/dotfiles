@@ -26,11 +26,6 @@ appendToPathIfDirectoryExists "$HOME/.local/bin"
 #    path=("$HOME/.nix-profile/bin" "$path[@]")
 #fi
 
-# Mise early
-# if [ -d "$HOME/.local/share/mise/shims" ]; then
-# path=("$HOME/.local/share/mise/shims" "${path[@]}")
-# fi
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -111,6 +106,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    mise # keep first
     1password
     alias-finder aliases archlinux autopep8 aws
     bgnotify branch bun
@@ -119,14 +115,14 @@ plugins=(
     deno dircycle docker docker-compose
     emoji emotty encode64 extract eza
     fabric fancy-ctrl-z firewalld fluxcd frontend-search fzf
-    gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh github git-hubflow gitignore gnu-utils golang
+    gcloud gh git git-auto-fetch git-extras gitfast git-flow git-flow-avh gh git-hubflow gitignore gnu-utils golang
     helm heroku history httpie
     iterm2
     jira jsontools
     k9s kubectl kubectx
-    macos man mercurial microk8s minikube mise mosh
+    macos man mercurial microk8s minikube mosh
     nats ng nmap node npm #nvm # DO NOT ADD NPX - SECURITY ISSUES
-    pep8 perl perms pip podman postgres pre-commit profiles pyenv pylint python
+    pep8 perl perms pip podman postgres pre-commit profiles pulumi pyenv pylint python
     qodana qrcode
     react-native redis-cli repo rsync ruby rust
     safe-paste salt screen skaffold starship sudo svn systemadmin systemd
@@ -264,6 +260,11 @@ fi
 # FSH
 fast-theme XDG:catppuccin-mocha &>/dev/null
 
+# fnox
+if type fnox &>/dev/null; then
+    eval "$(fnox activate zsh)"
+fi
+
 # FZF
 if [ -f "$HOME/.fzf.zsh" ]; then
     source "$HOME/fzf.zsh"
@@ -356,6 +357,11 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi
 
+# Pitchfork
+if type pitchfork &>/dev/null; then
+    eval "$(pitchfork activate zsh)"
+fi
+
 # pnpm
 if [ -d "$HOME/Library/pnpm" ]; then # macOS
     appendToPath "$HOME/library/pnpm"
@@ -391,3 +397,11 @@ if type vivid &>/dev/null; then
 fi
 
 # zprof
+
+# pnpm
+export PNPM_HOME='/home/ben/.local/share/pnpm'
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
