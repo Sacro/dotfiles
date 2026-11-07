@@ -1,0 +1,28 @@
+[daemons]
+
+[settings.boot]
+executable = "/home/ben/.local/share/mise/installs/pitchfork/latest/pitchfork"
+
+[settings.general]
+autostop_delay = "30s"
+mise = true
+
+[settings.logs]
+time_retention = "7d"
+
+[settings.proxy]
+enable = true
+https = true
+sync_hosts = false
+
+[settings.supervisor]
+auto_start = false
+file_watch_debounce = "1s"
+
+[settings.web]
+auto_start = true
+bind_address = "127.0.0.1"
+bind_port = 3120
+
+[namespaces.global]
+dir = "/home/ben"
