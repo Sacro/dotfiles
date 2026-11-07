@@ -7,7 +7,7 @@ local node_host_prog = "~/.local/share/mise/installs/npm-neovim/latest/node_modu
 
 local perl_host_prog = "~/.local/share/mise/shims/perl"
 
-local python3_host_prog = "~/.local/share/mise/installs/pipx-pynvim/latest/bin/pynvim-python"
+local python3_host_prog = "~/.local/share/mise/installs/pypi-pynvim/latest/bin/pynvim-python"
 -- local python3_host_prog = "~/.config/nvim/.venv/bin/python"
 if vim.fn.has "win32" == 1 then python3_host_prog = "python.exe" end
 

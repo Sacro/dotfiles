@@ -1,4 +1,5 @@
 [tools]
+aube = "latest"
 bottom = "latest"
 gdu = "latest"
 "gem:neovim" = "latest"
@@ -7,7 +8,7 @@ lua = "5.1"
 node = "lts"
 "npm:neovim" = "latest"
 perl = "latest"
-"pipx:pynvim" = "latest"
+"pypi:pynvim" = "latest"
 python = "latest"
 rg = "latest"
 

@@ -21,7 +21,9 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
 
   -- Pack
+  { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.godot" },
+  { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
 }
