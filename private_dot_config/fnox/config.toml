@@ -1,1 +1,3 @@
-#:schema https://fnox.jdx.dev/schema.json
+[providers.sync-age]
+type = "age"
+recipients = ["age17evvpqr6g4htjndn2n7t3pgj2mmq08f87laxfyzzqjtumfcs44csz7xpkj"]
