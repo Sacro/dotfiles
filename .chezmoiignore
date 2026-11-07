@@ -4,14 +4,14 @@
 # General things to ignore
 .oh-my-zsh/cache/*
 renovate.json
-
 **/.pnpm.cjs
 **/.pspminfo
 **/.venv/**
+**/*.local.lock
+**/*.local.toml
 **/Gemfile.lock
 **/node_modules/**
 **/pnpm-lock.yaml
-**/mise.lock
 **/uv.lock
 
 # Ignore MacOS specific things

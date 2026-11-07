@@ -1,70 +1,67 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[bootstrap.mise_shell_activate]
+bash = true
+fish = "auto"
+zsh = false   # handled in zshrc
+
+[bootstrap.services.mise-history]
+builtin = "history-watch"
+
+[bootstrap.services.pitchfork]
+scope = "user"
+command = "/home/ben/.local/bin/mise exec -- pitchfork supervisior run --boot"
+environment = { PITCHFORK_MISE_BIN = "/home/ben/.local/bin/mise" }
+working_directory = "~"
+requires_tools = true
+restart = "on-failure"
+
+[env]
+EDITOR = "nvim"
+
 [settings]
-idiomatic_version_file_enable_tools = ["node", "ruby"]
-
-# Keep downloaded archive/source files for debugging
-always_keep_download = false        # Deleted after install; not a cache
-always_keep_install = false         # Deleted on failure by default
-
-# Configure how frequently (in minutes) to fetch updated plugin repository changes
-# this is updated whenever a new runtime is installed
-# (note: this isn't currently implemented but there are plans to add it: https://github.com/jdx/mise/discussions/6735)
-plugin_autoupdate_last_check_duration = '1 week' # set to 0 to disable updates
-
-
-# Config files with these prefixes will be trusted by default
-trusted_config_paths = [
-    '~/Code',
+activate_aggressive = true
+color_theme = "catppuccin"
+experimental = true
+idiomatic_version_file_enable_tools = [
+  # https://mise.jdx.dev/dev-tools/versions.html#idiomatic-version-files
+  "bun",
+  "go",
+  "golangci-lint",
+  "node",
+  "npm",
+  "opentofu",
+  "pnpm",
+  "python",
+  "ruby",
+  "rust",
+  "terraform",
+  "terragrunt",
+  "yarn",
 ]
-
-verbose = false       # Set to true to see full installation output, see `MISE_VERBOSE`
-http_timeout = "30s"  # Set the timeout for http requests as duration string, see `MISE_HTTP_TIMEOUT`
-jobs = 4              # Number of plugins or runtimes to install in parallel. The default is `4`.
-raw = false           # Set to true to directly pipe plugins to `stdin`/`stdout`/`stderr`
-yes = false           # Set to true to automatically answer yes to all prompts
-
-
-not_found_auto_install = true # See `MISE_NOT_FOUND_AUTO_INSTALL`
-task.output = "prefix" # See Tasks Runner for more information
-paranoid = false       # See `MISE_PARANOID`
-
-
-disable_default_registry = false   # Disable the default registry, see `MISE_DISABLE_DEFAULT_REGISTRY`
-disable_tools = []                 # Disable specific tools, generally used to turn off core tools
-
-env_file = '.env' # Load `env` vars from a `dotenv` file, see `MISE_ENV_FILE`
-
-experimental = true # enable experimental features
-
-# Configure messages displayed when entering directories with config files
-status = {
-  missing_tools = "if_other_versions_installed",
-  show_env = false,
-  show_tools = false,
-}
-
 lockfile = true
+
+[settings.gitlab]
+use_git_credentials = true
 
 [settings.github]
 use_git_credentials = true
 
-[settings.node]
-corepack = false
+[settings.self_update]
+auto = true
 
-[settings.ruby]
-compile = false
+[settings.tool_update]
+global_auto = true
+
+[settings.upgrade]
+auto_prune = true
 
 [tools]
-"aqua:jdx/aube" = "latest"
-bun = "latest"
-coder = "2.24.2"
-deno = "latest"
+aube = { version = "latest", workflow = [
+  "release-plz.yml@refs/heads/main",
+  "release.yml@refs/heads/main",
+] }
 fnox = "latest"
-"gem:bundler" = "latest"
-"gem:rails" = "latest"
-golangci-lint = "latest"
-gup = "latest"
-k9s = "latest"
-node = "lts"
-pnpm = "latest"
-ruby = "latest"
+hk = { version = "latest", workflow = "release.yml" }
+pitchfork = { version = "latest", workflow = "release.yml@refs/heads/main" }
 usage = "latest"
