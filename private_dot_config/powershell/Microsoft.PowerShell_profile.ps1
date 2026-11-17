@@ -80,19 +80,12 @@ $PSStyle.Formatting.Verbose = $Flavor.Yellow.Foreground()
 $PSStyle.Formatting.Warning = $Flavor.Peach.Foreground()
 ## End Catppuccin ##
 
-## Direnv ##
 
-$Env:DIRENV_CONFIG = "$Env:UserProfile\.config\direnv\"
-$Env:XDG_CACHE_HOME = "$Env:UserProfile\.cache"
-$Env:XDG_DATA_HOME = "$Env:UserProfile\.local\share"
-
-## End Direnv ##
-
-# Git
-Import-Module posh-git
-
-# GSudo
-Import-Module gsudoModule
+# Mise - nice and early!
+if (Get-Command "mise" -ErrorAction SilentlyContinue)
+{
+    (&mise activate pwsh) | Out-String | Invoke-Expression
+}
 
 # PSReadLine
 Import-Module PSReadLine
@@ -141,11 +134,6 @@ if (Get-Command "lsd" -ErrorAction SilentlyContinue)
   function lt {lsd --tree}
 }
 
-# GoRelease
-if (Get-Command "pack" -ErrorAction SilentlyContinue) {
-  $(pack completion --shell powershell | Out-String | Invoke-Expression) 2> $null
-}
-
 # Scoop Completion
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
@@ -175,13 +163,6 @@ if (Get-Command "starship" -ErrorAction SilentlyContinue)
 if (Get-Command "tailscale" -ErrorAction SilentlyContinue)
 {
   $(tailscale completion powershell | Out-String | Invoke-Expression) 2> $null
-}
-
-
-# Talhelper
-if (Get-Command "talhelper" -ErrorAction SilentlyContinue)
-{
-  $(talhelper completion powershell | Out-String | Invoke-Expression) 2> $null
 }
 
 # Tpi
